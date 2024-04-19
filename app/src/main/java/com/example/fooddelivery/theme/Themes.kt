@@ -72,7 +72,7 @@ private val LightColorScheme = lightColorScheme(
 
 @SuppressLint("NewApi")
 @Composable
-fun Theme(
+fun FoodDeliveryTheme(
     isDarkTheme: Boolean = isSystemInDarkTheme(),
     isDynamicColor: Boolean = true,
     content: @Composable () -> Unit
