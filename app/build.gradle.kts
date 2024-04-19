@@ -4,11 +4,10 @@ plugins {
 }
 
 android {
-    namespace = "com.example.food_delivery"
+    namespace = "com.example.fooddelivery"
     compileSdk = 34
-    buildToolsVersion "21.0.1"
     defaultConfig {
-        applicationId = "com.example.food_delivery"
+        applicationId = "com.example.fooddelivery"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
