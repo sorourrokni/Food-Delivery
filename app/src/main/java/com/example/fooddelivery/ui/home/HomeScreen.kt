@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.home
 
+<<<<<<< HEAD
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
@@ -25,10 +26,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.CustomTabRow
+=======
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+
+>>>>>>> master
 
 @Composable
 fun HomeScreen(name: String, modifier: Modifier = Modifier) {
 
+<<<<<<< HEAD
     var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()
 
@@ -75,3 +82,8 @@ fun HomeScreen(name: String, modifier: Modifier = Modifier) {
 
 
 
+=======
+
+}
+
+>>>>>>> master
