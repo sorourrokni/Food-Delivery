@@ -1,0 +1,1190 @@
+{
+  "name": "favorites",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "19:456",
+    "version": "5602345228",
+    "component-id": "50418e77b7d1f98dfb08226da2d4eea8cf1bc893"
+  },
+  "default": "favorites",
+  "documentation": ".",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Favorite foods"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "group",
+        "id": "shopping-cart"
+      },
+      {
+        "type": "group",
+        "id": "navigation"
+      },
+      {
+        "type": "group",
+        "id": "Group 72"
+      },
+      {
+        "type": "group",
+        "id": "heart"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector2"
+      },
+      {
+        "type": "vector",
+        "id": "Vector3"
+      },
+      {
+        "type": "group",
+        "id": "home"
+      },
+      {
+        "type": "group",
+        "id": "heart1"
+      },
+      {
+        "type": "group",
+        "id": "user"
+      },
+      {
+        "type": "group",
+        "id": "stickynote"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/linear/home"
+      },
+      {
+        "type": "group",
+        "id": "home1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector4"
+      },
+      {
+        "type": "vector",
+        "id": "Vector5"
+      },
+      {
+        "type": "vector",
+        "id": "Vector6"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/bold/heart"
+      },
+      {
+        "type": "group",
+        "id": "heart2"
+      },
+      {
+        "type": "vector",
+        "id": "Vector7"
+      },
+      {
+        "type": "vector",
+        "id": "Vector8"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/linear/user"
+      },
+      {
+        "type": "group",
+        "id": "user1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector9"
+      },
+      {
+        "type": "vector",
+        "id": "Vector10"
+      },
+      {
+        "type": "vector",
+        "id": "Vector11"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/linear/stickynote"
+      },
+      {
+        "type": "group",
+        "id": "stickynote1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector12"
+      },
+      {
+        "type": "vector",
+        "id": "Vector13"
+      },
+      {
+        "type": "vector",
+        "id": "Vector14"
+      },
+      {
+        "type": "vector",
+        "id": "Vector15"
+      },
+      {
+        "type": "vector",
+        "id": "Vector16"
+      },
+      {
+        "type": "vector",
+        "id": "Vector17"
+      },
+      {
+        "type": "vector",
+        "id": "Vector18"
+      },
+      {
+        "type": "text",
+        "id": "No Favorite foods yet"
+      },
+      {
+        "type": "text",
+        "id": "Hit the orange button down below to Create an order"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/outline/heart"
+      },
+      {
+        "type": "group",
+        "id": "heart3"
+      },
+      {
+        "type": "vector",
+        "id": "Vector19"
+      },
+      {
+        "type": "vector",
+        "id": "Vector20"
+      }
+    ],
+    "modes": {
+      "favorites": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Favorite foods",
+              "Vector",
+              "shopping-cart",
+              "navigation",
+              "Group 72",
+              "heart"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9490196078431372
+            }
+          },
+          {
+            "id": "Favorite foods",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 132.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Favorite foods",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 34.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Vector",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.59857177734375
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 73.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 22.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 14.666666030883789
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "shopping-cart",
+            "opacity": 0.30000001192092896,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 349.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 65.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector1",
+              "Vector2",
+              "Vector3"
+            ]
+          },
+          {
+            "id": "navigation",
+            "padding": {
+              "left": 32.0,
+              "top": 32.0,
+              "right": 32.0,
+              "bottom": 46.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 794.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 414.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "arrangement": "row",
+            "children": [
+              "home",
+              "heart1",
+              "user",
+              "stickynote"
+            ],
+            "item-spacing": 70.0,
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9490196078431372
+            },
+            "clip-content": false
+          },
+          {
+            "id": "Group 72",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 75.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 429.08349609375
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 266.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 90.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "No Favorite foods yet",
+              "Hit the orange button down below to Create an order"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "heart",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 157.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 303.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/outline/heart"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector1",
+            "margin": {
+              "left": 8.0,
+              "top": 20.0,
+              "right": 14.0,
+              "bottom": 2.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector1.svg"
+          },
+          {
+            "id": "Vector2",
+            "margin": {
+              "left": 19.0,
+              "top": 20.0,
+              "right": 3.0,
+              "bottom": 2.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector2.svg"
+          },
+          {
+            "id": "Vector3",
+            "margin": {
+              "left": 1.0,
+              "top": 1.0,
+              "right": 1.0,
+              "bottom": 7.9996337890625
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector3.svg"
+          },
+          {
+            "id": "home",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/linear/home"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "heart1",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.4,
+                "hue": 15.420560747663552,
+                "saturation": 1.0,
+                "value": 0.8392156862745098
+              },
+              "blur": 20.0,
+              "offset-x": 0.0,
+              "offset-y": 6.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/bold/heart"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "user",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/linear/user"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "stickynote",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/linear/stickynote"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "vuesax/linear/home",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "home1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "home1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector4",
+              "Vector5",
+              "Vector6"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector4",
+            "margin": {
+              "left": 12.0,
+              "top": 15.0,
+              "right": 12.0,
+              "bottom": 6.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector4.svg"
+          },
+          {
+            "id": "Vector5",
+            "margin": {
+              "left": 1.9968109130859375,
+              "top": 2.1837158203125,
+              "right": 2.0001697540283203,
+              "bottom": 2.1900291442871094
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.750030517578125
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector5.svg"
+          },
+          {
+            "id": "Vector6",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "vuesax/bold/heart",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "heart2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "heart2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector7",
+              "Vector8"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector7",
+            "margin": {
+              "left": 2.0,
+              "top": 3.0999755859375,
+              "right": 2.0,
+              "bottom": 3.100025177001953
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector6.svg"
+          },
+          {
+            "id": "Vector8",
+            "margin": {
+              "left": 1.7763568394002505e-15
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "vuesax/linear/user",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "user1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "user1",
+            "is-structured": false,
+            "children": [
+              "Vector9",
+              "Vector10",
+              "Vector11"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector9",
+            "margin": {
+              "left": 7.0,
+              "top": 2.0,
+              "right": 7.0,
+              "bottom": 12.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector7.svg"
+          },
+          {
+            "id": "Vector10",
+            "margin": {
+              "left": 3.410003662109375,
+              "top": 15.0,
+              "right": 3.410003662109375,
+              "bottom": 2.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector8.svg"
+          },
+          {
+            "id": "Vector11",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "vuesax/linear/stickynote",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "stickynote1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "stickynote1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector12",
+              "Vector13",
+              "Vector14",
+              "Vector15",
+              "Vector16",
+              "Vector17",
+              "Vector18"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector12",
+            "margin": {
+              "left": 8.0,
+              "top": 2.0,
+              "right": 16.0,
+              "bottom": 19.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector9.svg"
+          },
+          {
+            "id": "Vector13",
+            "margin": {
+              "left": 16.0,
+              "top": 2.0,
+              "right": 8.0,
+              "bottom": 19.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector10.svg"
+          },
+          {
+            "id": "Vector14",
+            "margin": {
+              "left": 7.0,
+              "top": 11.0,
+              "right": 9.0,
+              "bottom": 13.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector11.svg"
+          },
+          {
+            "id": "Vector15",
+            "margin": {
+              "left": 7.0,
+              "top": 15.0,
+              "right": 12.0,
+              "bottom": 9.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector12.svg"
+          },
+          {
+            "id": "Vector16",
+            "margin": {
+              "left": 3.0,
+              "top": 3.5,
+              "right": 3.0,
+              "bottom": 2.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector13.svg"
+          },
+          {
+            "id": "Vector17",
+            "margin": {
+              "left": 15.0,
+              "top": 16.0,
+              "right": 3.0,
+              "bottom": 2.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -0.75
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -0.75
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector14.svg"
+          },
+          {
+            "id": "Vector18",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "No Favorite foods yet",
+            "text-content": "No Favorite foods yet",
+            "overflow": "visible",
+            "text-size": 28.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Hit the orange button down below to Create an order",
+            "opacity": 0.5699999928474426,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 29.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 50.0
+              }
+            },
+            "text-content": "Hit the orange button down\nbelow to Create an order",
+            "overflow": "visible",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "vuesax/outline/heart",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "heart3"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "heart3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector19",
+              "Vector20"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector19",
+            "margin": {
+              "left": 5.208343505859375,
+              "top": 9.791748046875,
+              "right": 5.2083282470703125,
+              "bottom": 9.791587829589844
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector15.svg"
+          },
+          {
+            "id": "Vector20",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "favorites",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

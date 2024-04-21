@@ -1,0 +1,475 @@
+{
+  "name": "i_phone_11_pro_max_23",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "13:449",
+    "version": "5602314389",
+    "component-id": "b746a0d6d22ec8f505c842263f1f9c6b713834c9"
+  },
+  "default": "iPhone 11 Pro Max - 23",
+  "documentation": "forgot pass\n",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 3"
+      },
+      {
+        "type": "group",
+        "id": "lock"
+      },
+      {
+        "type": "group",
+        "id": "Group 70"
+      },
+      {
+        "type": "group",
+        "id": "Group 1"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Enter code"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/bold/lock"
+      },
+      {
+        "type": "group",
+        "id": "lock1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector2"
+      },
+      {
+        "type": "text",
+        "id": "Forgot Password"
+      },
+      {
+        "type": "text",
+        "id": "Enter your registered email"
+      },
+      {
+        "type": "text",
+        "id": "Email address"
+      },
+      {
+        "type": "text",
+        "id": "Dosamarvis@gmail.com"
+      },
+      {
+        "type": "vector",
+        "id": "Line 1"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 23": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Rectangle 3",
+              "lock",
+              "Group 70",
+              "Group 1",
+              "Rectangle 2",
+              "Enter code"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9490196078431372
+            }
+          },
+          {
+            "id": "Rectangle 3",
+            "border-radius": 30.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.058823529411764705,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 30.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 414.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 382.0
+              }
+            },
+            "vector-content": "rectangle_3.svg"
+          },
+          {
+            "id": "lock",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 157.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 142.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/bold/lock"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 70",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 135.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 258.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 142.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 47.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Forgot Password",
+              "Enter your registered email"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 431.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 59.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Email address",
+              "Dosamarvis@gmail.com",
+              "Line 1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Enter code",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 166.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Enter code",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "vuesax/bold/lock",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "lock1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "lock1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector",
+              "Vector1",
+              "Vector2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "Vector1",
+            "margin": {
+              "left": 21.875,
+              "top": 5.208251953125,
+              "right": 21.875,
+              "bottom": 57.916744232177734
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Vector2",
+            "margin": {
+              "left": 8.333328247070312,
+              "top": 41.666748046875,
+              "right": 8.333343505859375,
+              "bottom": 8.333255767822266
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector1.svg"
+          },
+          {
+            "id": "Forgot Password",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 5.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 15.630252100840337,
+              "saturation": 0.9520000000000001,
+              "value": 0.9803921568627451
+            },
+            "text-content": "Forgot Password",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Enter your registered email",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 33.0
+              }
+            },
+            "font-weight": 300.0,
+            "text-content": "Enter your registered email",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 12.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Email address",
+            "opacity": 0.4000000059604645,
+            "text-content": "Email address",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Dosamarvis@gmail.com",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 27.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Dosamarvis@gmail.com",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Line 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 58.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "line_1.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 23",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

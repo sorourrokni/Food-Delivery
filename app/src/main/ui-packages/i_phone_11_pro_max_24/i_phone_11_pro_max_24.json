@@ -1,0 +1,332 @@
+{
+  "name": "i_phone_11_pro_max_24",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "13:450",
+    "version": "5602320087",
+    "component-id": "5dfeea90a9e614c098225bcdcdae7e755915406c"
+  },
+  "default": "iPhone 11 Pro Max - 24",
+  "documentation": "verification\n",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 3"
+      },
+      {
+        "type": "group",
+        "id": "shield-tick"
+      },
+      {
+        "type": "group",
+        "id": "Group 70"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Submit"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/bold/shield-tick"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      },
+      {
+        "type": "text",
+        "id": "Verification"
+      },
+      {
+        "type": "text",
+        "id": "Enter your verification code"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 24": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Rectangle 3",
+              "shield-tick",
+              "Group 70",
+              "Rectangle 2",
+              "Submit"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9490196078431372
+            }
+          },
+          {
+            "id": "Rectangle 3",
+            "border-radius": 30.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.058823529411764705,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 30.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 414.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 382.0
+              }
+            },
+            "vector-content": "rectangle_3.svg"
+          },
+          {
+            "id": "shield-tick",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 157.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 142.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/bold/shield-tick"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 70",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 135.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 258.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 143.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 47.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Verification",
+              "Enter your verification code"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Submit",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 184.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Submit",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "vuesax/bold/shield-tick",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 100.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector",
+              "Vector1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 14.791656494140625,
+              "top": 7.927001953125,
+              "right": 14.832977294921875,
+              "bottom": 8.302169799804688
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Vector1",
+            "margin": {
+              "left": 7.105427357601002e-15
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "Verification",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 29.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 15.630252100840337,
+              "saturation": 0.9520000000000001,
+              "value": 0.9803921568627451
+            },
+            "text-content": "Verification",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Enter your verification code",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 33.0
+              }
+            },
+            "font-weight": 300.0,
+            "text-content": "Enter your verification code",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 12.0,
+            "line-height": 1.171875
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 24",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

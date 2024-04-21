@@ -1,0 +1,425 @@
+{
+  "name": "i_phone_11_pro_max_1",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "5:1335",
+    "version": "5602131074",
+    "component-id": "7eebf73a23d09c126ea2363f36a4463013b8cca5"
+  },
+  "default": "iPhone 11 Pro Max - 1",
+  "documentation": "get started page",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 1"
+      },
+      {
+        "type": "image",
+        "id": "ToyFaces_Tansparent_BG_29"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 5"
+      },
+      {
+        "type": "image",
+        "id": "ToyFaces_Tansparent_BG_49"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 3"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 4"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Get starteed"
+      },
+      {
+        "type": "text",
+        "id": "Food for Everyone"
+      },
+      {
+        "type": "group",
+        "id": "Group 3"
+      },
+      {
+        "type": "image",
+        "id": "Bella Olonje logo 111 1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector 1"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 1": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Ellipse 1",
+              "ToyFaces_Tansparent_BG_29",
+              "Rectangle 5",
+              "ToyFaces_Tansparent_BG_49",
+              "Rectangle 3",
+              "Rectangle 4",
+              "Rectangle 2",
+              "Get starteed",
+              "Food for Everyone",
+              "Group 3"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 5.17766497461929,
+              "saturation": 0.7725490196078432,
+              "value": 1.0
+            }
+          },
+          {
+            "id": "Ellipse 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 49.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 56.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 73.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 73.0
+              }
+            },
+            "vector-content": "ellipse_1.svg"
+          },
+          {
+            "id": "ToyFaces_Tansparent_BG_29",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 217.91908851265543
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 456.58195998159954
+              }
+            },
+            "relative-transform": [
+              [
+                0.988839864730835,
+                -0.1489824652671814,
+                0.0
+              ],
+              [
+                0.1489824652671814,
+                0.988839864730835,
+                0.0
+              ]
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 225.39828491210938
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 298.540771484375
+              }
+            },
+            "image-content": "toy_faces_tansparent_bg_29.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Rectangle 5",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 145.01592239370814
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 605.2113353854998
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 272.4671325683594
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 170.95848083496094
+              }
+            },
+            "vector-content": "rectangle_5.svg"
+          },
+          {
+            "id": "ToyFaces_Tansparent_BG_49",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 11.469089966238812
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 356.3538845342024
+              }
+            },
+            "relative-transform": [
+              [
+                0.9985402822494507,
+                0.054012466222047806,
+                0.0
+              ],
+              [
+                -0.054012466222047806,
+                0.9985402822494507,
+                0.0
+              ]
+            ],
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 358.09906005859375
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 434.36090087890625
+              }
+            },
+            "image-content": "toy_faces_tansparent_bg_49.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Rectangle 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 600.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 394.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 195.0
+              }
+            },
+            "vector-content": "rectangle_3.svg"
+          },
+          {
+            "id": "Rectangle 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 140.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 755.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 357.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 64.0
+              }
+            },
+            "vector-content": "rectangle_4.svg"
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 51.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 790.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Get starteed",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 156.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 815.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 14.69387755102041,
+              "saturation": 0.9607843137254902,
+              "value": 1.0
+            },
+            "text-content": "Get starteed",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Food for Everyone",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 51.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 160.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 1.0
+            },
+            "text-content": "Food for \nEveryone",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 65.0,
+            "letter-spacing": -1.95,
+            "line-height": 0.8683594512939453
+          },
+          {
+            "id": "Group 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 62.7735595703125
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 67.77880859375
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 45.86396026611328
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 49.64925765991211
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Bella Olonje logo 111 1",
+              "Vector 1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Bella Olonje logo 111 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.21590042114258
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 49.64925765991211
+              }
+            },
+            "image-content": "bella_olonje_logo_111_1.png",
+            "scale": "fill"
+          },
+          {
+            "id": "Vector 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 27.5552978515625
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 11.25537109375
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 18.308616638183594
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 35.41489791870117
+              }
+            },
+            "vector-content": "vector_1.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 1",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
