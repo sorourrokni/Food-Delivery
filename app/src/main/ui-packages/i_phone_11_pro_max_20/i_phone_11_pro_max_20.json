@@ -1,0 +1,250 @@
+{
+  "name": "i_phone_11_pro_max_20",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "13:451",
+    "version": "5602322781",
+    "component-id": "c02d03ae19a2bbdedd7996a0a8e83546f465b6a3"
+  },
+  "default": "iPhone 11 Pro Max - 20",
+  "documentation": "no internet",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "No internet Connection"
+      },
+      {
+        "type": "text",
+        "id": "Your internet connection is currently not available please check or try again."
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Try again"
+      },
+      {
+        "type": "group",
+        "id": "eva:wifi-off-fill"
+      },
+      {
+        "type": "group",
+        "id": "Group"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 20": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "No internet Connection",
+              "Your internet connection is currently not available please check or try again.",
+              "Rectangle 2",
+              "Try again",
+              "eva:wifi-off-fill"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012096774193548345,
+              "value": 0.9725490196078431
+            }
+          },
+          {
+            "id": "No internet Connection",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 63.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 418.0
+              }
+            },
+            "text-content": "No internet Connection",
+            "overflow": "visible",
+            "text-size": 28.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Your internet connection is currently not available please check or try again.",
+            "opacity": 0.5699999928474426,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 61.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 468.0
+              }
+            },
+            "text-content": "Your internet connection is currently\nnot available please check or try again.",
+            "overflow": "visible",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 563.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Try again",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 172.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 588.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Try again",
+            "overflow": "visible",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "eva:wifi-off-fill",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 118.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 251.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 160.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 160.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group"
+            ]
+          },
+          {
+            "id": "Group",
+            "margin": {
+              "left": 13.4903564453125,
+              "top": 19.972412109375,
+              "right": 13.224517822265625,
+              "bottom": 19.961647033691406
+            },
+            "is-structured": false,
+            "children": [
+              "Vector",
+              "Vector1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 59.84295654296875,
+              "top": 100.027587890625,
+              "right": 60.10883331298828,
+              "bottom": 6.705024719238281
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Vector1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector1.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 20",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

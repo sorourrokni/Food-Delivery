@@ -1,0 +1,832 @@
+{
+  "name": "edit_profile",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "25:203",
+    "version": "5602382902",
+    "component-id": "5195211ad69ee8942186e2b6a663e27f2b5f714c"
+  },
+  "default": "edit profile",
+  "documentation": "PROFILE_3\n",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Information"
+      },
+      {
+        "type": "text",
+        "id": "Edit profile"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Updatet"
+      },
+      {
+        "type": "group",
+        "id": "chevron-left"
+      },
+      {
+        "type": "group",
+        "id": "Frame 77"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "group",
+        "id": "Group 64"
+      },
+      {
+        "type": "group",
+        "id": "Group 61"
+      },
+      {
+        "type": "group",
+        "id": "Group 62"
+      },
+      {
+        "type": "group",
+        "id": "Group 63"
+      },
+      {
+        "type": "group",
+        "id": "Group 76"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 10"
+      },
+      {
+        "type": "text",
+        "id": "Marvis Ighedosa"
+      },
+      {
+        "type": "text",
+        "id": "Name"
+      },
+      {
+        "type": "group",
+        "id": "Group 77"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 11"
+      },
+      {
+        "type": "text",
+        "id": "Dosamarvis@gmail.com"
+      },
+      {
+        "type": "text",
+        "id": "Email"
+      },
+      {
+        "type": "group",
+        "id": "Group 78"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 12"
+      },
+      {
+        "type": "text",
+        "id": "+234 9011039271"
+      },
+      {
+        "type": "text",
+        "id": "Phone"
+      },
+      {
+        "type": "group",
+        "id": "Group 79"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 13"
+      },
+      {
+        "type": "text",
+        "id": "No 15 uti street off ovie palace road effurun delta state"
+      },
+      {
+        "type": "text",
+        "id": "Address"
+      }
+    ],
+    "modes": {
+      "edit profile": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Information",
+              "Edit profile",
+              "Rectangle 2",
+              "Updatet",
+              "chevron-left",
+              "Frame 77"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012096774193548345,
+              "value": 0.9725490196078431
+            }
+          },
+          {
+            "id": "Information",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 138.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Information",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Edit profile",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 161.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 61.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Edit profile",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Updatet",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 173.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 600.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Updatet",
+            "overflow": "visible",
+            "text-size": 17.0,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Text"
+          },
+          {
+            "id": "chevron-left",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 41.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 60.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "Frame 77",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 49.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 192.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "shrink"
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "main-axis-align": "start",
+            "children": [
+              "Group 64",
+              "Group 61",
+              "Group 62",
+              "Group 63"
+            ],
+            "item-spacing": 28.0,
+            "clip-content": false
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 9.0,
+              "top": 6.0,
+              "right": 9.0,
+              "bottom": 6.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Group 64",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group 76"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 61",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group 77"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 62",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group 78"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 63",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 102.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group 79"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 76",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Rectangle 10",
+              "Marvis Ighedosa",
+              "Name"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 10",
+            "border-radius": 16.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -8.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "vector-content": "rectangle_10.svg"
+          },
+          {
+            "id": "Marvis Ighedosa",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 16.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 33.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.011428571428571389,
+              "value": 0.6862745098039216
+            },
+            "text-content": "Marvis Ighedosa",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Name",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 7.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Name",
+            "overflow": "visible",
+            "text-align": "left",
+            "line-height": 1.171875
+          },
+          {
+            "id": "Group 77",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Rectangle 11",
+              "Dosamarvis@gmail.com",
+              "Email"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 11",
+            "border-radius": 16.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -8.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "vector-content": "rectangle_11.svg"
+          },
+          {
+            "id": "Dosamarvis@gmail.com",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 16.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 33.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.011428571428571389,
+              "value": 0.6862745098039216
+            },
+            "text-content": "Dosamarvis@gmail.com",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Email",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 7.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Email",
+            "overflow": "visible",
+            "text-align": "left",
+            "line-height": 1.171875
+          },
+          {
+            "id": "Group 78",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 62.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Rectangle 12",
+              "+234 9011039271",
+              "Phone"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 12",
+            "border-radius": 16.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -8.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "vector-content": "rectangle_12.svg"
+          },
+          {
+            "id": "+234 9011039271",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 16.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 33.0
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.011428571428571389,
+              "value": 0.6862745098039216
+            },
+            "text-content": "+234 9011039271",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Phone",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 7.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Phone",
+            "overflow": "visible",
+            "text-align": "left",
+            "line-height": 1.171875
+          },
+          {
+            "id": "Group 79",
+            "border-radius": 16.0,
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 102.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Rectangle 13",
+              "No 15 uti street off ovie palace road effurun delta state",
+              "Address"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 13",
+            "border-radius": 16.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -8.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 80.0
+              }
+            },
+            "vector-content": "rectangle_13.svg"
+          },
+          {
+            "id": "No 15 uti street off ovie palace road effurun delta state",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 15.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 30.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 285.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.011428571428571389,
+              "value": 0.6862745098039216
+            },
+            "text-content": "No 15 uti street off ovie palace road effurun delta state",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Address",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 7.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Address",
+            "overflow": "visible",
+            "text-align": "left",
+            "line-height": 1.171875
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "edit profile",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
