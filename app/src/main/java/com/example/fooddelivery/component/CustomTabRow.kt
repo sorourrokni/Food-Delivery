@@ -1,7 +1,11 @@
 package com.example.fooddelivery.component
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ScrollableTabRow
 import androidx.compose.material3.Tab
@@ -14,7 +18,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.fooddelivery.R
+import com.example.fooddelivery.data.Food
 
 @Composable
 fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
@@ -23,7 +30,6 @@ fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
 
     Column {
         ScrollableTabRow(
-
             selectedTabIndex = selectedTabIndex,
             indicator = { tabPositions ->
                 TabRowDefaults.Indicator(
@@ -31,7 +37,7 @@ fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
                     color = MaterialTheme.colorScheme.primary
                 )
             },
-            containerColor = MaterialTheme.colorScheme.background,
+            containerColor = MaterialTheme.colorScheme.onSecondary,
             contentColor = MaterialTheme.colorScheme.onBackground,
             divider = {}
         ) {
@@ -52,19 +58,10 @@ fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
 
         // Content below the tab row
         when (selectedTabIndex) {
-            0 -> TabContent("Content for Foods")
-            1 -> TabContent("Content for Drinks")
-            2 -> TabContent("Content for Snacks")
-            3 -> TabContent("Content for Sauce")
+            0 -> ScrollableRowList()
+            1 -> ScrollableRowList()
+            2 -> ScrollableRowList()
+            3 -> ScrollableRowList()
         }
     }
-}
-
-@Composable
-fun TabContent(content: String) {
-    Text(
-        text = content,
-        style = MaterialTheme.typography.bodyMedium,
-        modifier = Modifier.padding(16.dp)
-    )
 }
