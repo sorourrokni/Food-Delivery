@@ -1,0 +1,1301 @@
+{
+  "name": "i_phone_11_pro_max_9",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "22:460",
+    "version": "5602370416",
+    "component-id": "95c04f537f1b18a58d53fbfcaee04ab4e239fb17"
+  },
+  "default": "iPhone 11 Pro Max - 9",
+  "documentation": "PAYMENT_2\n",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "text",
+        "id": "Checkout"
+      },
+      {
+        "type": "text",
+        "id": "Payment"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Proceed to payment"
+      },
+      {
+        "type": "group",
+        "id": "chevron-left"
+      },
+      {
+        "type": "group",
+        "id": "Group 51"
+      },
+      {
+        "type": "group",
+        "id": "Group 50"
+      },
+      {
+        "type": "group",
+        "id": "Group 52"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "text",
+        "id": "Total"
+      },
+      {
+        "type": "text",
+        "id": "23,000"
+      },
+      {
+        "type": "text",
+        "id": "Payment method"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 11"
+      },
+      {
+        "type": "group",
+        "id": "Group 9"
+      },
+      {
+        "type": "group",
+        "id": "Group 10"
+      },
+      {
+        "type": "group",
+        "id": "bi:credit-card-2-front-fill"
+      },
+      {
+        "type": "group",
+        "id": "coin"
+      },
+      {
+        "type": "text",
+        "id": "Card"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 12"
+      },
+      {
+        "type": "vector",
+        "id": "Line 3"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 7"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 8"
+      },
+      {
+        "type": "text",
+        "id": "Direct pay"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 13"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 9"
+      },
+      {
+        "type": "group",
+        "id": "Group"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      },
+      {
+        "type": "group",
+        "id": "vuesax/outline/coin"
+      },
+      {
+        "type": "group",
+        "id": "coin1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector2"
+      },
+      {
+        "type": "vector",
+        "id": "Vector3"
+      },
+      {
+        "type": "vector",
+        "id": "Vector4"
+      },
+      {
+        "type": "vector",
+        "id": "Vector5"
+      },
+      {
+        "type": "vector",
+        "id": "Vector6"
+      },
+      {
+        "type": "vector",
+        "id": "Vector7"
+      },
+      {
+        "type": "text",
+        "id": "Delivery method."
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 14"
+      },
+      {
+        "type": "group",
+        "id": "Group 11"
+      },
+      {
+        "type": "group",
+        "id": "Group 12"
+      },
+      {
+        "type": "text",
+        "id": "Door delivery"
+      },
+      {
+        "type": "vector",
+        "id": "Line 4"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 10"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 11"
+      },
+      {
+        "type": "text",
+        "id": "Pick up"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 12"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 9": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Checkout",
+              "Payment",
+              "Rectangle 2",
+              "Proceed to payment",
+              "chevron-left",
+              "Group 51",
+              "Group 50",
+              "Group 52"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012096774193548345,
+              "value": 0.9725490196078431
+            }
+          },
+          {
+            "id": "Checkout",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 161.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 61.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Checkout",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Payment",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 124.0
+              }
+            },
+            "font-weight": 700.0,
+            "text-content": "Payment",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 34.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Proceed to payment",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 131.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Proceed to payment",
+            "overflow": "visible",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "chevron-left",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 41.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 60.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "Group 51",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 711.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 305.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 26.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Total",
+              "23,000"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 50",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 46.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 213.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 194.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Payment method",
+              "Rectangle 11",
+              "Group 9",
+              "Group 10",
+              "bi:credit-card-2-front-fill",
+              "coin"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 52",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 51.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 477.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 196.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Delivery method.",
+              "Rectangle 14",
+              "Group 11",
+              "Group 12"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 9.0,
+              "top": 6.0,
+              "right": 9.0,
+              "bottom": 6.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Total",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 3.0
+              }
+            },
+            "text-content": "Total",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "23,000",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 237.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "23,000",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 22.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Payment method",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 3.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Payment method",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 11",
+            "border-radius": 20.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 10.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 154.0
+              }
+            },
+            "vector-content": "rectangle_11.svg"
+          },
+          {
+            "id": "Group 9",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 21.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 60.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 262.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 55.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Card",
+              "Rectangle 12",
+              "Line 3",
+              "Ellipse 7",
+              "Ellipse 8"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 10",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 21.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 130.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 157.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Direct pay",
+              "Rectangle 13",
+              "Ellipse 9"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "bi:credit-card-2-front-fill",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 64.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 71.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 16.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Group"
+            ]
+          },
+          {
+            "id": "coin",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 61.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 140.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "vuesax/outline/coin"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Card",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 81.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 10.0
+              }
+            },
+            "text-content": "Card",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 12",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 30.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "vector-content": "rectangle_12.svg"
+          },
+          {
+            "id": "Line 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 30.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 54.500010141042964
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 232.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "line_3.svg"
+          },
+          {
+            "id": "Ellipse 7",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 11.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              }
+            },
+            "vector-content": "ellipse_7.svg"
+          },
+          {
+            "id": "Ellipse 8",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 15.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 7.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 7.0
+              }
+            },
+            "vector-content": "ellipse_8.svg"
+          },
+          {
+            "id": "Direct pay",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 81.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 10.0
+              }
+            },
+            "text-content": "Direct pay",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 13",
+            "border-radius": 10.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 30.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 40.0
+              }
+            },
+            "vector-content": "rectangle_13.svg"
+          },
+          {
+            "id": "Ellipse 9",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 11.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              }
+            },
+            "vector-content": "ellipse_9.svg"
+          },
+          {
+            "id": "Group",
+            "margin": {
+              "top": 2.0,
+              "bottom": 2.0
+            },
+            "is-structured": false,
+            "children": [
+              "Vector1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector1.svg"
+          },
+          {
+            "id": "vuesax/outline/coin",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "coin1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "coin1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector2",
+              "Vector3",
+              "Vector4",
+              "Vector5",
+              "Vector6",
+              "Vector7"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Vector2",
+            "margin": {
+              "left": 6.0416259765625,
+              "top": 5.375,
+              "right": 9.383302211761475,
+              "bottom": 8.716667175292969
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector2.svg"
+          },
+          {
+            "id": "Vector3",
+            "margin": {
+              "left": 7.7083740234375,
+              "top": 10.0833740234375,
+              "right": 11.041626453399658,
+              "bottom": 8.049960136413574
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector3.svg"
+          },
+          {
+            "id": "Vector4",
+            "margin": {
+              "left": 7.7083740234375,
+              "top": 4.7166748046875,
+              "right": 11.041626453399658,
+              "bottom": 13.383325099945068
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector4.svg"
+          },
+          {
+            "id": "Vector5",
+            "margin": {
+              "left": 1.0416259765625,
+              "top": 1.0333251953125,
+              "right": 4.3917083740234375,
+              "bottom": 4.4000091552734375
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector5.svg"
+          },
+          {
+            "id": "Vector6",
+            "margin": {
+              "left": 10.1846923828125,
+              "top": 10.190185546875,
+              "right": 1.0666885375976562,
+              "bottom": 1.066676139831543
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector6.svg"
+          },
+          {
+            "id": "Vector7",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            }
+          },
+          {
+            "id": "Delivery method.",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 3.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Delivery method.",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Text"
+          },
+          {
+            "id": "Rectangle 14",
+            "border-radius": 20.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.027450980392156862,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 10.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 10.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 315.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 156.0
+              }
+            },
+            "vector-content": "rectangle_14.svg"
+          },
+          {
+            "id": "Group 11",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 21.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 70.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 262.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 45.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Door delivery",
+              "Line 4",
+              "Ellipse 10",
+              "Ellipse 11"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 12",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 21.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 140.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 87.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Pick up",
+              "Ellipse 12"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Door delivery",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 31.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "text-content": "Door delivery",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Line 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 30.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 44.500010141042964
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 232.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "line_4.svg"
+          },
+          {
+            "id": "Ellipse 10",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              }
+            },
+            "vector-content": "ellipse_10.svg"
+          },
+          {
+            "id": "Ellipse 11",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 4.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 5.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 7.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 7.0
+              }
+            },
+            "vector-content": "ellipse_11.svg"
+          },
+          {
+            "id": "Pick up",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 31.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "text-content": "Pick up",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Ellipse 12",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 15.0
+              }
+            },
+            "vector-content": "ellipse_12.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 9",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

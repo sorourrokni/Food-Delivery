@@ -1,0 +1,663 @@
+{
+  "name": "i_phone_11_pro_max_4",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "17:454",
+    "version": "5602336386",
+    "component-id": "40570c05afeb2faae2d8b1c5f68b64b4674a970e"
+  },
+  "default": "iPhone 11 Pro Max - 4",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "group",
+        "id": "chevron-left"
+      },
+      {
+        "type": "group",
+        "id": "heart"
+      },
+      {
+        "type": "group",
+        "id": "Mask Group"
+      },
+      {
+        "type": "text",
+        "id": "Veggie tomato mix"
+      },
+      {
+        "type": "text",
+        "id": "Delivery info"
+      },
+      {
+        "type": "text",
+        "id": "Return policy"
+      },
+      {
+        "type": "text",
+        "id": "All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately."
+      },
+      {
+        "type": "text",
+        "id": "N1,900"
+      },
+      {
+        "type": "group",
+        "id": "Group 6"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Add to cart"
+      },
+      {
+        "type": "text",
+        "id": "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
+      },
+      {
+        "type": "vector",
+        "id": "Vector"
+      },
+      {
+        "type": "vector",
+        "id": "Vector1"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 2"
+      },
+      {
+        "type": "image",
+        "id": "image 2"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 3"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 4"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 5"
+      },
+      {
+        "type": "vector",
+        "id": "Ellipse 6"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 4": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "chevron-left",
+              "heart",
+              "Mask Group",
+              "Veggie tomato mix",
+              "Delivery info",
+              "Return policy",
+              "All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.",
+              "N1,900",
+              "Group 6",
+              "Rectangle 2",
+              "Add to cart",
+              "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            }
+          },
+          {
+            "id": "chevron-left",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 41.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 60.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 24.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector"
+            ]
+          },
+          {
+            "id": "heart",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 340.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 60.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 20.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Vector1"
+            ]
+          },
+          {
+            "id": "Mask Group",
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.06666666666666667,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 40.0,
+              "offset-x": 0.0,
+              "offset-y": 40.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 86.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 94.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 241.20712280273438
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 241.20712280273438
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Ellipse 2",
+              "image 2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Veggie tomato mix",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 48.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 426.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 318.0
+              },
+              "height-constraints": {
+                "sizing-mode": "shrink"
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Veggie tomato mix",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 28.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Delivery info",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 533.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Delivery info",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Rounded"
+          },
+          {
+            "id": "Return policy",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 643.0
+              }
+            },
+            "font-weight": 600.0,
+            "text-content": "Return policy",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Rounded"
+          },
+          {
+            "id": "All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.",
+            "opacity": 0.5,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 666.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 297.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 158.0
+              }
+            },
+            "text-content": "All our foods are double checked before leaving our stores so by any case you found a broken food please contact our hotline immediately.",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 15.0,
+            "letter-spacing": 0.3,
+            "line-height": 1.388359375,
+            "typeface": "SF Pro Text"
+          },
+          {
+            "id": "N1,900",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 121.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 471.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 172.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 19.0
+              }
+            },
+            "font-weight": 700.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 15.630252100840337,
+              "saturation": 0.9520000000000001,
+              "value": 0.9803921568627451
+            },
+            "text-content": "N1,900",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-size": 22.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Group 6",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 172.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 373.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 68.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Ellipse 3",
+              "Ellipse 4",
+              "Ellipse 5",
+              "Ellipse 6"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Add to cart",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 160.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 600.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Add to cart",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.193359375,
+            "typeface": "SF Pro Text"
+          },
+          {
+            "id": "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm",
+            "opacity": 0.5,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 53.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 560.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 297.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 77.0
+              }
+            },
+            "text-content": "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm",
+            "overflow": "visible",
+            "max-lines": -1,
+            "text-align": "left",
+            "text-size": 15.0,
+            "letter-spacing": 0.3,
+            "line-height": 1.388359375,
+            "typeface": "SF Pro Text"
+          },
+          {
+            "id": "Vector",
+            "margin": {
+              "left": 9.0,
+              "top": 6.0,
+              "right": 9.0,
+              "bottom": 6.0
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector.svg"
+          },
+          {
+            "id": "Vector1",
+            "margin": {
+              "left": 1.29058837890625,
+              "top": 2.49853515625,
+              "right": 1.2901458740234375,
+              "bottom": 2.308277130126953
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": -1.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": -1.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              },
+              "height-constraints": {
+                "sizing-mode": "proportional",
+                "value": 1.0
+              }
+            },
+            "vector-content": "vector1.svg"
+          },
+          {
+            "id": "Ellipse 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 241.20712280273438
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 241.20712280273438
+              }
+            }
+          },
+          {
+            "id": "image 2",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 405.7298889160156
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 269.09234619140625
+              }
+            },
+            "image-content": "image_2.png",
+            "scale": "cover"
+          },
+          {
+            "id": "Ellipse 3",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              }
+            },
+            "vector-content": "ellipse_3.svg"
+          },
+          {
+            "id": "Ellipse 4",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 20.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              }
+            },
+            "vector-content": "ellipse_4.svg"
+          },
+          {
+            "id": "Ellipse 5",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 40.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              }
+            },
+            "vector-content": "ellipse_5.svg"
+          },
+          {
+            "id": "Ellipse 6",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 60.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 0.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 8.0
+              }
+            },
+            "vector-content": "ellipse_6.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 4",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}

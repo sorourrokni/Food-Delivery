@@ -1,0 +1,546 @@
+{
+  "name": "i_phone_11_pro_max_2",
+  "version": 33,
+  "source-key": {
+    "type": "figma",
+    "file": "8OTMqjkfxfPrZ9Yz62WrEE",
+    "node": "7:202",
+    "version": "5602300470",
+    "component-id": "1f41d8e80131d41f0084dff843d73ce6522308b2"
+  },
+  "default": "iPhone 11 Pro Max - 2",
+  "design": {
+    "atoms": [
+      {
+        "type": "group",
+        "id": "top_level",
+        "root": "true"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 3"
+      },
+      {
+        "type": "group",
+        "id": "Group 3"
+      },
+      {
+        "type": "text",
+        "id": "Login"
+      },
+      {
+        "type": "text",
+        "id": "Sign-up"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 1"
+      },
+      {
+        "type": "group",
+        "id": "Group 1"
+      },
+      {
+        "type": "group",
+        "id": "Group 2"
+      },
+      {
+        "type": "vector",
+        "id": "Rectangle 2"
+      },
+      {
+        "type": "text",
+        "id": "Login1"
+      },
+      {
+        "type": "text",
+        "id": "Forgot passcode?"
+      },
+      {
+        "type": "image",
+        "id": "Bella Olonje logo 111 1"
+      },
+      {
+        "type": "vector",
+        "id": "Vector 1"
+      },
+      {
+        "type": "text",
+        "id": "Email address"
+      },
+      {
+        "type": "text",
+        "id": "Dosamarvis@gmail.com"
+      },
+      {
+        "type": "vector",
+        "id": "Line 1"
+      },
+      {
+        "type": "text",
+        "id": "Password"
+      },
+      {
+        "type": "text",
+        "id": "* * * * * * * *"
+      },
+      {
+        "type": "vector",
+        "id": "Line 2"
+      }
+    ],
+    "modes": {
+      "iPhone 11 Pro Max - 2": {
+        "rules": [
+          {
+            "id": "top_level",
+            "border-radius": 20.0,
+            "is-structured": false,
+            "children": [
+              "Rectangle 3",
+              "Group 3",
+              "Login",
+              "Sign-up",
+              "Rectangle 1",
+              "Group 1",
+              "Group 2",
+              "Rectangle 2",
+              "Login1",
+              "Forgot passcode?"
+            ],
+            "background-color": {
+              "alpha": 1.0,
+              "hue": 0.0,
+              "saturation": 0.0,
+              "value": 0.9490196078431372
+            }
+          },
+          {
+            "id": "Rectangle 3",
+            "border-radius": 30.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.058823529411764705,
+                "hue": 0.0,
+                "saturation": 0.0,
+                "value": 0.0
+              },
+              "blur": 30.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 414.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 382.0
+              }
+            },
+            "vector-content": "rectangle_3.svg"
+          },
+          {
+            "id": "Group 3",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 136.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 113.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 150.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 162.3800048828125
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Bella Olonje logo 111 1",
+              "Vector 1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Login",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 89.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 331.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Login",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Sign-up",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 263.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 330.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Sign-up",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 18.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Rectangle 1",
+            "border-radius": 40.0,
+            "drop-shadow": {
+              "color": {
+                "alpha": 0.09803921568627451,
+                "hue": 14.482758620689658,
+                "saturation": 0.8923076923076922,
+                "value": 0.7647058823529411
+              },
+              "blur": 4.0,
+              "offset-x": 0.0,
+              "offset-y": 4.0,
+              "spread": 0.0,
+              "blend-mode": "normal"
+            },
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 46.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 366.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 134.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 3.0
+              }
+            },
+            "vector-content": "rectangle_1.svg"
+          },
+          {
+            "id": "Group 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 431.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 59.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Email address",
+              "Dosamarvis@gmail.com",
+              "Line 1"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Group 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 536.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 59.0
+              }
+            },
+            "is-structured": false,
+            "children": [
+              "Password",
+              "* * * * * * * *",
+              "Line 2"
+            ],
+            "clip-content": false
+          },
+          {
+            "id": "Rectangle 2",
+            "border-radius": 30.0,
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 785.0
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 70.0
+              }
+            },
+            "vector-content": "rectangle_2.svg"
+          },
+          {
+            "id": "Login1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 184.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 810.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 240.0,
+              "saturation": 0.012048192771084295,
+              "value": 0.9764705882352941
+            },
+            "text-content": "Login",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Forgot passcode?",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 50.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 629.0
+              }
+            },
+            "font-weight": 500.0,
+            "color": {
+              "alpha": 1.0,
+              "hue": 15.630252100840337,
+              "saturation": 0.9520000000000001,
+              "value": 0.9803921568627451
+            },
+            "text-content": "Forgot passcode?",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Bella Olonje logo 111 1",
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 131.52780151367188
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 162.3800048828125
+              }
+            },
+            "image-content": "bella_olonje_logo_111_1.png",
+            "scale": "fill"
+          },
+          {
+            "id": "Vector 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 90.120849609375
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 36.811279296875
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 59.87910079956055
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 115.8259048461914
+              }
+            },
+            "vector-content": "vector_1.svg"
+          },
+          {
+            "id": "Email address",
+            "opacity": 0.4000000059604645,
+            "text-content": "Email address",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Dosamarvis@gmail.com",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 27.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "Dosamarvis@gmail.com",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Line 1",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 58.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "line_1.svg"
+          },
+          {
+            "id": "Password",
+            "opacity": 0.4000000059604645,
+            "text-content": "Password",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-size": 15.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "* * * * * * * *",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 27.0
+              }
+            },
+            "font-weight": 500.0,
+            "text-content": "* * * * * * * * ",
+            "overflow": "visible",
+            "text-align": "left",
+            "text-align-vertical": "center",
+            "text-size": 17.0,
+            "line-height": 1.171875
+          },
+          {
+            "id": "Line 2",
+            "alignment": {
+              "horizontal": {
+                "attachment": "start",
+                "offset": 0.0
+              },
+              "vertical": {
+                "attachment": "start",
+                "offset": 58.5
+              }
+            },
+            "size-constraints": {
+              "width-constraints": {
+                "sizing-mode": "fixed",
+                "value": 314.0
+              },
+              "height-constraints": {
+                "sizing-mode": "fixed",
+                "value": 0.0
+              }
+            },
+            "vector-content": "line_2.svg"
+          }
+        ]
+      }
+    }
+  },
+  "previews": [
+    {
+      "design": "iPhone 11 Pro Max - 2",
+      "size": {
+        "width": 414.0,
+        "height": 896.0
+      }
+    }
+  ],
+  "adin-component-search-paths": [],
+  "image-search-paths": [],
+  "vector-search-paths": []
+}
