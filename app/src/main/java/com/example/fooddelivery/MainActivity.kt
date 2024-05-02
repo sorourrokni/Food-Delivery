@@ -15,26 +15,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fooddelivery.ui.history.historyPage
-import com.example.fooddelivery.ui.theme.FoodDeliveryTheme
+import com.example.fooddelivery.ui.history.HistoryPage
+import com.example.fooddelivery.theme.FoodDeliveryTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FoodDeliveryTheme {
-                Column(
+                Surface (
                     modifier = Modifier.fillMaxSize(),
-                    verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                ) {
-                    Button(onClick = {
-                        Intent(applicationContext, historyPage::class.java).also {
-                            startActivity(it)
-                        }
-                    }) {
-                        Text("click me")
-                    }
+                        color = MaterialTheme.colorScheme.background
+
+                )
+                {
+                    HistoryPage(name = "")
                 }
             }
         }
