@@ -50,69 +50,6 @@ import java.util.Map
 
 @Composable
 fun HistoryItem(payment:Payment , modifier:Modifier= Modifier){
-//    Box(
-//        modifier = modifier
-//            .padding(start = 17.dp, top = 0.dp, end = 17.dp, bottom = 0.dp)
-//            .fillMaxSize()
-//            .height(321.dp)
-//            .width(220.dp)
-//            .background(
-//                color = Color.White,
-//                shape = RoundedCornerShape(20.dp)
-//            )
-//    ) {
-//        Box(
-//            modifier = Modifier
-//                .align(Alignment.TopEnd)
-//                .height(20.dp)
-//                .width(20.dp)
-//                .background(
-//                    color = Color.White,
-//                    shape = RoundedCornerShape(30.dp)
-//                )
-//        ) {
-//            Column(
-//                modifier = Modifier.fillMaxSize(),
-//                verticalArrangement = Arrangement.Center
-//            ) {
-//                Text(
-//                    text = foodItem.name,
-//                    style = MaterialTheme.typography.headlineSmall,
-//                    textAlign = TextAlign.Center,
-//                    modifier = Modifier.fillMaxWidth()
-//                        .padding(start = 50.dp, top = 64.dp, end = 50.dp, bottom = 0.dp)
-//                )
-//                Text(
-//                    text = foodItem.price,
-//                    style = MaterialTheme.typography.displaySmall
-//                        .copy(color = MaterialTheme.colorScheme.primary),
-//                    textAlign = TextAlign.Center,
-//                    modifier = Modifier.fillMaxWidth()
-//                        .padding(start = 24.dp, top = 15.dp, end = 24.dp, bottom = 39.dp)
-//                )
-//            }
-//        }
-//        Image(
-//            painter = painterResource(id = foodItem.imageResId),
-//            contentDescription = null,
-//            modifier = Modifier
-//                .align(Alignment.TopCenter)
-//                .size(164.16.dp, 164.16.dp).scale(1.7f)
-//                .padding(start = 0.dp, top = 32.dp, end = 0.dp, bottom = 0.dp)
-//        )
-//        Column (modifier=Modifier.fillMaxSize(),
-//            verticalArrangement = Arrangement.Center){
-//            Row ( horizontalArrangement = Arrangement.SpaceBetween,
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .height(132.dp)
-//                    .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)){
-//                Text(text="salam")
-//            }
-//        }
-//            Text(text = "name")
-//
-//        }
     val scrollState = rememberScrollState()
 
     Column (modifier= Modifier
@@ -125,10 +62,10 @@ fun HistoryItem(payment:Payment , modifier:Modifier= Modifier){
             modifier = Modifier
                 .fillMaxWidth()
                 .background(color = Color.White)
-                .padding(end = 5.dp, bottom = 5.dp)
+                .padding(start=5.dp,end = 5.dp, bottom = 5.dp)
                 , horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(modifier= Modifier.padding(start=3.dp)
+            Row(modifier= Modifier
 
             ){
                 Text(text=payment.foods_list.toList()[0].second.toString(),
@@ -158,7 +95,7 @@ fun HistoryItem(payment:Payment , modifier:Modifier= Modifier){
 
             Row(modifier= Modifier
                 .size(50.dp, 24.dp)
-                .background(color = Color(0xFF55AC53), shape = RoundedCornerShape(30.dp))
+                .background(color = MaterialTheme.colorScheme.onSecondary, shape = RoundedCornerShape(30.dp))
                 .align(Alignment.CenterVertically)
                 .wrapContentSize(Alignment.Center)
                 ){
@@ -254,9 +191,11 @@ fun HistoryItem(payment:Payment , modifier:Modifier= Modifier){
                     ,style=MaterialTheme.typography.bodySmall
                     ,color=Color.Black
                     , fontSize = 8.sp)
-                Row(modifier= Modifier){
+                Row(modifier= Modifier.wrapContentSize(Alignment.Center)
+                ){
                     Text(text="   $address"
-                        ,modifier=Modifier
+                        ,modifier=Modifier.wrapContentSize(Alignment.Center)
+
                         ,style=MaterialTheme.typography.bodySmall
                         ,color=Color.Black
                         , fontSize = 6.sp
