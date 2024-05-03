@@ -1,49 +1,29 @@
 package com.example.fooddelivery
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.fooddelivery.data.Address
-import com.example.fooddelivery.data.Delivery
-import com.example.fooddelivery.data.Food
-import com.example.fooddelivery.data.Payment
-import com.example.fooddelivery.data.payment_method
-import com.example.fooddelivery.ui.home.history.HistoryPage
 import com.example.fooddelivery.theme.FoodDeliveryTheme
-import com.example.fooddelivery.ui.home.favourite.Favourite
+import com.example.fooddelivery.ui.home.HomeScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             FoodDeliveryTheme {
-                Surface (
+                // A surface container using the 'background' color from the theme
+                Surface(
                     modifier = Modifier.fillMaxSize(),
-                        color = MaterialTheme.colorScheme.background
-
-                )
-                {
-
-                    val food_list= ArrayList<Food>()
-                    food_list.add(Food("Veggie tomato mix", "N1,900", R.drawable.food_1,true))
-                    food_list.add(Food("Veggie tomato mix", "N1,900", R.drawable.food_1,true))
-                    food_list.add(Food("Veggie tomato mix", "N1,900", R.drawable.food_1,true))
-
-
-
-                    Favourite(food_list = food_list)
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    HomeScreen(name = "Home")
                 }
             }
         }
