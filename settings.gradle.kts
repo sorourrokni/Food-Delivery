@@ -8,9 +8,13 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        gradlePluginPortal()
         google()
         mavenCentral()
+
     }
 }
-rootProject.name = "Food Delivery"
-include ':app'
+
+rootProject.name = "FoodDelivery"
+include(":app")
+ 
