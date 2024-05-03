@@ -33,6 +33,7 @@ fun Favourite( food_list:ArrayList<Food>,modifier: Modifier = Modifier) {
         modifier = modifier
             .verticalScroll(scrollState)
             .background(color = Color.White)
+
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,

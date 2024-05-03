@@ -9,6 +9,7 @@ import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 
 private val DarkColorScheme = darkColorScheme(
@@ -47,16 +48,16 @@ private val LightColorScheme = lightColorScheme(
     onPrimaryContainer = Grey01,
     inversePrimary = Grey02,
     secondary = Grey03,
-    onSecondary = Green,
-//    secondaryContainer = DarkBlue90,
-//    onSecondaryContainer = DarkBlue10,
-//    tertiary = Yellow40,
-//    onTertiary = Color.White,
-//    tertiaryContainer = Yellow90,
-//    onTertiaryContainer = Yellow10,
-//    error = Red40,
-//    onError = Color.White,
-//    errorContainer = Red90,
+    onSecondary = Grey04,
+    secondaryContainer = Grey05,
+    onSecondaryContainer = Grey06,
+    tertiary = Grey07,
+    onTertiary = Grey08,
+    tertiaryContainer = Grey09,
+    onTertiaryContainer = Grey10,
+    error = Green,
+    onError = Orange02,
+    errorContainer = Red,
 //    onErrorContainer = Red10,
 //    background = Grey99,
 //    onBackground = Grey10,
@@ -73,17 +74,9 @@ private val LightColorScheme = lightColorScheme(
 @Composable
 fun FoodDeliveryTheme(
     isDarkTheme: Boolean = isSystemInDarkTheme(),
-    isDynamicColor: Boolean = true,
     content: @Composable () -> Unit
 ) {
-    val dynamicColor = isDynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
     val myColorScheme = when {
-        dynamicColor && isDarkTheme -> {
-            dynamicDarkColorScheme(LocalContext.current)
-        }
-        dynamicColor && !isDarkTheme -> {
-            dynamicLightColorScheme(LocalContext.current)
-        }
         isDarkTheme -> DarkColorScheme
         else -> LightColorScheme
     }
