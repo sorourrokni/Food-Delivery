@@ -34,52 +34,28 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
 
     Column (modifier= Modifier
         .fillMaxSize()
-        .background( color = MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(20.dp))
+        .background(color = MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(20.dp))
         .verticalScroll(scrollState)
         .padding(start = 10.dp, end = 10.dp, bottom = 10.dp, top = 10.dp)
-        ) {
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start=5.dp,end = 5.dp, bottom = 5.dp)
-                , horizontalArrangement = Arrangement.SpaceBetween
+                .padding( end = 5.dp)
+            , horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(modifier= Modifier
-
-            ){
-                Text(text=payment.foods_list.toList()[0].second.toString(),
-                    modifier= Modifier
-                        .size(25.dp, 25.dp)
-                        .background(MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(25.dp))
-                        .align(Alignment.CenterVertically)
-                        .wrapContentSize(Alignment.Center)
-                , style = MaterialTheme.typography.bodySmall
-                ,fontSize =8.sp
-                , color = Color.White)
-                Text(text=payment.foods_list.toList()[0].first.name.toString(),
-                    modifier= Modifier
-                        .padding(start=9.dp,top=5.dp)
-                    , style = MaterialTheme.typography.bodyMedium
-                    ,fontSize =8.sp
-                )
-                val price =payment.foods_list.toList()[0].first.price.toString()
-                Text(text="# $price",
-                    modifier= Modifier
-                        .padding(start=9.dp,top=5.dp)
-                    , style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary
-                    ,fontSize =8.sp
-                )
-            }
-
+            HistoryFood(number = payment.foods_list.toList()[0].second, food = payment.foods_list.toList()[0].first)
             Row(modifier= Modifier
                 .size(50.dp, 24.dp)
-                .background(color =  MaterialTheme.colorScheme.error, shape = RoundedCornerShape(30.dp))
+                .background(
+                    color = MaterialTheme.colorScheme.error,
+                    shape = RoundedCornerShape(30.dp)
+                )
                 .align(Alignment.CenterVertically)
                 .wrapContentSize(Alignment.Center)
-                ){
+            ){
                 Text(text = "Delivered",textAlign = TextAlign.Center, style = MaterialTheme.typography.bodySmall, fontSize =8.sp
-               )
+                )
             }
         }
         val it=payment.foods_list.iterator()
@@ -89,50 +65,26 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
                 null
             }
             else{
-            Row ( modifier = Modifier
-                .fillMaxWidth()
-                .background(color = MaterialTheme.colorScheme.onPrimary)
-                .padding(start = 5.dp, end = 5.dp, bottom = 5.dp)
-
-            ){
-                Text(text=e.value.toString(),
-                    modifier= Modifier
-                        .size(25.dp, 25.dp)
-                        .background(MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(25.dp))
-                        .align(Alignment.CenterVertically)
-                        .wrapContentSize(Alignment.Center)
-                    , style = MaterialTheme.typography.bodySmall
-                ,fontSize =8.sp
-                    , color = Color.White)
-                Text(text=e.key.name.toString(),
-                    modifier= Modifier
-                        .padding(start=9.dp,top=5.dp)
-                    , style = MaterialTheme.typography.bodyMedium
-                    ,fontSize =8.sp
-                )
-                val price =e.key.price.toString()
-                Text(text="# $price",
-                    modifier= Modifier
-                        .padding(start=9.dp,top=5.dp)
-                    , style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.primary
-                    ,fontSize =8.sp
-                )
-            }
-        }}
+                HistoryFood(number = e.value, food = e.key)
+            }}
         Row (modifier= Modifier
             .padding(start = 5.dp, bottom = 8.dp)
             .wrapContentSize(Alignment.Center)
             , horizontalArrangement = Arrangement.SpaceBetween) {
             Text(text = "Address Details",
-                modifier= Modifier.padding(top=5.dp, end = 10.dp).size(height=15.dp, width = 80.dp),
+                modifier= Modifier
+                    .padding(top = 5.dp, end = 10.dp)
+                    .size(height = 15.dp, width = 80.dp),
                 style=MaterialTheme.typography.bodyMedium,
                 fontSize =10.sp
 
-                )
+            )
             Row(modifier= Modifier
                 .fillMaxWidth()
-                .background(MaterialTheme.colorScheme.secondaryContainer, shape = RoundedCornerShape(20.dp))
+                .background(
+                    MaterialTheme.colorScheme.secondaryContainer,
+                    shape = RoundedCornerShape(20.dp)
+                )
 
                 .padding(start = 15.dp, top = 5.dp, bottom = 5.dp, end = 5.dp)
 
@@ -144,7 +96,7 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
                 val address=payment.address.address.toString()
 
                 Row(modifier= Modifier
-                     ){
+                ){
                     Text(text="$first  $last "
                         ,modifier=Modifier
                         ,style=MaterialTheme.typography.bodySmall
@@ -181,7 +133,7 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
 
         }
         Row (modifier= Modifier
-            .padding(start = 5.dp,bottom=8.dp)
+            .padding(start = 5.dp, bottom = 8.dp)
             .wrapContentSize(Alignment.Center)
 
             , horizontalArrangement = Arrangement.SpaceBetween){
@@ -189,13 +141,16 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
             Text(text = "Payment",
                 modifier= Modifier
                     .padding(top = 5.dp, end = 10.dp)
-                    .size(height=15.dp, width = 80.dp),
+                    .size(height = 15.dp, width = 80.dp),
                 style=MaterialTheme.typography.bodyMedium,
                 fontSize =10.sp
 
             )
             Row(modifier= Modifier
-                .background(MaterialTheme.colorScheme.secondaryContainer, shape = RoundedCornerShape(20.dp))
+                .background(
+                    MaterialTheme.colorScheme.secondaryContainer,
+                    shape = RoundedCornerShape(20.dp)
+                )
                 .padding(start = 15.dp, top = 5.dp, bottom = 5.dp, end = 5.dp)
             )
             {
@@ -245,13 +200,16 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
             Text(text = "Delivery",
                 modifier= Modifier
                     .padding(top = 5.dp, end = 10.dp)
-                    .size(height=15.dp, width = 80.dp),
+                    .size(height = 15.dp, width = 80.dp),
                 style=MaterialTheme.typography.bodyMedium,
                 fontSize =10.sp
 
             )
             Row(modifier= Modifier
-                .background(MaterialTheme.colorScheme.secondaryContainer, shape = RoundedCornerShape(20.dp))
+                .background(
+                    MaterialTheme.colorScheme.secondaryContainer,
+                    shape = RoundedCornerShape(20.dp)
+                )
                 .padding(start = 15.dp, top = 5.dp, bottom = 5.dp, end = 5.dp)
             )
             {
