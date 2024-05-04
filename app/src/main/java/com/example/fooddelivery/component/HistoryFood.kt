@@ -26,18 +26,18 @@ fun HistoryFood(number:Int,food: Food){
     ){
         Text(text=number.toString(),
             modifier= Modifier
-                .size(25.dp, 25.dp)
-                .background(MaterialTheme.colorScheme.primary, shape = RoundedCornerShape(25.dp))
+                .size(12.dp, 12.dp)
+                .background(Color(0xB2FA4A0C), shape = RoundedCornerShape(25.dp))
                 .align(Alignment.CenterVertically)
                 .wrapContentSize(Alignment.Center)
             , style = MaterialTheme.typography.bodySmall
-            ,fontSize =8.sp
+            ,fontSize =8.sp, lineHeight = 9.sp
             , color = Color.White)
 
         Text(text=food.name,
             modifier= Modifier
                 .padding(start=9.dp,top=5.dp)
-            , style = MaterialTheme.typography.bodyMedium
+            , style = MaterialTheme.typography.titleMedium
             ,fontSize =8.sp
         )
         val price =food.price
