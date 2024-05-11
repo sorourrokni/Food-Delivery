@@ -40,6 +40,8 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
+import com.example.fooddelivery.component.AuthTextField
+import com.example.fooddelivery.component.FilledButton
 
 @Composable
 fun ForgotPasswordScreen(name:String,modifier: Modifier=Modifier) {
@@ -87,7 +89,7 @@ fun ForgotPasswordScreen(name:String,modifier: Modifier=Modifier) {
 
             }
         }
-        TextField(KeyboardType.Email, label = "Email address")
+        AuthTextField(KeyboardType.Email, label = "Email address")
 
         Spacer(modifier = Modifier.height(280.dp))
 
@@ -96,52 +98,3 @@ fun ForgotPasswordScreen(name:String,modifier: Modifier=Modifier) {
     }
 }
 
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun TextField(type: KeyboardType, label: String) {
-    var text by rememberSaveable { mutableStateOf("") }
-
-    TextField(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 0.dp)
-            .height(59.dp),
-        value = text,
-        onValueChange = { text = it },
-        textStyle = MaterialTheme.typography.titleSmall.copy(textDecoration = TextDecoration.None),
-        label = {
-            Text(
-                text = label,
-                style = MaterialTheme.typography.bodySmall
-            )
-        },
-        visualTransformation = if (type == KeyboardType.Password) PasswordVisualTransformation() else VisualTransformation.None,
-        keyboardOptions = KeyboardOptions(keyboardType = type),
-        colors = TextFieldDefaults.textFieldColors(
-            textColor = Color.Black,
-            containerColor = MaterialTheme.colorScheme.onSecondary,
-            cursorColor = Color.Black,
-            focusedIndicatorColor = Color.Black.copy(alpha = 0.5f),
-            unfocusedIndicatorColor = Color.Black,
-            focusedLabelColor = Color.Gray,
-        )
-    )
-}
-
-@Composable
-fun FilledButton(onClick: () -> Unit, text: String) {
-    Button(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 42.dp),
-        onClick = { onClick() },
-        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
-    ) {
-        Text(
-            modifier = Modifier.padding(start = 0.dp, top = 12.dp, end = 0.dp, bottom = 12.dp),
-            text = text,
-            style = MaterialTheme.typography.titleSmall.copy(color = MaterialTheme.colorScheme.secondary)
-        )
-    }
-}

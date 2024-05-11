@@ -1,4 +1,4 @@
-package com.example.fooddelivery.ui.auth.verification
+package com.example.fooddelivery.component
 
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement

@@ -14,30 +14,20 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
-import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.compose.ui.text.input.VisualTransformation
-import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
+import com.example.fooddelivery.component.FilledButton
+import com.example.fooddelivery.component.VerificationCodeField
 
 @Composable
 fun VerificationScreen(name:String,modifier: Modifier =Modifier) {
@@ -92,7 +82,7 @@ fun VerificationScreen(name:String,modifier: Modifier =Modifier) {
             }
         }
         Spacer(modifier = Modifier.height(50.dp))
-        var number=VerificationCodeField(4).take(4)
+        var number= VerificationCodeField(4).take(4)
         Spacer(modifier = Modifier.height(280.dp))
 
         FilledButton(onClick = { /*TODO*/ }, text = "Submit")
@@ -102,19 +92,4 @@ fun VerificationScreen(name:String,modifier: Modifier =Modifier) {
 
 
 
-@Composable
-fun FilledButton(onClick: () -> Unit, text: String) {
-    Button(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 42.dp),
-        onClick = { onClick() },
-        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
-    ) {
-        Text(
-            modifier = Modifier.padding(start = 0.dp, top = 12.dp, end = 0.dp, bottom = 12.dp),
-            text = text,
-            style = MaterialTheme.typography.titleSmall.copy(color = MaterialTheme.colorScheme.secondary)
-        )
-    }
-}
+

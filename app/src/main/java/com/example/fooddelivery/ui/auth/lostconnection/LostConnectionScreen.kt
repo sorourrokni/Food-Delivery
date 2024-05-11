@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
+import com.example.fooddelivery.component.FilledButton
 
 @Composable
 fun LostConnectionScreen(name :String , modifier:Modifier=Modifier) {
@@ -44,21 +45,3 @@ fun LostConnectionScreen(name :String , modifier:Modifier=Modifier) {
     }
 }
 
-
-
-@Composable
-fun FilledButton(onClick: () -> Unit, text: String) {
-    Button(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 42.dp),
-        onClick = { onClick() },
-        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
-    ) {
-        Text(
-            modifier = Modifier.padding(start = 0.dp, top = 12.dp, end = 0.dp, bottom = 12.dp),
-            text = text,
-            style = MaterialTheme.typography.titleSmall.copy(color = MaterialTheme.colorScheme.secondary)
-        )
-    }
-}
