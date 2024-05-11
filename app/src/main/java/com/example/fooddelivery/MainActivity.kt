@@ -15,6 +15,7 @@ import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
 import com.example.fooddelivery.ui.auth.lostconnection.LostConnectionScreen
 import com.example.fooddelivery.ui.auth.verification.VerificationScreen
 import com.example.fooddelivery.ui.home.HomeScreen
+import com.example.fooddelivery.ui.profile.edit.EditProfileScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   VerificationScreen(name="verification")
+                   EditProfileScreen(name="EditProfile")
                 }
             }
         }
