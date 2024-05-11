@@ -11,6 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.fooddelivery.theme.FoodDeliveryTheme
+import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
+import com.example.fooddelivery.ui.auth.lostconnection.LostConnectionScreen
+import com.example.fooddelivery.ui.auth.verification.VerificationScreen
 import com.example.fooddelivery.ui.home.HomeScreen
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   HomeScreen(name = "Home")
+                   VerificationScreen(name="verification")
                 }
             }
         }
