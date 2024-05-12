@@ -10,11 +10,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fooddelivery.data.Address
+import com.example.fooddelivery.data.Payment
 import com.example.fooddelivery.theme.FoodDeliveryTheme
 import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
 import com.example.fooddelivery.ui.auth.lostconnection.LostConnectionScreen
 import com.example.fooddelivery.ui.auth.verification.VerificationScreen
 import com.example.fooddelivery.ui.home.HomeScreen
+import com.example.fooddelivery.ui.payment.checkout.DeliveryCheckoutScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +29,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                   VerificationScreen(name="verification")
+                    var address= Address("Marvis"," Kparobo","+234 9011039271","Km 5 refinery road oppsite republic road, effurun, delta state")
+                   DeliveryCheckoutScreen(address,23000,name = "delivery")
                 }
             }
         }
