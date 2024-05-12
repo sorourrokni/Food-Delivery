@@ -30,8 +30,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val person= Person(
-                    "hooman.honarvar@gmail.com","9358340535","hoomanhonarvar",
-                    "234234",R.drawable.person1,98,"Iran")
+                        "hooman.honarvar@gmail.com","9358340535","hoomanhonarvar",
+                        "234234",R.drawable.person1,98,"Iran")
                     EditProfileScreen(person)
                 }
             }
