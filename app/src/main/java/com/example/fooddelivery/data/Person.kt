@@ -11,4 +11,5 @@ data class Person (
     @DrawableRes val profileImg: Int,
     val nationalCode:Int,
     val address:String
-)
+
+    )
