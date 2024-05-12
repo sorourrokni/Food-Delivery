@@ -12,12 +12,14 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.fooddelivery.component.NavigationItem
 import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.theme.FoodDeliveryTheme
 import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
 import com.example.fooddelivery.ui.auth.lostconnection.LostConnectionScreen
 import com.example.fooddelivery.ui.auth.verification.VerificationScreen
 import com.example.fooddelivery.ui.home.HomeScreen
+import com.example.fooddelivery.ui.profile.ProfileScreen
 import com.example.fooddelivery.ui.profile.edit.EditProfileScreen
 
 class MainActivity : ComponentActivity() {
@@ -30,10 +32,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val person= Person(
-                        "hooman.honarvar@gmail.com","9358340535","hoomanhonarvar",
-                        "234234",R.drawable.person1,98,"Iran")
-                   EditProfileScreen(person)
                 }
             }
         }
