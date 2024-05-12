@@ -29,9 +29,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    var person= Person("hoomanhonarvar@gmail.com","9358340536","hoomanhonarvar","123123",
-                        R.drawable.user,98,"Iran")
-                   ProfileScreen(person,"profileScreen")
+
                 }
             }
         }
