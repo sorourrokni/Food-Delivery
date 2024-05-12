@@ -15,6 +15,7 @@ import androidx.compose.ui.semantics.Role.Companion.Image
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
+import com.example.fooddelivery.component.ProfileButton
 import com.example.fooddelivery.component.ProfileCard
 import com.example.fooddelivery.data.Person
 
@@ -33,6 +34,7 @@ fun ProfileScreen(person: Person, name:String, modifier: Modifier=Modifier) {
             Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
         }
         ProfileCard(person = person,Modifier.padding(start = 42.dp,end=57.dp))
+        ProfileButton(name = "Orders",Modifier.padding(start=42.dp,57.dp))
     }
 
 }
