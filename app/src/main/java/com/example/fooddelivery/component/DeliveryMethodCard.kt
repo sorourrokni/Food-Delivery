@@ -40,6 +40,12 @@ fun DeliveryMethodCard (total:Int,modifier: Modifier){
                Text("Pick Up", style = MaterialTheme.typography.bodyMedium,modifier=Modifier.padding(top=12.dp,start=16.dp))
            }
 
+
         }
+
+    }
+    Row( Modifier.padding(start=50.dp,end=46.dp,top=50.dp)){
+        Text("total",style=MaterialTheme.typography.bodyMedium)
+        Text("$total", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=199.dp))
     }
 }

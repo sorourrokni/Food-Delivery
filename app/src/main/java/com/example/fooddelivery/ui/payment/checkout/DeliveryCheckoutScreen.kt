@@ -4,7 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,13 +18,16 @@ import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.AddressCard
 import com.example.fooddelivery.component.DeliveryMethodCard
+import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Payment
 
 @Composable
 fun DeliveryCheckoutScreen(address:Address,total:Int, name:String, modifier: Modifier=Modifier){
-    Column(){
+    val scrollState = rememberScrollState()
+
+    Column(Modifier.verticalScroll(scrollState)){
         Row(modifier=Modifier.padding(start = 40.dp,top=60.dp)){
             Image(painterResource(id = R.drawable.chevron_left),null)
             Text("Checkout",style=MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=96.dp))
@@ -35,8 +41,8 @@ fun DeliveryCheckoutScreen(address:Address,total:Int, name:String, modifier: Mod
         }
         AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp))
         DeliveryMethodCard(total = total, modifier = Modifier.padding(start=50.dp,end=46.dp))
-        Row(){
+        Spacer(modifier = Modifier.padding(top = 48.dp))
+        FilledButton(onClick = { /*TODO*/ }, text = "Proceed to payment")
 
-        }
     }
 }
