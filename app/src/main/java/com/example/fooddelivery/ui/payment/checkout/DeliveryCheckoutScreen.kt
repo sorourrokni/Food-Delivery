@@ -14,7 +14,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.AddressCard
+import com.example.fooddelivery.component.DeliveryMethodCard
 import com.example.fooddelivery.data.Address
+import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Payment
 
 @Composable
@@ -32,5 +34,9 @@ fun DeliveryCheckoutScreen(address:Address,total:Int, name:String, modifier: Mod
             Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
         }
         AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp))
+        DeliveryMethodCard(total = total, modifier = Modifier.padding(start=50.dp,end=46.dp))
+        Row(){
+
+        }
     }
 }
