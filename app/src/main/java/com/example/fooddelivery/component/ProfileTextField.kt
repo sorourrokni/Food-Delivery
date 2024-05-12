@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.sp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProfileTextField(label:String,type:KeyboardType,base:String) {
+fun ProfileTextField(label:String,type:KeyboardType,base:String,width:Int,height:Int):String {
     var text by rememberSaveable { mutableStateOf(base) }
     Column(){
 
@@ -68,9 +68,10 @@ fun ProfileTextField(label:String,type:KeyboardType,base:String) {
                     disabledIndicatorColor = Color.Transparent
                 )
             , modifier =Modifier.border(BorderStroke(1.dp,Color.Black),shape = RoundedCornerShape(16.dp))
-                .size(315.dp,50.dp)
+                .size(width.dp,height.dp)
 
         )
     }
+    return text
 
 }
