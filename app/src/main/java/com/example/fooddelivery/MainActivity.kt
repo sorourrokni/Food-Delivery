@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.fooddelivery.theme.FoodDeliveryTheme
+import com.example.fooddelivery.ui.auth.AuthLayout
 import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
 import com.example.fooddelivery.ui.auth.login.LoginScreen
 import com.example.fooddelivery.ui.auth.lostconnection.LostConnectionScreen
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                 LoginScreen(name = "login")
+                 AuthLayout()
                 }
             }
         }
