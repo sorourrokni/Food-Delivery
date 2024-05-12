@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
@@ -34,7 +35,15 @@ fun ProfileScreen(person: Person, name:String, modifier: Modifier=Modifier) {
             Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
         }
         ProfileCard(person = person,Modifier.padding(start = 42.dp,end=57.dp))
-        ProfileButton(name = "Orders",Modifier.padding(start=42.dp,57.dp))
+        Spacer(Modifier.height(27.dp))
+        ProfileButton(name = "Orders",Modifier.padding(start=42.dp,end=57.dp))
+        Spacer(Modifier.height(27.dp))
+        ProfileButton(name = "Pending reviews",Modifier.padding(start=42.dp,end=57.dp))
+        Spacer(Modifier.height(27.dp))
+        ProfileButton(name = "Faq",Modifier.padding(start=42.dp,end=57.dp))
+        Spacer(Modifier.height(27.dp))
+        ProfileButton(name = "Help",Modifier.padding(start=42.dp,end=57.dp))
+
     }
 
 }
