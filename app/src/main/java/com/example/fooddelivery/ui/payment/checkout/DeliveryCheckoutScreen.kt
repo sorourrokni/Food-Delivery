@@ -24,7 +24,7 @@ import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Payment
 
 @Composable
-fun DeliveryCheckoutScreen(address:Address,total:Int, name:String, modifier: Modifier=Modifier){
+fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifier){
     val scrollState = rememberScrollState()
 
     Column(Modifier.verticalScroll(scrollState)){
@@ -40,7 +40,11 @@ fun DeliveryCheckoutScreen(address:Address,total:Int, name:String, modifier: Mod
             Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
         }
         AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp))
-        DeliveryMethodCard(total = total, modifier = Modifier.padding(start=50.dp,end=46.dp))
+        DeliveryMethodCard( modifier = Modifier.padding(start=50.dp,end=46.dp))
+        Row( Modifier.padding(start=50.dp,end=46.dp,top=67.dp)){
+            Text("Total",style=MaterialTheme.typography.bodyMedium)
+            Text("$total", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=199.dp))
+        }
         Spacer(modifier = Modifier.padding(top = 48.dp))
         FilledButton(onClick = { /*TODO*/ }, text = "Proceed to payment")
 

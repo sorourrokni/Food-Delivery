@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.data.Delivery
 
 @Composable
-fun DeliveryMethodCard (total:Int,modifier: Modifier){
+fun DeliveryMethodCard (modifier: Modifier){
     val selectedOption = remember { mutableStateOf(Delivery.Door_Delivery) }
     Text(text = "Delivery method",style=MaterialTheme.typography.titleSmall, modifier =Modifier.padding(start=50.dp,end=46.dp,top=42.dp, bottom = 20.dp))
     Column(modifier.background(Color.White, RoundedCornerShape(20.dp))){
@@ -44,8 +44,5 @@ fun DeliveryMethodCard (total:Int,modifier: Modifier){
         }
 
     }
-    Row( Modifier.padding(start=50.dp,end=46.dp,top=50.dp)){
-        Text("total",style=MaterialTheme.typography.bodyMedium)
-        Text("$total", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=199.dp))
-    }
+
 }
