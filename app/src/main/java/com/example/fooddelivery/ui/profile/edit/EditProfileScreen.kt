@@ -55,7 +55,7 @@ fun EditProfileScreen (person: Person, modifier: Modifier =Modifier){
         }
         Spacer(Modifier.height(34.dp))
 
-        Column(modifier=Modifier.padding(start=49.dp)){
+        Column(modifier=Modifier.padding(start=58.dp)){
             var name by remember { mutableStateOf(person.fullName) }
             var email by remember { mutableStateOf(person.email) }
             var phoneNumber by remember { mutableStateOf(person.phoneNumber) }
