@@ -45,10 +45,10 @@ fun EditProfileScreen (person: Person, modifier: Modifier =Modifier){
             modifier = Modifier
                 .fillMaxWidth()
                 .height(132.dp)
-                .padding(start = 54.dp, top = 60.dp, end = 41.dp, bottom = 0.dp)
+                .padding(start = 40.dp, top = 60.dp, end = 41.dp, bottom = 0.dp)
         ) {
             Image(painter = painterResource(id = R.drawable.chevron_left), contentDescription = null)
-            Text("Edit Profile", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=85.dp))
+            Text("Edit Profile", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=96.dp))
         }
         Row(modifier = Modifier.padding(start=58.dp,top=20.dp)){
             Text("Information",style=MaterialTheme.typography.headlineSmall.copy(fontSize = 17.sp, lineHeight = 20.sp))
