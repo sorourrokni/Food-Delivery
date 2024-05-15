@@ -1,4 +1,8 @@
 package com.example.fooddelivery.ui.auth.onboarding
 
-class OnBoardingScreen {
+import androidx.compose.runtime.Composable
+
+@Composable
+fun OnBoardingScreen() {
+
 }

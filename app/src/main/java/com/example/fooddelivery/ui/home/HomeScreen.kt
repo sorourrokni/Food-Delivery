@@ -20,11 +20,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.CustomTabRow
 
 @Composable
-fun HomeScreen(name: String, modifier: Modifier = Modifier) {
+fun HomeScreen( modifier: Modifier = Modifier) {
 
     var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()

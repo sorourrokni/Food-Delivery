@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.fooddelivery.theme.FoodDeliveryTheme
+import com.example.fooddelivery.ui.auth.forgotpassword.ForgotPasswordScreen
+import com.example.fooddelivery.ui.auth.onboarding.OnBoardingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
