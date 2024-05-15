@@ -1,3 +1,21 @@
 package com.example.fooddelivery.data
 
-data class Address(val first_name:String,val last_name:String,val phone_number:String,val address:String)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
+
+@Entity(foreignKeys = [ForeignKey(
+entity = Person::class,
+parentColumns = arrayOf("email"),
+childColumns = arrayOf("user"),
+onDelete = ForeignKey.CASCADE
+)])
+data class Address(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val address:String,
+    val description:String,
+    @ColumnInfo(index = true)
+    val user:String
+)
