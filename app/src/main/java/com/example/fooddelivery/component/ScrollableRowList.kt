@@ -16,11 +16,11 @@ import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Food
 
 val foodItems = listOf(
-    Food("Veggie tomato mix", "N1,900", R.drawable.food_1),
-    Food("Egg and cucumber", "N1,900", R.drawable.food_2),
-    Food("Egg and cucumber", "N1,900", R.drawable.food_3),
-    Food("Egg and cucumber", "N1,900", R.drawable.food_4),
-    Food("Egg and cucumber", "N1,900", R.drawable.food_1),
+    Food("Veggie tomato mix", "N1,900", listOf(R.drawable.food_1)),
+    Food("Egg and cucumber", "N1,900", listOf(R.drawable.food_2)),
+    Food("Egg and cucumber", "N1,900", listOf(R.drawable.food_3)),
+    Food("Egg and cucumber", "N1,900", listOf(R.drawable.food_4)),
+    Food("Egg and cucumber", "N1,900", listOf(R.drawable.food_1)),
 )
 
 @Composable

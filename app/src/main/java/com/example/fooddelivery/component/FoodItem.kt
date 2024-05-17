@@ -68,7 +68,7 @@ fun FoodItem(foodItem: Food) {
             }
         }
         Image(
-            painter = painterResource(id = foodItem.imageResId),
+            painter = painterResource(id = foodItem.imageResIds.first()),
             contentDescription = null,
             modifier = Modifier
                 .align(Alignment.TopCenter)
