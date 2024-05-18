@@ -18,19 +18,28 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.data.Food
 
 @Composable
-fun FoodItem(foodItem: Food) {
+fun FoodItem(
+    foodItem: Food,
+    width: Int,
+    topHeight: Int,
+    height: Int,
+    scale: Float,
+    titlePadding: Int,
+    imgPadding: Int
+) {
     Box(
         modifier = Modifier
             .padding(start = 17.dp, top = 0.dp, end = 17.dp, bottom = 0.dp)
             .fillMaxSize()
-            .height(321.dp)
-            .width(220.dp)
+            .height(topHeight.dp)
+            .width(width.dp)
             .background(
                 color = MaterialTheme.colorScheme.onSecondary,
                 shape = RoundedCornerShape(30.dp)
@@ -39,8 +48,8 @@ fun FoodItem(foodItem: Food) {
         Box(
             modifier = Modifier
                 .align(Alignment.BottomEnd)
-                .height(270.dp)
-                .width(220.dp)
+                .height(height.dp)
+                .width(width.dp)
                 .background(
                     color = MaterialTheme.colorScheme.onPrimary,
                     shape = RoundedCornerShape(30.dp)
@@ -54,16 +63,19 @@ fun FoodItem(foodItem: Food) {
                     text = foodItem.name,
                     style = MaterialTheme.typography.headlineSmall,
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                        .padding(start = 50.dp, top = 64.dp, end = 50.dp, bottom = 0.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 64.dp, start = titlePadding.dp, end = titlePadding.dp)
+
                 )
                 Text(
                     text = foodItem.price,
                     style = MaterialTheme.typography.displaySmall
                         .copy(color = MaterialTheme.colorScheme.primary),
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.fillMaxWidth()
-                        .padding(start = 24.dp, top = 15.dp, end = 24.dp, bottom = 39.dp)
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 15.dp, bottom = 39.dp)
                 )
             }
         }
@@ -72,8 +84,9 @@ fun FoodItem(foodItem: Food) {
             contentDescription = null,
             modifier = Modifier
                 .align(Alignment.TopCenter)
-                .size(164.16.dp, 164.16.dp).scale(1.7f)
-                .padding(start = 0.dp, top = 32.dp, end = 0.dp, bottom = 0.dp)
+                .size(164.dp, 164.dp)
+                .scale(scale)
+                .padding(top = imgPadding.dp)
         )
     }
 }
