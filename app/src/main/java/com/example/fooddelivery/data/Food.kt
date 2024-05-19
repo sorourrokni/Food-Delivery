@@ -1,13 +1,14 @@
 package com.example.fooddelivery.data
 
 import androidx.annotation.DrawableRes
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
 data class Food(
     @PrimaryKey
-    val name: String
-    ,val description:String
-    , val price: String
-    , @DrawableRes val imageResId: Int)
+    @ColumnInfo(name = "name")val name: String
+    ,@ColumnInfo(name = "description")val description:String
+    , @ColumnInfo(name = "price")val price: String
+    , @ColumnInfo(name = "picture ")@DrawableRes val imageResId: Int)

@@ -3,6 +3,7 @@ package com.example.fooddelivery.data
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.PrimaryKey
 
 @Entity(foreignKeys = [ForeignKey(
     entity = Person::class,
@@ -15,10 +16,11 @@ import androidx.room.ForeignKey
         parentColumns = arrayOf("name"),
         childColumns = arrayOf("foodID"),
         onDelete = ForeignKey.CASCADE
-    )])
+    )],
+    primaryKeys = ["foodID","userID"])
 data class foodFav(
-    @ColumnInfo(index = true)
+    @ColumnInfo(name = "foodID")
     val foodID:String,
-    @ColumnInfo(index = true)
+    @ColumnInfo(name = "userID")
     val userID:String
 )
