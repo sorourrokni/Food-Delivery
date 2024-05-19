@@ -1,8 +1,8 @@
 package com.example.fooddelivery.data
 
-import androidx.annotation.DrawableRes
 
 data class Payment(
+    val person:Person,
     val foods_list:LinkedHashMap<Food,Int> ,
     val total_price: Int,
     val address:Address,

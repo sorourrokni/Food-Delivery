@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -23,13 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.fooddelivery.R
-import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.data.Payment
 import com.example.fooddelivery.theme.RobotoFontFamily
-import java.security.KeyStore
-import java.security.KeyStore.Entry
-import java.util.Map
 
 @Composable
 fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
@@ -101,9 +95,9 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
 
             )
             {
-                val first=payment.address.first_name.toString()
-                val last=payment.address.last_name.toString()
-                val phone_number=payment.address.phone_number.toString()
+                val first=payment.person.fullName.split(" ")[0].toString()
+                val last=payment.person.fullName.split(" ")[1].toString()
+                val phone_number=payment.person.phoneNumber.toString()
                 val address=payment.address.address.toString()
 
                 Row(modifier= Modifier

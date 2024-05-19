@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 @Entity(foreignKeys = [ForeignKey(
 entity = Person::class,
 parentColumns = arrayOf("email"),
-childColumns = arrayOf("user"),
+childColumns = arrayOf("userId"),
 onDelete = ForeignKey.CASCADE
 )])
 data class Address(
@@ -17,5 +17,5 @@ data class Address(
     val address:String,
     val description:String,
     @ColumnInfo(index = true)
-    val user:String
+    val userId:String
 )

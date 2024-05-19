@@ -17,10 +17,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
 
 @Composable
-fun ProfileCard(person: Person,modifier: Modifier){
+fun ProfileCard(person: Person,modifier: Modifier,address: Address){
     Row(
         modifier
             .background(color = Color.White, shape = RoundedCornerShape(20.dp))
@@ -35,7 +36,7 @@ fun ProfileCard(person: Person,modifier: Modifier){
             Divider(color = Color.Black, thickness = 0.5.dp)
             Text(person.phoneNumber,style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer)
             Divider(color = Color.Black, thickness = 0.5.dp)
-            Text(person.address,style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer)
+            Text(address.address,style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onPrimaryContainer)
 
         }
     }

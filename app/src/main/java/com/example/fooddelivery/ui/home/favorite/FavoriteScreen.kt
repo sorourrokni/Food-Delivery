@@ -23,8 +23,6 @@ import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Food
 import androidx.compose.ui.Modifier
 import com.example.fooddelivery.component.FavoriteItem
-import com.example.fooddelivery.component.FavoriteItem
-import com.example.fooddelivery.component.FoodItem
 
 @Composable
 fun FavoriteScreen( food_list:ArrayList<Food>,modifier: Modifier = Modifier) {
