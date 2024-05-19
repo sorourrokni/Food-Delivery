@@ -28,13 +28,6 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        try{
-            Log.i("hooman",db.foodDao().insertFood(Food("Veggie tomato mix","description", "N1,900", R.drawable.food_1)).toString())
-        }
-        catch (e:Exception){
-            Log.i("hooman",e.toString())
-
-        }
         setContent {
             FoodDeliveryTheme {
                 // A surface container using the 'background' color from the theme
