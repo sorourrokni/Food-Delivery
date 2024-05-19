@@ -1,6 +1,7 @@
 package com.example.fooddelivery
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,11 +11,30 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.room.Room
+import com.example.fooddelivery.data.DataBase
+import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.theme.FoodDeliveryTheme
 
 class MainActivity : ComponentActivity() {
+    private  val db by lazy{
+        Room.databaseBuilder(
+            applicationContext,
+            DataBase ::class.java,
+            "DataBase"
+
+        ).build()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        try{
+            Log.i("hooman",db.foodDao().insertFood(Food("Veggie tomato mix","description", "N1,900", R.drawable.food_1)).toString())
+        }
+        catch (e:Exception){
+            Log.i("hooman",e.toString())
+
+        }
         setContent {
             FoodDeliveryTheme {
                 // A surface container using the 'background' color from the theme
@@ -22,6 +42,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+
                 }
             }
         }

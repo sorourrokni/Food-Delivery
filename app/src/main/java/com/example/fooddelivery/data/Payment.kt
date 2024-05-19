@@ -8,4 +8,5 @@ data class Payment(
     val address:Address,
     val delivery: Delivery,
     val payment_method:payment_method
+    ,val person:Person
 )
