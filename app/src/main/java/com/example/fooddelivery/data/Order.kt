@@ -9,13 +9,13 @@ import androidx.room.PrimaryKey
     (foreignKeys = [ForeignKey(
     entity = Person::class,
     parentColumns = arrayOf("email"),
-    childColumns = arrayOf("userID"),
+    childColumns = arrayOf("user"),
     onDelete = ForeignKey.CASCADE
 ),
     ForeignKey(
         entity = Address::class,
         parentColumns = arrayOf("id"),
-        childColumns = arrayOf("addressID"),
+        childColumns = arrayOf("delivery_adr"),
         onDelete = ForeignKey.CASCADE
     )])
 data class Order (
@@ -25,9 +25,8 @@ data class Order (
     val PaymentMethod:payment_method,
     val deliveryMethod: Delivery,
     @ColumnInfo(index = true)
-    val addressID:Int,
+    val delivery_adr:Int,
     @ColumnInfo(index = true)
-    val userID :Int,
-    val status:orderStatus
+    val user :String
 
 )

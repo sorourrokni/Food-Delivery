@@ -9,13 +9,13 @@ import androidx.room.PrimaryKey
 @Entity(foreignKeys = [ForeignKey(
     entity = Order::class,
     parentColumns = arrayOf("id"),
-    childColumns = arrayOf("orderID"),
+    childColumns = arrayOf("order"),
     onDelete = ForeignKey.CASCADE
 ),
     ForeignKey(
         entity = Food::class,
         parentColumns = arrayOf("name"),
-        childColumns = arrayOf("foodID"),
+        childColumns = arrayOf("food"),
         onDelete = ForeignKey.CASCADE
     )])
 
@@ -24,9 +24,9 @@ data class OrderItem (
     val id:Int=0,
     val quantity:Int,
     @ColumnInfo(index = true)
-    val orderID:Int,
+    val order:Int,
     @ColumnInfo(index = true)
-    val foodID:String
+    val food:String
 
 )
 
