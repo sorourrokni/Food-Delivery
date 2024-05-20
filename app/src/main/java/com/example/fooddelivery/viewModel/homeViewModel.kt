@@ -3,6 +3,7 @@ package com.example.fooddelivery.viewModel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.dao.FoodDao
 import com.example.fooddelivery.data.dao.OrderDao
 import com.example.fooddelivery.data.dao.foodFavDao
@@ -44,6 +45,9 @@ class homeViewModel(
         else{
             Log.i("like_food","food hasn't been liked ")
         }
+    }
+    fun userHistory():List<Order>{
+        return orderDao.getAllOrdersByUser(email)
     }
 
 
