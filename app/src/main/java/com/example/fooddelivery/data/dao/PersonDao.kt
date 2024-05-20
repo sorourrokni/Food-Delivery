@@ -15,7 +15,7 @@ interface PersonDao {
      fun deletePerson(person: Person)
 
     @Query ("select * from Person where email==:emailInput")
-    fun getPersonWithEmail(emailInput:String):Person
+    fun getPersonWithEmail(emailInput:String):Person?
 
 
 }

@@ -98,7 +98,15 @@ class authViewModel(private val personDao:PersonDao):ViewModel() {
     fun verification(input:Int):Boolean{
         return input==verificationCode
     }
-    fun onEvent(event:PersonEvent){
+
+    fun createNewUser(email: String,password: String){
+        val person=Person(email,"","", password,R.drawable.person1)
+        try {
+            personDao.upsertPerson(person)
+        }
+        catch (e :Exception){
+            Log.e("custom_error",e.toString())
+        }
 
     }
 }

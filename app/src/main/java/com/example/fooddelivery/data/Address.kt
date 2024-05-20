@@ -15,7 +15,7 @@ data class Address(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val address:String,
-    val description:String,
+    var description:String,
     @ColumnInfo(index = true)
-    val user:String
+    var user:String
 )

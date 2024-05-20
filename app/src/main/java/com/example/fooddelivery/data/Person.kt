@@ -7,9 +7,9 @@ import androidx.room.PrimaryKey
 @Entity
 data class Person (
     @PrimaryKey
-    val email:String,
-    val phoneNumber:String,
-    val fullName:String,
+    var email:String,
+    var phoneNumber:String,
+    var fullName:String,
     val password:String,
     @DrawableRes val profileImg: Int
 )
