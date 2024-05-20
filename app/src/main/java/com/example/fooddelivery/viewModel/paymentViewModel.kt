@@ -2,6 +2,7 @@ package com.example.fooddelivery.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
@@ -91,6 +92,34 @@ class paymentViewModel(
             else{
                 Log.e("custom_error","error in orders: there is two TODO Cart")
             }
+        }
+    }
+    fun deliveryChange(address: Address,deliverMethode:Delivery){
+        val orderList=orderDao.getUserTODOCart(email)
+        if (orderList?.count()==1){
+           orderList[0].deliveryMethod=deliverMethode
+            orderList[0].addressID=address.id
+            orderDao.upsertOrder(orderList[0])
+        }
+        if (orderList.isEmpty()){
+            Log.e("custom_error","error in orders: there is TODO Cart")
+        }
+        else{
+            Log.e("custom_error","error in orders: there is two TODO Cart")
+        }
+    }
+    fun paymentChange(paymentMethod: payment_method,deliverMethode: Delivery){
+        val orderList=orderDao.getUserTODOCart(email)
+        if (orderList?.count()==1){
+            orderList[0].deliveryMethod=deliverMethode
+            orderList[0].paymentMethod=paymentMethod
+            orderDao.upsertOrder(orderList[0])
+        }
+        if (orderList.isEmpty()){
+            Log.e("custom_error","error in orders: there is TODO Cart")
+        }
+        else{
+            Log.e("custom_error","error in orders: there is two TODO Cart")
         }
     }
 

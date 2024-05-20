@@ -22,10 +22,10 @@ data class Order (
     @PrimaryKey(autoGenerate = true)
     val id:Int=0,
     var totalPrice:Int,
-    val paymentMethod:payment_method,
-    val deliveryMethod: Delivery,
+    var paymentMethod:payment_method,
+    var deliveryMethod: Delivery,
     @ColumnInfo(index = true)
-    val addressID:Int,
+    var addressID:Int,
     @ColumnInfo(index = true)
     val userID :String,
     val status: orderStatus
