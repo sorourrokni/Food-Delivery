@@ -9,5 +9,5 @@ data class Food(
     @PrimaryKey
     val name: String
     ,val description:String
-    , val price: String
+    , val price: Int
     , @DrawableRes val imageResId: Int)

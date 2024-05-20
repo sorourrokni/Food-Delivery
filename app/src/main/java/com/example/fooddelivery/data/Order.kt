@@ -21,7 +21,7 @@ import androidx.room.PrimaryKey
 data class Order (
     @PrimaryKey(autoGenerate = true)
     val id:Int=0,
-    val totalPrice:String,
+    var totalPrice:Int,
     val paymentMethod:payment_method,
     val deliveryMethod: Delivery,
     @ColumnInfo(index = true)

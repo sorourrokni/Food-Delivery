@@ -22,7 +22,7 @@ import androidx.room.PrimaryKey
     primaryKeys = ["orderID","foodID"])
 
 data class OrderItem (
-    val quantity:Int,
+    var quantity:Int,
     @ColumnInfo(index = true)
     val orderID:Int,
     @ColumnInfo(index = true)
