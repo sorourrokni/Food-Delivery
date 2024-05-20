@@ -20,11 +20,10 @@ import com.example.fooddelivery.component.AddressCard
 import com.example.fooddelivery.component.DeliveryMethodCard
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.data.Address
-import com.example.fooddelivery.data.Delivery
-import com.example.fooddelivery.data.Payment
+import com.example.fooddelivery.data.Person
 
 @Composable
-fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifier){
+fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifier,person: Person){
     val scrollState = rememberScrollState()
 
     Column(Modifier.verticalScroll(scrollState)){
@@ -39,7 +38,7 @@ fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifie
             Text("Address details",style=MaterialTheme.typography.headlineSmall.copy(fontSize =18.sp, lineHeight = 21.sp))
             Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
         }
-        AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp))
+        AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp), person = person)
         DeliveryMethodCard( modifier = Modifier.padding(start=50.dp,end=46.dp))
         Row( Modifier.padding(start=50.dp,end=46.dp,top=67.dp)){
             Text("Total",style=MaterialTheme.typography.bodyMedium)

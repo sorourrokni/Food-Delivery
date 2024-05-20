@@ -23,12 +23,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 import com.example.fooddelivery.R
+import com.example.fooddelivery.Screen
 import com.example.fooddelivery.component.AuthTextField
 import com.example.fooddelivery.component.FilledButton
 
 @Composable
-fun ForgotPasswordScreen(name:String,modifier: Modifier=Modifier) {
+fun ForgotPasswordScreen(navController: NavController,name:String,modifier: Modifier=Modifier) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -77,7 +79,7 @@ fun ForgotPasswordScreen(name:String,modifier: Modifier=Modifier) {
 
         Spacer(modifier = Modifier.height(280.dp))
 
-        FilledButton(onClick = { /*TODO*/ }, text = "Enter code")
+        FilledButton(onClick = { navController.navigate(Screen.LostConnectionScreen.route) }, text = "Enter code")
 
     }
 }

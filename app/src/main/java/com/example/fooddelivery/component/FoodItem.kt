@@ -58,7 +58,7 @@ fun FoodItem(foodItem: Food) {
                         .padding(start = 50.dp, top = 64.dp, end = 50.dp, bottom = 0.dp)
                 )
                 Text(
-                    text = foodItem.price,
+                    text = foodItem.price.toString(),
                     style = MaterialTheme.typography.displaySmall
                         .copy(color = MaterialTheme.colorScheme.primary),
                     textAlign = TextAlign.Center,
