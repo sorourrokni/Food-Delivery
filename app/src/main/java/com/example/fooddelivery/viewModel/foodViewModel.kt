@@ -1,4 +1,8 @@
 package com.example.fooddelivery.viewModel
 
-class foodViewModel {
+import androidx.lifecycle.ViewModel
+import com.example.fooddelivery.data.dao.FoodDao
+
+class foodViewModel(private val foodDao: FoodDao):ViewModel() {
+
 }

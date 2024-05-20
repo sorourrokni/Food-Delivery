@@ -12,12 +12,13 @@ import com.example.fooddelivery.data.foodFav
 @Dao
 interface foodFavDao {
     @Insert
-    suspend fun insertFoodFav(foodFav: foodFav)
+     fun insertFoodFav(foodFav: foodFav)
     @Delete
-    suspend fun deleteFoodFav(foodFav: foodFav)
+     fun deleteFoodFav(foodFav: foodFav)
     @Query("select name,description,price,imageResId from foodFav natural join food where foodFav.userID==:email" )
     fun getAllFoodFavByUserID(email:String):List<Food>
-
+    @Query("select * from foodFav , person , food where foodFav.userID==:email and foodFav.foodID==:name")
+    fun userLikeFood(email:String,name:String)
 
 
 }
