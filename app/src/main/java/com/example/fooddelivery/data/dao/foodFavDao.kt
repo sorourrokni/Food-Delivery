@@ -17,8 +17,8 @@ interface foodFavDao {
      fun deleteFoodFav(foodFav: foodFav)
     @Query("select name,description,price,imageResId from foodFav natural join food where foodFav.userID==:email" )
     fun getAllFoodFavByUserID(email:String):List<Food>
-    @Query("select * from foodFav , person , food where foodFav.userID==:email and foodFav.foodID==:name")
-    fun userLikeFood(email:String,name:String)
+    @Query("select foodFav.foodID,foodFav.userID from foodFav , person , food where foodFav.userID==:email and foodFav.foodID==:name")
+    fun userLikeFood(email:String,name:String):foodFav
 
 
 }
