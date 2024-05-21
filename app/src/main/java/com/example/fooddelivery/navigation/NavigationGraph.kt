@@ -1,6 +1,7 @@
 package com.example.fooddelivery.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -12,7 +13,7 @@ import com.example.fooddelivery.ui.home.history.HistoryScreen
 import com.example.fooddelivery.ui.profile.ProfileScreen
 
 @Composable
-fun NavigationGraph(navController: NavHostController, fakeData: FakeData) {
+fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifier: Modifier) {
 
     NavHost(navController, startDestination = NavigationItem.Home.route) {
         composable(NavigationItem.Home.route) { HomeScreen(navController = navController) }

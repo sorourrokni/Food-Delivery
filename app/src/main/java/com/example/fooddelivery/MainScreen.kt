@@ -1,7 +1,10 @@
 package com.example.fooddelivery
 
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.fooddelivery.navigation.BottomNavigationBar
 import com.example.fooddelivery.navigation.FakeData
@@ -21,7 +24,11 @@ fun MainScreen() {
     )
     Scaffold(
         bottomBar = { BottomNavigationBar(navController, items) }
-    ) {
-        NavigationGraph(navController, fakeData = fakeData)
+    ) { innerPadding: PaddingValues ->
+        NavigationGraph(
+            navController,
+            fakeData = fakeData,
+            modifier = Modifier.padding(innerPadding)
+        )
     }
 }
