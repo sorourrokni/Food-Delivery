@@ -26,7 +26,12 @@ fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifi
         }
         composable(NavigationItem.Favorite.route) { FavoriteScreen(foodList = fakeData.foods) }
         composable(NavigationItem.History.route) { HistoryScreen(payments = fakeData.payments) }
-        composable(Screen.FoodDetail.route) { FoodDetailScreen(navController = navController) }
+        composable(Screen.FoodDetail.route) {
+            FoodDetailScreen(
+                "foodDetail",
+                navController = navController
+            )
+        }
         composable(Screen.Expandable.route) {
             ExpandableHomeScreen(
                 name = "expandable",

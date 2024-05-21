@@ -19,6 +19,7 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.FoodCaption
@@ -26,7 +27,11 @@ import com.example.fooddelivery.component.ImageSlider
 import com.example.fooddelivery.data.Food
 
 @Composable
-fun FoodDetailScreen(name: String, modifier: Modifier = Modifier) {
+fun FoodDetailScreen(
+    name: String,
+    modifier: Modifier = Modifier,
+    navController: NavHostController
+) {
 
     val scrollState = rememberScrollState()
 
@@ -36,7 +41,6 @@ fun FoodDetailScreen(name: String, modifier: Modifier = Modifier) {
         price = 2000,
         imageResId = R.drawable.food_1
     )
-
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
