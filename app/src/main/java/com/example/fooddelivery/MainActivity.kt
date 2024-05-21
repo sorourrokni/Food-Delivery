@@ -1,8 +1,6 @@
 package com.example.fooddelivery
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,17 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.room.Room
 import com.example.fooddelivery.data.DataBase
-import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.theme.FoodDeliveryTheme
-import javax.mail.Authenticator
-import javax.mail.Message
-import javax.mail.MessagingException
-import javax.mail.PasswordAuthentication
-import javax.mail.Session
-import javax.mail.Transport
-import javax.mail.internet.AddressException
-import javax.mail.internet.InternetAddress
-import javax.mail.internet.MimeMessage
 
 
 class MainActivity : ComponentActivity() {
