@@ -27,8 +27,8 @@ import com.example.fooddelivery.component.HistoryItem
 import com.example.fooddelivery.data.Payment
 
 @androidx.compose.runtime.Composable
-fun HistoryPage(payments:ArrayList<Payment>, modifier: Modifier = Modifier){
-    var enabled by remember { mutableStateOf(true)}
+fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
+    var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()
 
     Column(
@@ -60,31 +60,43 @@ fun HistoryPage(payments:ArrayList<Payment>, modifier: Modifier = Modifier){
                 text = "History", style = MaterialTheme.typography.displayLarge
             )
         }
-        if (payments.size<1){
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 20.dp)
-            ){
-                Image(painter = painterResource(id = R.drawable.empty_history), contentDescription = null,
-                    modifier= Modifier.size(width=100.dp,height=100.dp))
+        if (payments.isEmpty()) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 20.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.empty_history),
+                    contentDescription = null,
+                    modifier = Modifier.size(width = 100.dp, height = 100.dp)
+                )
             }
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 10.dp)){
-                Text(text="No history yet",
-                    style=MaterialTheme.typography.bodyLarge, color = Color.Black)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 10.dp)
+            ) {
+                Text(
+                    text = "No history yet",
+                    style = MaterialTheme.typography.bodyLarge, color = Color.Black
+                )
             }
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 10.dp)){
-                Text(text="Hit the orange button down\n"+
-                        "\tbelow to Create an order",
-                    style=MaterialTheme.typography.bodyMedium,color=Color.Gray)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 10.dp)
+            ) {
+                Text(
+                    text = "Hit the orange button down\n" +
+                            "\tbelow to Create an order",
+                    style = MaterialTheme.typography.bodyMedium, color = Color.Gray
+                )
             }
-        }else {
+        } else {
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
@@ -101,6 +113,4 @@ fun HistoryPage(payments:ArrayList<Payment>, modifier: Modifier = Modifier){
             }
         }
     }
-
-
 }

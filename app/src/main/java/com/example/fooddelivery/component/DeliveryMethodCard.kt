@@ -21,15 +21,15 @@ import com.example.fooddelivery.data.Delivery
 
 @Composable
 fun DeliveryMethodCard (modifier: Modifier){
-    val selectedOption = remember { mutableStateOf(Delivery.Door_Delivery) }
+    val selectedOption = remember { mutableStateOf(Delivery.DoorDelivery) }
     Text(text = "Delivery method",style=MaterialTheme.typography.titleSmall, modifier =Modifier.padding(start=50.dp,end=46.dp,top=42.dp, bottom = 20.dp))
     Column(modifier.background(Color.White, RoundedCornerShape(20.dp))){
         Spacer(Modifier.height(20.dp))
 
         Column(){
             Row(Modifier.padding(start=25.dp)){
-                RadioButton(selected = selectedOption.value==Delivery.Door_Delivery,
-                    onClick = {selectedOption.value=Delivery.Door_Delivery})
+                RadioButton(selected = selectedOption.value==Delivery.DoorDelivery,
+                    onClick = {selectedOption.value=Delivery.DoorDelivery})
                 Text("Door Delivery", style = MaterialTheme.typography.bodyMedium,modifier=Modifier.padding(top=12.dp,start=16.dp))
             }
             Divider(color = Color.Black, thickness = 0.5.dp, modifier = Modifier.padding(start = 51.dp,end=32.dp,top=12.dp))

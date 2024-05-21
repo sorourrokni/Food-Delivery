@@ -6,7 +6,6 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
-import com.example.fooddelivery.data.foodFav
 
 @Dao
 interface OrderDao {

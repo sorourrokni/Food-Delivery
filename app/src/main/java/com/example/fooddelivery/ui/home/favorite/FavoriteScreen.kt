@@ -1,4 +1,4 @@
-package com.example.fooddelivery.ui.home.favourite
+package com.example.fooddelivery.ui.home.favorite
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -16,16 +16,16 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
-import com.example.fooddelivery.data.Food
-import androidx.compose.ui.Modifier
 import com.example.fooddelivery.component.FavoriteItem
+import com.example.fooddelivery.data.Food
 
 @Composable
-fun FavoriteScreen( food_list:ArrayList<Food>,modifier: Modifier = Modifier) {
+fun FavoriteScreen(foodList:List<Food>, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
@@ -57,8 +57,8 @@ fun FavoriteScreen( food_list:ArrayList<Food>,modifier: Modifier = Modifier) {
                 text = "Favorite", style = MaterialTheme.typography.displayLarge, color = Color.Black
             )
         }
-        if(food_list.size>0){
-            val it=food_list.iterator()
+        if(foodList.isNotEmpty()){
+            val it=foodList.iterator()
             for (e in it){
                 FavoriteItem(e)
             }

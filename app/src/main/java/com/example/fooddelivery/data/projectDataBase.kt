@@ -10,7 +10,7 @@ import com.example.fooddelivery.data.dao.PersonDao
 import com.example.fooddelivery.data.dao.foodFavDao
 
 @Database(
-    entities = [Address::class,Food::class,foodFav::class,Order::class,OrderItem::class,Person::class],
+    entities = [Address::class,Food::class,FoodFavorite::class,Order::class,OrderItem::class,Person::class],
     version = 1,
 )
 abstract class DataBase:RoomDatabase() {

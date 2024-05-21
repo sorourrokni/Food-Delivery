@@ -23,19 +23,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
-import com.example.fooddelivery.data.payment_method
+import com.example.fooddelivery.data.PaymentMethod
 
 @Composable
 fun  PaymentMethodCard(modifier:Modifier=Modifier) {
-    val selectedOption = remember { mutableStateOf(payment_method.Card) }
+    val selectedOption = remember { mutableStateOf(PaymentMethod.Card) }
     Text(text = "Payment method",style= MaterialTheme.typography.titleSmall, modifier =Modifier.padding(start=50.dp,end=46.dp,top=42.dp, bottom = 20.dp))
     Column(modifier.background(Color.White, RoundedCornerShape(20.dp))){
         Spacer(Modifier.height(20.dp))
 
         Column(){
             Row(Modifier.padding(start=25.dp)){
-                RadioButton(selected = selectedOption.value== payment_method.Card,
-                    onClick = {selectedOption.value= payment_method.Card})
+                RadioButton(selected = selectedOption.value== PaymentMethod.Card,
+                    onClick = {selectedOption.value= PaymentMethod.Card})
                 Column(horizontalAlignment = Alignment.CenterHorizontally){
                     Spacer(modifier = Modifier.height(4.dp))
                     Row(modifier= Modifier
@@ -49,8 +49,8 @@ fun  PaymentMethodCard(modifier:Modifier=Modifier) {
             Divider(color = Color.Black, thickness = 0.5.dp, modifier = Modifier.padding(start = 51.dp,end=32.dp,top=12.dp))
 
             Row(Modifier.padding(start=25.dp, bottom = 20.dp,top=12.dp)){
-                RadioButton(selected = selectedOption.value== payment_method.Direct_pay,
-                    onClick = {selectedOption.value= payment_method.Direct_pay})
+                RadioButton(selected = selectedOption.value== PaymentMethod.DirectPay,
+                    onClick = {selectedOption.value= PaymentMethod.DirectPay})
                 Column(horizontalAlignment = Alignment.CenterHorizontally){
                     Spacer(modifier = Modifier.height(4.dp))
                     Row(modifier= Modifier
