@@ -46,7 +46,15 @@ fun ScrollableRowList() {
                 .horizontalScroll(scrollState)
         ) {
             foodItems.forEach { foodItem ->
-                FoodItem(foodItem = foodItem)
+                FoodItem(
+                    foodItem = foodItem,
+                    width = 220,
+                    height = 270,
+                    topHeight = 321,
+                    scale = 1.7f,
+                    imgPadding = 32,
+                    titlePadding = 46
+                )
             }
         }
     }
