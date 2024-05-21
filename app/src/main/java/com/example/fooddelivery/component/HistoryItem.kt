@@ -42,7 +42,7 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
 
             , horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            HistoryFood(number = payment.foods_list.toList()[0].second, food = payment.foods_list.toList()[0].first)
+            HistoryFood(number = payment.foodsList.toList()[0].second, food = payment.foodsList.toList()[0].first)
             Row(modifier= Modifier
                 .size(45.dp, 12.dp)
                 .background(
@@ -62,8 +62,8 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
                 )
             }
         }
-        val it=payment.foods_list.iterator()
-        val first_food=payment.foods_list.toList()[0].first.name.toString()
+        val it=payment.foodsList.iterator()
+        val first_food=payment.foodsList.toList()[0].first.name.toString()
 
         for (e in it){
             if(e.key.name==first_food){
@@ -164,7 +164,7 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
                 .padding(start = 15.dp, top = 5.dp, bottom = 5.dp, end = 5.dp)
             )
             {
-                if(payment.payment_method.name=="Card"){
+                if(payment.paymentMethod.name=="Card"){
                     Text(text="Card  "
                         ,modifier=Modifier
                         ,style=MaterialTheme.typography.bodySmall
@@ -270,7 +270,7 @@ fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
                     , style = MaterialTheme.typography.titleLarge,
                     color = Color.Black
                     ,fontSize =8.sp, lineHeight = 9.sp)
-                val tot_price=payment.total_price
+                val tot_price=payment.totalPrice
                 Text(text="#$tot_price"
                     ,modifier= Modifier
                         .padding(start=9.dp,top=5.dp)

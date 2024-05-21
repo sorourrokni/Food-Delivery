@@ -6,12 +6,12 @@ import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
+import com.example.fooddelivery.data.PaymentMethod
 import com.example.fooddelivery.data.dao.AddressDao
 import com.example.fooddelivery.data.dao.FoodDao
 import com.example.fooddelivery.data.dao.OrderDao
 import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.orderStatus
-import com.example.fooddelivery.data.payment_method
 
 class paymentViewModel(
     private val orderDao: OrderDao,
@@ -44,14 +44,14 @@ class paymentViewModel(
             val allOrders=orderDao.getAllOrders()
             if (allOrders.isEmpty()){
                 val order= Order(1,food.price,
-                    payment_method.Direct_pay,
+                    PaymentMethod.DirectPay,
                     Delivery.PickUp,address.id,email,
                     orderStatus.TODO)
                 orderDao.upsertOrder(order)
             }
             else{
                 val order= Order(allOrders.last().id+1,food.price,
-                    payment_method.Direct_pay,
+                    PaymentMethod.DirectPay,
                     Delivery.PickUp,address.id,email,
                     orderStatus.TODO)
                 orderDao.upsertOrder(order)
@@ -108,7 +108,7 @@ class paymentViewModel(
             Log.e("custom_error","error in orders: there is two TODO Cart")
         }
     }
-    fun paymentChange(paymentMethod: payment_method,deliverMethode: Delivery){
+    fun paymentChange(paymentMethod: PaymentMethod, deliverMethode: Delivery){
         val orderList=orderDao.getUserTODOCart(email)
         if (orderList?.count()==1){
             orderList[0].deliveryMethod=deliverMethode

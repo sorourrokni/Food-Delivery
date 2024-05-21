@@ -13,9 +13,10 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavHostController
 
 @Composable
-fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
+fun CustomTabRow(name: String, modifier: Modifier = Modifier,navController: NavHostController) {
     val tabTitles = listOf("Foods", "Drinks", "Snacks", "Sauce")
     var selectedTabIndex by remember { mutableStateOf(0) }
 
@@ -49,10 +50,10 @@ fun CustomTabRow(name: String, modifier: Modifier = Modifier) {
 
         // Content below the tab row
         when (selectedTabIndex) {
-            0 -> ScrollableRowList()
-            1 -> ScrollableRowList()
-            2 -> ScrollableRowList()
-            3 -> ScrollableRowList()
+            0 -> ScrollableRowList(navController)
+            1 -> ScrollableRowList(navController)
+            2 -> ScrollableRowList(navController)
+            3 -> ScrollableRowList(navController)
         }
     }
 }

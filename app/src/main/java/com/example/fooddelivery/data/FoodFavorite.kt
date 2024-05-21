@@ -1,6 +1,5 @@
 package com.example.fooddelivery.data
 
-import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 
@@ -17,7 +16,7 @@ import androidx.room.ForeignKey
         onDelete = ForeignKey.CASCADE
     )],
     primaryKeys = ["foodID","userID"])
-data class foodFav(
+data class FoodFavorite(
     val foodID:String,
     val userID:String
 )

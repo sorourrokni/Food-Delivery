@@ -2,6 +2,7 @@ package com.example.fooddelivery.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -21,6 +22,8 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.data.Food
 
 @Composable
@@ -31,7 +34,8 @@ fun FoodItem(
     height: Int,
     scale: Float,
     titlePadding: Int,
-    imgPadding: Int
+    imgPadding: Int,
+    navController: NavController
 ) {
     Box(
         modifier = Modifier
@@ -43,6 +47,7 @@ fun FoodItem(
                 color = MaterialTheme.colorScheme.onSecondary,
                 shape = RoundedCornerShape(30.dp)
             )
+            .clickable { navController.navigate(Screen.FoodDetail.route) }
     ) {
         Box(
             modifier = Modifier

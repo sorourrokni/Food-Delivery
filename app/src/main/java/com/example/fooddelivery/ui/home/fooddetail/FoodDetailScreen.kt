@@ -95,5 +95,3 @@ fun FoodDetailScreen(name: String, modifier: Modifier = Modifier) {
         FilledButton(onClick = { /*TODO*/ }, text = "Add to cart")
     }
 }
-
-

@@ -22,7 +22,7 @@ data class Order (
     @PrimaryKey(autoGenerate = true)
     val id:Int=0,
     var totalPrice:Int,
-    var paymentMethod:payment_method,
+    var paymentMethod:PaymentMethod,
     var deliveryMethod: Delivery,
     @ColumnInfo(index = true)
     var addressID:Int,
