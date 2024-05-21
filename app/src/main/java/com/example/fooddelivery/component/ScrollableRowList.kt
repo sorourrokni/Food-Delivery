@@ -1,5 +1,6 @@
 package com.example.fooddelivery.component
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,24 +8,26 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.text.BasicText
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
+import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.data.Food
 
 val foodItems = listOf(
-    Food("Veggie tomato mix","description", 1900, R.drawable.food_1),
-    Food("Egg and cucumber","description", 1900, R.drawable.food_2),
-    Food("Egg and cucumber","description", 1900, R.drawable.food_3),
-    Food("Egg and cucumber","description", 1900, R.drawable.food_4),
-    Food("Egg and cucumber","description", 1900, R.drawable.food_1),
+    Food("Veggie tomato mix", "description", 1900, R.drawable.food_1),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_2),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_3),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_4),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_1),
 )
 
 @Composable
-fun ScrollableRowList() {
+fun ScrollableRowList(navController: NavHostController) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -36,7 +39,8 @@ fun ScrollableRowList() {
                 .fillMaxWidth()
                 .padding(0.dp, 0.dp, 40.dp, 40.dp)
         ) {
-            BasicText(
+            Text(
+                modifier = Modifier.clickable { navController.navigate(Screen.Expandable.route) },
                 text = "see more",
                 style = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.primary),
             )
@@ -53,7 +57,8 @@ fun ScrollableRowList() {
                     topHeight = 321,
                     scale = 1.7f,
                     imgPadding = 32,
-                    titlePadding = 46
+                    titlePadding = 46,
+                    navController = navController
                 )
             }
         }
