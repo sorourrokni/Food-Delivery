@@ -18,18 +18,21 @@ import com.example.fooddelivery.data.Food
 fun ItemGrid() {
 
     val foodItems = listOf(
-        Food("Veggie tomato mix", "N1,900", R.drawable.food_1),
-        Food("Egg and cucumber", "N1,900", R.drawable.food_2),
-        Food("Egg and cucumber", "N1,900", R.drawable.food_3),
-        Food("Egg and cucumber", "N1,900", R.drawable.food_4),
-        Food("Egg and cucumber", "N1,900", R.drawable.food_1),
+        Food("Veggie tomato mix", "N1,900", 100, R.drawable.food_1),
+        Food("Egg and cucumber", "N1,900", 200, R.drawable.food_2),
+        Food("Egg and cucumber", "N1,900", 250, R.drawable.food_3),
+        Food("Egg and cucumber", "N1,900", 480, R.drawable.food_4),
+        Food("Egg and cucumber", "N1,900", 100, R.drawable.food_1),
     )
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(16.dp,16.dp),
+        contentPadding = PaddingValues(16.dp, 16.dp),
         modifier = Modifier
-            .background(color = MaterialTheme.colorScheme.onSecondary, shape = RoundedCornerShape(30.dp))
+            .background(
+                color = MaterialTheme.colorScheme.onSecondary,
+                shape = RoundedCornerShape(30.dp)
+            )
             .padding(top = 36.dp)
 
     ) {
