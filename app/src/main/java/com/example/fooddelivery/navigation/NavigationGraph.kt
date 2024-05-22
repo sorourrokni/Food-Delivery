@@ -9,16 +9,21 @@ import androidx.navigation.compose.composable
 import com.example.fooddelivery.ui.home.HomeScreen
 import com.example.fooddelivery.ui.home.expandable.ExpandableHomeScreen
 import com.example.fooddelivery.ui.home.favorite.FavoriteScreen
+import com.example.fooddelivery.ui.home.fooddetail.FoodDetailScreen
 import com.example.fooddelivery.ui.home.history.HistoryScreen
 import com.example.fooddelivery.ui.profile.ProfileScreen
-import com.example.fooddelivery.ui.home.fooddetail.FoodDetailScreen
+import com.example.fooddelivery.ui.profile.edit.EditProfileScreen
 
 @Composable
 fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifier: Modifier) {
 
     val navControllerWithHistory = remember { NavControllerWithHistory(navController) }
 
-    NavHost(navController = navControllerWithHistory.navController, startDestination = NavigationItem.Home.route, modifier = modifier) {
+    NavHost(
+        navController = navControllerWithHistory.navController,
+        startDestination = NavigationItem.Home.route,
+        modifier = modifier
+    ) {
 
         composable(NavigationItem.Home.route) {
             HomeScreen(navControllerWithHistory = navControllerWithHistory)
@@ -27,7 +32,8 @@ fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifi
             ProfileScreen(
                 person = fakeData.person1,
                 address = fakeData.address1,
-                name = "profile"
+                name = "profile",
+                navControllerWithHistory = navControllerWithHistory
             )
         }
         composable(NavigationItem.Favorite.route) {
@@ -37,7 +43,10 @@ fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifi
             HistoryScreen(payments = fakeData.payments)
         }
         composable(Screen.FoodDetail.route) {
-            FoodDetailScreen(name = "foodDetail", navControllerWithHistory = navControllerWithHistory)
+            FoodDetailScreen(
+                name = "foodDetail",
+                navControllerWithHistory = navControllerWithHistory
+            )
         }
         composable(Screen.Expandable.route) {
             ExpandableHomeScreen(
@@ -47,6 +56,13 @@ fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifi
         }
         composable(Screen.Home.route) {
             HomeScreen(navControllerWithHistory = navControllerWithHistory)
+        }
+        composable(Screen.EditProfile.route) {
+            EditProfileScreen(
+                person = fakeData.person1,
+                address = fakeData.address1,
+                navControllerWithHistory = navControllerWithHistory
+            )
         }
     }
 }
