@@ -105,7 +105,7 @@ fun EditProfileScreen(
             Spacer(Modifier.height(12.dp))
             ProfileTextField(label = "Address", type = KeyboardType.Text, base = address, 315, 90)
         }
-        Spacer(Modifier.height(150.dp))
+        Spacer(Modifier.height(72.dp))
         FilledButton(onClick = { /*TODO*/ }, text = "Update")
     }
 }
