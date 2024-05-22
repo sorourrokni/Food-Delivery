@@ -11,12 +11,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun ItemGrid(navController: NavHostController) {
+fun ItemGrid(navControllerWithHistory: NavControllerWithHistory) {
 
     val foodItems = listOf(
         Food("Veggie tomato mix", "N1,900", 100, R.drawable.food_1),
@@ -51,7 +51,7 @@ fun ItemGrid(navController: NavHostController) {
                     titlePadding = 8,
                     imgPadding = 0,
                     scale = 1.2f,
-                   navController = navController
+                   navControllerWithHistory = navControllerWithHistory
                 )
             }
         }

@@ -20,12 +20,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.CustomTabRow
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier,navController: NavHostController) {
+fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavControllerWithHistory) {
 
     var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()
@@ -64,7 +64,7 @@ fun HomeScreen(modifier: Modifier = Modifier,navController: NavHostController) {
             name = "CustomTabRow", modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 75.dp, top = 80.dp, end = 0.dp, bottom = 0.dp)
-                .height(33.dp), navController = navController
+                .height(33.dp), navControllerWithHistory = navControllerWithHistory
         )
     }
 }

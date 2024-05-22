@@ -13,10 +13,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
-import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.navigation.Screen
 
 val foodItems = listOf(
     Food("Veggie tomato mix", "description", 1900, R.drawable.food_1),
@@ -27,7 +27,7 @@ val foodItems = listOf(
 )
 
 @Composable
-fun ScrollableRowList(navController: NavHostController) {
+fun ScrollableRowList(navControllerWithHistory: NavControllerWithHistory) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -40,7 +40,7 @@ fun ScrollableRowList(navController: NavHostController) {
                 .padding(0.dp, 0.dp, 40.dp, 40.dp)
         ) {
             Text(
-                modifier = Modifier.clickable { navController.navigate(Screen.Expandable.route) },
+                modifier = Modifier.clickable { navControllerWithHistory.navigate(Screen.Expandable.route) },
                 text = "see more",
                 style = MaterialTheme.typography.bodySmall.copy(color = MaterialTheme.colorScheme.primary),
             )
@@ -58,7 +58,7 @@ fun ScrollableRowList(navController: NavHostController) {
                     scale = 1.7f,
                     imgPadding = 32,
                     titlePadding = 46,
-                    navController = navController
+                    navControllerWithHistory = navControllerWithHistory
                 )
             }
         }
