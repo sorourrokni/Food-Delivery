@@ -56,11 +56,12 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(132.dp)
-                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)
+                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 56.dp)
         ) {
             Text(
-                text = "History", style = MaterialTheme.typography.displayLarge
+                text = "History",
+                style = MaterialTheme.typography.displayLarge,
+                color = Color.Black
             )
         }
         if (payments.isEmpty()) {
@@ -104,15 +105,12 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.SpaceBetween,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(134.dp)
-                    .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)
+                    .padding(start = 48.dp, end = 48.dp)
             ) {
                 val it = payments.iterator()
                 for (e in it) {
                     HistoryItem(e)
-
                 }
-
             }
         }
     }

@@ -53,7 +53,7 @@ fun FavoriteScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
                 .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 56.dp)
         ) {
             Text(
-                text = "Favorite",
+                text = "Favorite foods",
                 style = MaterialTheme.typography.displayLarge,
                 color = Color.Black
             )
