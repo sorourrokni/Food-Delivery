@@ -1,9 +1,12 @@
 package com.example.fooddelivery.ui.home.history
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -33,8 +36,9 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
 
     Column(
         modifier = modifier
+            .fillMaxHeight()
             .verticalScroll(scrollState)
-
+            .background(color = MaterialTheme.colorScheme.onSecondary)
     ) {
         Row(
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -53,11 +57,12 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(132.dp)
-                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)
+                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 56.dp)
         ) {
             Text(
-                text = "History", style = MaterialTheme.typography.displayLarge
+                text = "History",
+                style = MaterialTheme.typography.displayLarge,
+                color = Color.Black
             )
         }
         if (payments.isEmpty()) {
@@ -97,19 +102,15 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
                 )
             }
         } else {
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(134.dp)
-                    .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)
+                    .padding(horizontal = 48.dp)
             ) {
-                val it = payments.iterator()
-                for (e in it) {
-                    HistoryItem(e)
-
+                payments.forEach { payment ->
+                    HistoryItem(payment)
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
-
             }
         }
     }

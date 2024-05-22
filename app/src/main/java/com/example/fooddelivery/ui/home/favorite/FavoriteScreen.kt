@@ -25,12 +25,12 @@ import com.example.fooddelivery.component.FavoriteItem
 import com.example.fooddelivery.data.Food
 
 @Composable
-fun FavoriteScreen(foodList:List<Food>, modifier: Modifier = Modifier) {
+fun FavoriteScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
-            .background(color = Color.White)
+            .background(color = MaterialTheme.colorScheme.onSecondary)
 
     ) {
         Row(
@@ -50,42 +50,54 @@ fun FavoriteScreen(foodList:List<Food>, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier
                 .fillMaxWidth()
-                .height(132.dp)
-                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 0.dp)
+                .padding(start = 54.dp, top = 0.dp, end = 41.dp, bottom = 56.dp)
         ) {
             Text(
-                text = "Favorite", style = MaterialTheme.typography.displayLarge, color = Color.Black
+                text = "Favorite foods",
+                style = MaterialTheme.typography.displayLarge,
+                color = Color.Black
             )
         }
-        if(foodList.isNotEmpty()){
-            val it=foodList.iterator()
-            for (e in it){
+        if (foodList.isNotEmpty()) {
+            val it = foodList.iterator()
+            for (e in it) {
                 FavoriteItem(e)
             }
-        }
-        else{
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 20.dp)
-            ){
-                Image(painter = painterResource(id = R.drawable.ic_heart_unselected), contentDescription = null,
-                    modifier= Modifier.size(width=100.dp,height=100.dp))
+        } else {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 20.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_heart_unselected),
+                    contentDescription = null,
+                    modifier = Modifier.size(width = 100.dp, height = 100.dp)
+                )
             }
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 10.dp)){
-                Text(text="No Favorite foods yet",
-                    style=MaterialTheme.typography.bodyLarge, color = Color.Black)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 10.dp)
+            ) {
+                Text(
+                    text = "No Favorite foods yet",
+                    style = MaterialTheme.typography.bodyLarge, color = Color.Black
+                )
             }
-            Row(modifier= Modifier
-                .fillMaxWidth()
-                .wrapContentSize(Alignment.Center)
-                .padding(top = 10.dp)){
-                Text(text="Hit the orange button down\n" +
-                        "below to Create an order",
-                    style=MaterialTheme.typography.bodyMedium)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)
+                    .padding(top = 10.dp)
+            ) {
+                Text(
+                    text = "Hit the orange button down\n" +
+                            "below to Create an order",
+                    style = MaterialTheme.typography.bodyMedium
+                )
             }
 
         }

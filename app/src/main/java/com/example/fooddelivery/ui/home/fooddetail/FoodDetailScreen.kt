@@ -2,6 +2,7 @@ package com.example.fooddelivery.ui.home.fooddetail
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -19,18 +20,18 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.FoodCaption
 import com.example.fooddelivery.component.ImageSlider
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
 fun FoodDetailScreen(
     name: String,
     modifier: Modifier = Modifier,
-    navController: NavHostController
+    navControllerWithHistory: NavControllerWithHistory
 ) {
 
     val scrollState = rememberScrollState()
@@ -54,6 +55,9 @@ fun FoodDetailScreen(
                 .padding(start = 42.dp, top = 60.dp, end = 41.dp, bottom = 0.dp)
         ) {
             Image(
+                modifier = Modifier.clickable {
+                    navControllerWithHistory.popBackStack()
+                },
                 painter = painterResource(id = R.drawable.chevron_left),
                 contentDescription = null,
                 colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primaryContainer)

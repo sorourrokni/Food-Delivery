@@ -2,8 +2,11 @@ package com.example.fooddelivery.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,32 +24,55 @@ import com.example.fooddelivery.data.Food
 fun FavoriteItem(food: Food, modifier: Modifier = Modifier) {
     Row(
         modifier = Modifier
-            .padding(start = 60.dp, end = 60.dp)
-            .size(315.dp, 102.dp)
-            .background(color = Color.White, shape = RoundedCornerShape(10.dp))
+            .padding(start = 48.dp, end = 48.dp, bottom = 24.dp)
+            .size(width = 315.dp, height = 102.dp)
+            .background(
+                color = MaterialTheme.colorScheme.onPrimary,
+                shape = RoundedCornerShape(20.dp)
+            )
+            .fillMaxSize()
     ) {
-        Image(
-            painter = painterResource(id = food.imageResId),
-            contentDescription = null,
-            Modifier.size(100.dp, 100.dp)
-        )
-        Column(modifier = Modifier.padding(top = 15.dp)) {
+        Column(
+            modifier = Modifier
+                .fillMaxHeight()
+                .padding(top = 16.dp), verticalArrangement = Arrangement.Center
+        ) {
+            Image(
+                painter = painterResource(id = food.imageResId),
+                contentDescription = null,
+                Modifier
+                    .size(100.dp, 100.dp)
+            )
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxHeight()
+                .padding(top = 16.dp, end = 16.dp)
+        ) {
             Text(
                 text = food.name,
                 style = MaterialTheme.typography.titleSmall, color = Color.Black
             )
             Text(
+                modifier = Modifier.padding(top = 12.dp),
                 text = "# ${food.price}",
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.primary
             )
         }
-        Image(
-            painter = painterResource(id = R.drawable.ic_heart_selected), contentDescription = null,
+        Column(
             modifier = Modifier
-                .padding(top = 40.dp)
-//                .size(60.dp,60.dp)
-        )
+                .fillMaxHeight()
+                .padding(bottom = 24.dp, end = 24.dp),
+            verticalArrangement = Arrangement.Bottom
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.ic_heart_selected),
+                contentDescription = null,
+                modifier = Modifier
+
+            )
+        }
 
     }
 

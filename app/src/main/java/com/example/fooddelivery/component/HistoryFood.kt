@@ -17,36 +17,38 @@ import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.data.Food
 
 @Composable
-fun HistoryFood(number:Int,food: Food){
-    Row(modifier= Modifier
-        .background(color = MaterialTheme.colorScheme.onPrimary)
-        .padding(start = 5.dp, end = 5.dp, bottom = 5.dp)
+fun HistoryFood(number: Int, food: Food) {
+    Row(
+        modifier = Modifier
+            .background(color = MaterialTheme.colorScheme.onPrimary)
+            .padding(start = 5.dp, end = 5.dp, bottom = 5.dp),
+        verticalAlignment = Alignment.CenterVertically
 
-    ){
-        Text(text=number.toString(),
-            modifier= Modifier
+    ) {
+        Text(
+            text = number.toString(),
+            modifier = Modifier
                 .size(12.dp, 12.dp)
                 .background(Color(0xB2FA4A0C), shape = RoundedCornerShape(25.dp))
                 .align(Alignment.CenterVertically)
-                .wrapContentSize(Alignment.Center)
-            , style = MaterialTheme.typography.bodySmall
-            ,fontSize =8.sp, lineHeight = 9.sp
-            , color = Color.White)
-
-        Text(text=food.name,
-            modifier= Modifier
-                .padding(start=9.dp,top=5.dp)
-            , style = MaterialTheme.typography.titleMedium
-            ,fontSize =8.sp
+                .wrapContentSize(Alignment.Center),
+            style = MaterialTheme.typography.bodySmall,
+            fontSize = 8.sp,
+            lineHeight = 9.sp,
+            color = Color.White
         )
-        val price =food.price
-        Text(text="# $price",
-            modifier= Modifier
-                .padding(start=9.dp,top=5.dp)
-            , style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.primary
-            ,fontSize =8.sp
+        Text(
+            text = food.name,
+            modifier = Modifier
+                .padding(start = 8.dp, top = 4.dp),
+            style = MaterialTheme.typography.titleMedium,
+            fontSize = 8.sp
+        )
+        Text(
+            text = "# ${food.price}",
+            modifier = Modifier
+                .padding(start = 8.dp, top = 4.dp), style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.primary, fontSize = 8.sp
         )
     }
-
 }

@@ -19,12 +19,13 @@ import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.component.ItemGrid
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
 fun ExpandableHomeScreen(
     name: String,
     modifier: Modifier = Modifier,
-    navController: NavHostController
+    navControllerWithHistory: NavControllerWithHistory
 ) {
     Column(modifier = Modifier.background(color = MaterialTheme.colorScheme.tertiaryContainer)) {
         Row(
@@ -34,7 +35,7 @@ fun ExpandableHomeScreen(
                 .padding(start = 42.dp, top = 64.dp, bottom = 36.dp)
         ) {
             Image(
-                modifier = Modifier.clickable { navController.navigate(Screen.Home.route) },
+                modifier = Modifier.clickable { navControllerWithHistory.navigate(Screen.Home.route) },
                 painter = painterResource(id = R.drawable.chevron_left),
                 contentDescription = null
             )
@@ -44,6 +45,6 @@ fun ExpandableHomeScreen(
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 18.sp)
             )
         }
-        ItemGrid(navController)
+        ItemGrid(navControllerWithHistory)
     }
 }

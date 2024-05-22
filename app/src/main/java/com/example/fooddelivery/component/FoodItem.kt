@@ -22,9 +22,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
-import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.navigation.Screen
 
 @Composable
 fun FoodItem(
@@ -35,7 +35,7 @@ fun FoodItem(
     scale: Float,
     titlePadding: Int,
     imgPadding: Int,
-    navController: NavController
+    navControllerWithHistory: NavControllerWithHistory
 ) {
     Box(
         modifier = Modifier
@@ -47,7 +47,7 @@ fun FoodItem(
                 color = MaterialTheme.colorScheme.onSecondary,
                 shape = RoundedCornerShape(30.dp)
             )
-            .clickable { navController.navigate(Screen.FoodDetail.route) }
+            .clickable { navControllerWithHistory.navigate(Screen.FoodDetail.route) }
     ) {
         Box(
             modifier = Modifier
