@@ -8,9 +8,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,13 +25,11 @@ import com.example.fooddelivery.theme.RobotoFontFamily
 
 @Composable
 fun HistoryItem(payment: Payment, modifier:Modifier= Modifier){
-    val scrollState = rememberScrollState()
 
     Column (modifier= Modifier
         .size(314.dp,134.dp)
         .background(color = MaterialTheme.colorScheme.onPrimary, shape = RoundedCornerShape(20.dp))
-        .verticalScroll(scrollState)
-        .padding(start = 10.dp, end = 10.dp, bottom = 10.dp, top = 10.dp)
+        .padding(start = 12.dp, end = 12.dp, bottom = 12.dp, top = 12.dp)
     ) {
         Row(
             modifier = Modifier
