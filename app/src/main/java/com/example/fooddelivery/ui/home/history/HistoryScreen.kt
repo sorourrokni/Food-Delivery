@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -101,15 +102,14 @@ fun HistoryScreen(payments: List<Payment>, modifier: Modifier = Modifier) {
                 )
             }
         } else {
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+            Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(start = 48.dp, end = 48.dp)
+                    .padding(horizontal = 48.dp)
             ) {
-                val it = payments.iterator()
-                for (e in it) {
-                    HistoryItem(e)
+                payments.forEach { payment ->
+                    HistoryItem(payment)
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
         }
