@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.auth.login
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -46,6 +47,7 @@ fun LoginScreen(name: String, viewModel: AuthViewModel = viewModel()) {
         Spacer(modifier = Modifier.height(136.dp))
 
         FilledButton(onClick = {
+            Log.i("ttttttttttttt", "adsfasdlf")
             coroutineScope.launch {
                 viewModel.login(email, password) { isSuccess ->
                     loginResult = isSuccess

@@ -1,9 +1,9 @@
 package com.example.fooddelivery
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -16,11 +16,12 @@ import com.example.fooddelivery.theme.FoodDeliveryTheme
 import com.example.fooddelivery.ui.auth.AuthLayout
 import com.example.fooddelivery.viewModel.AuthViewModel
 import com.example.fooddelivery.ui.auth.login.LoginScreen
+import com.example.fooddelivery.ui.home.HomeScreen
 import com.example.fooddelivery.viewModel.AuthViewModelFactory
 import com.example.fooddelivery.viewModel.PersonRepository
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
-
-class AuthActivity : ComponentActivity() {
+class HomeActivity : AppCompatActivity() {
 
     private lateinit var personDao: PersonDao
     private lateinit var viewModel: AuthViewModel
@@ -38,9 +39,9 @@ class AuthActivity : ComponentActivity() {
             applicationContext,
             DataBase::class.java,
             "DataBase"
-        ).allowMainThreadQueries().build()
+        ).build()
         personDao = db.personDao()
-        Log.i("ttttttauth", db.isOpen.toString())
+
         val personRepo = PersonRepository(personDao)
         // Create the ViewModel using the factory
         val factory = AuthViewModelFactory(personRepo)
@@ -54,7 +55,8 @@ class AuthActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ){
-                    AuthLayout()
+//                    HomeScreen()
+                    MainScreen()
                 }
             }
         }

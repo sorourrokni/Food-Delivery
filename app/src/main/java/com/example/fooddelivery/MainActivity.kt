@@ -37,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Log.i("tttttttttttt", db.isOpen.toString())
-                    Intent(applicationContext, AuthActivity::class.java).also {
+                    Intent(applicationContext, HomeActivity::class.java).also {
                         startActivity(it)
                         MainScreen()
                     }
