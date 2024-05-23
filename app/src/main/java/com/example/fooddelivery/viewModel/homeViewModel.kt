@@ -95,9 +95,9 @@ class homeViewModel(
 
         if (orderList?.count() == 1) {
             var orderItem :OrderItem?=null
-                viewModelScope.launch {
+            viewModelScope.launch {
                     orderItem=orderItemRepository.getOrderItem(orderList!![0].id, name)
-                }
+            }
 
             if (orderItem == null) {
                 var newOrderItem = OrderItem(number, orderList!![0].id, name)

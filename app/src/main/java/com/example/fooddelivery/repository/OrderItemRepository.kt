@@ -17,6 +17,11 @@ class OrderItemRepository(private val orderItemDao: OrderItemDao) {
     suspend fun upsert(orderItem: OrderItem) {
         orderItemDao.upsertOrderItem(orderItem)
     }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun delete(orderItem: OrderItem) {
+        orderItemDao.deleteOrderItem(orderItem)
+    }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
