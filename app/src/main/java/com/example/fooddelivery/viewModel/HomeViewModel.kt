@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Food
@@ -14,22 +13,16 @@ import com.example.fooddelivery.data.FoodFavorite
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
 import com.example.fooddelivery.data.PaymentMethod
-import com.example.fooddelivery.data.dao.AddressDao
-import com.example.fooddelivery.data.dao.FoodDao
-import com.example.fooddelivery.data.dao.OrderDao
-import com.example.fooddelivery.data.dao.OrderItemDao
-import com.example.fooddelivery.data.dao.foodFavDao
 import com.example.fooddelivery.data.orderStatus
 import com.example.fooddelivery.repository.AddressRepository
 import com.example.fooddelivery.repository.FoodRepository
 import com.example.fooddelivery.repository.OrderItemRepository
 import com.example.fooddelivery.repository.OrderRepository
 import com.example.fooddelivery.repository.foodFavRepository
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 
-class homeViewModel(
+class HomeViewModel(
     private val foodRepository: FoodRepository,
     private val foodFavRepository: foodFavRepository,
     private val orderRepository: OrderRepository,
@@ -170,14 +163,14 @@ class homeViewModel(
         private val foodRepository: FoodRepository,
         private val foodFavRepository: foodFavRepository,
         private val orderRepository: OrderRepository,
-        private val email: String,
         private val orderItemRepository: OrderItemRepository,
-        private val addressRepository: AddressRepository
+        private val addressRepository: AddressRepository,
+        private val email: String
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(homeViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return homeViewModel(
+                return HomeViewModel(
                     foodRepository,
                     foodFavRepository,
                     orderRepository,
@@ -187,7 +180,5 @@ class homeViewModel(
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
-
-
-}
+    }
 }

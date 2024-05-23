@@ -6,13 +6,11 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
-import com.example.fooddelivery.data.dao.AddressDao
-import com.example.fooddelivery.data.dao.PersonDao
 import com.example.fooddelivery.repository.AddressRepository
 import com.example.fooddelivery.repository.PersonRepository
 import kotlinx.coroutines.launch
 
-class profileViewModel(
+class ProfileViewModel(
     private val personRepository: PersonRepository,
     private val addressRepository: AddressRepository,
     private val email:String)
@@ -69,15 +67,15 @@ class profileViewModel(
         }
     }
 
-    class profileViewModelFactory(
+    class ProfileViewModelFactory(
         private val personRepository: PersonRepository,
         private val addressRepository: AddressRepository,
         private val email: String
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(profileViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(ProfileViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return profileViewModel(
+                return ProfileViewModel(
                     personRepository, addressRepository, email
                 ) as T
             }
