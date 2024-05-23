@@ -11,7 +11,7 @@ import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.dao.PersonDao
 import com.example.fooddelivery.data.dao.foodFavDao
 
-@Database(entities = [Person::class], version = 1)
+@Database(entities = [Person::class, Food::class, FoodFavorite::class, Order::class, OrderItem::class, Address::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun personDao(): PersonDao
     abstract fun foodDao(): FoodDao

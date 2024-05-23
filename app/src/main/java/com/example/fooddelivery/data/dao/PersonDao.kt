@@ -15,6 +15,9 @@ interface PersonDao {
     @Delete
      fun deletePerson(person: Person)
 
+     @Query("select * from Person")
+     fun getAllPerson(): List<Person>?
+
     @Query ("select * from Person where email==:emailInput")
     fun getPersonWithEmail(emailInput:String):Person?
 

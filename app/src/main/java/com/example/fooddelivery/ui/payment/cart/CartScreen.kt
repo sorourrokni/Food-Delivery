@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FavoriteItem
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.data.FoodImages
 
 @Composable
 fun CartScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
@@ -60,6 +61,15 @@ fun CartScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
         if (foodList.isNotEmpty()) {
             val it = foodList.iterator()
             for (e in it) {
+//                val foodImage: MutableList<FoodImages> = mutableListOf()
+//                if (foodImagesList.isNotEmpty()) {
+//                    for (i in foodImagesList.iterator())
+//                    {
+//                        if (i.foodID == e.name) {
+//                            foodImage.add(i)
+//                        }
+//                    }
+//                }
                 FavoriteItem(e)
             }
         } else {

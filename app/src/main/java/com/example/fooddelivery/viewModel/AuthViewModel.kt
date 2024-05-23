@@ -113,16 +113,20 @@ class AuthViewModel(private val personRepository: PersonRepository):ViewModel() 
         return input == verificationCode
     }
 
-    fun createNewUser(email: String, password: String) {
-        val person = Person(email, "", "", password, R.drawable.person1)
-        try {
-            viewModelScope.launch {
-                personRepository.upsert(person)
+    fun createListOfUser(persons: List<Person>) {
+        viewModelScope.launch {
+            for (p in persons.iterator()) {
+                personRepository.upsert(p)
             }
-        } catch (e: Exception) {
-            Log.e("custom_error", e.toString())
         }
+    }
 
+    fun getAllPersons(): List<Person>{
+        var persons: MutableList<Person> = mutableListOf()
+        viewModelScope.launch {
+            persons = (personRepository.getAllPerson() as MutableList<Person>?)!!
+        }
+        return persons
     }
 
 

@@ -24,6 +24,7 @@ import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.FoodCaption
 import com.example.fooddelivery.component.ImageSlider
+import com.example.fooddelivery.data.Category
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
@@ -40,6 +41,7 @@ fun FoodDetailScreen(
         "Veggie tomato mix",
         "description",
         price = 2000,
+        category = Category.Foods,
         imageResId = R.drawable.food_1
     )
     Column(
