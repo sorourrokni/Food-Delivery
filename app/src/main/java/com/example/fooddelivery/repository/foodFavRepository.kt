@@ -6,9 +6,8 @@ import com.example.fooddelivery.data.FoodFavorite
 import com.example.fooddelivery.data.dao.foodFavDao
 import kotlinx.coroutines.flow.Flow
 
-class foodFavRepository(private val foodFavDao: foodFavDao,email:String) {
+class foodFavRepository(private val foodFavDao: foodFavDao) {
 
-    val allUserFavoriteFood: Flow<List<Food>> = foodFavDao.getAllFoodFavByUserID(email)
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
@@ -27,6 +26,11 @@ class foodFavRepository(private val foodFavDao: foodFavDao,email:String) {
     @WorkerThread
     suspend fun userLikeFood(email:String,name:String):FoodFavorite? {
         return foodFavDao.userLikeFood(email,name)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getAllUserFavoriteFood(email:String):List<Food> {
+        return foodFavDao.getAllFoodFavByUserID(email)
     }
 
 }

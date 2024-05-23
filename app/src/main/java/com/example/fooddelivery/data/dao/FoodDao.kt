@@ -6,6 +6,7 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.fooddelivery.data.Food
 import kotlinx.coroutines.flow.Flow
+import androidx.room.DeleteColumn as W
 
 @Dao
 interface FoodDao {
@@ -14,6 +15,8 @@ interface FoodDao {
 
     @Delete
     suspend fun deleteFood(food: Food)
+    @Query("Delete from Food")
+    suspend fun deleteAll()
 
     @Query("select * from Food")
     fun getAllFood(): Flow<List<Food>>

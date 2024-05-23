@@ -6,7 +6,7 @@ import com.example.fooddelivery.data.FoodFavorite
 import com.example.fooddelivery.data.dao.AddressDao
 import kotlinx.coroutines.flow.Flow
 
-class AddressRepository(private val addressDao: AddressDao,email:String) {
+class AddressRepository(private val addressDao: AddressDao) {
 
 
     @Suppress("RedundantSuspendModifier")

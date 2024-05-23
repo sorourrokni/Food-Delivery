@@ -7,8 +7,7 @@ import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.data.dao.OrderDao
 import kotlinx.coroutines.flow.Flow
 
-class OrderRepository(private val orderDao: OrderDao,email:String,addressID:Int,orderID:Int) {
-    val allUserOrders: Flow<List<Order>> = orderDao.getAllOrdersByUser(email)
+class OrderRepository(private val orderDao: OrderDao) {
 
 
 

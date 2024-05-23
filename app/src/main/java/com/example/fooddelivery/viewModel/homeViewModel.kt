@@ -39,7 +39,6 @@ class homeViewModel(
 ) : ViewModel() {
 
     val allFoods: LiveData <List<Food>> = foodRepository.allFoods.asLiveData()
-    val allFavoriteFoods: LiveData<List<Food>> = foodFavRepository.allUserFavoriteFood.asLiveData()
     fun getFoodInfo(name: String): Food? {
         var food:Food?=null
         viewModelScope.launch {
@@ -47,6 +46,13 @@ class homeViewModel(
         }
         return  food
 
+    }
+    fun getAllUserFavoriteFood(email:String):List<Food>?{
+        var food:List<Food>?=null
+        viewModelScope.launch {
+            food= foodFavRepository.getAllUserFavoriteFood(email)
+        }
+        return  food
     }
     fun likeFood(name: String) {
         var food:FoodFavorite?=null
