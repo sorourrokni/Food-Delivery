@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface OrderItemDao {
     @Upsert
-     fun upsertOrderItem(orderItem: OrderItem)
+     suspend fun upsertOrderItem(orderItem: OrderItem)
     @Delete
      fun deleteOrderItem(orderItem: OrderItem)
      @Query("select * from orderitem where orderID==:inputOrderID and foodID==:inputFoodID")

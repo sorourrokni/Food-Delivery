@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface PersonDao {
     @Upsert
-     fun upsertPerson(person: Person)
+    suspend fun upsertPerson(person: Person)
     @Delete
      fun deletePerson(person: Person)
 
