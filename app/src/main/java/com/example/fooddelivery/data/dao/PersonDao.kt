@@ -10,12 +10,12 @@ import com.example.fooddelivery.data.Person
 @Dao
 interface PersonDao {
     @Upsert
-     fun upsertPerson(person: Person)
+     suspend fun upsertPerson(person: Person)
     @Delete
-     fun deletePerson(person: Person)
+     suspend fun deletePerson(person: Person)
 
     @Query ("select * from Person where email==:emailInput")
-    fun getPersonWithEmail(emailInput:String):Person?
+    suspend fun getPersonWithEmail(emailInput:String):Person?
 
 
 }

@@ -36,6 +36,7 @@ fun AuthLayout() {
     val scrollState = rememberScrollState()
     val tabTitles = AuthTab.values()
     var selectedTabIndex by remember { mutableIntStateOf(0) }
+
     Column(
         modifier = Modifier
             .verticalScroll(scrollState)
@@ -96,6 +97,7 @@ fun AuthLayout() {
 
         }
         when (tabTitles[selectedTabIndex]) {
+
             AuthTab.LOGIN -> LoginScreen("login")
             AuthTab.SIGNUP -> SignupScreen("signup")
         }

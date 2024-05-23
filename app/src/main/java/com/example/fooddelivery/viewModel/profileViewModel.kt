@@ -7,7 +7,7 @@ import com.example.fooddelivery.data.dao.AddressDao
 import com.example.fooddelivery.data.dao.PersonDao
 
 class profileViewModel(private val personDao: PersonDao,private val addressDao: AddressDao,private val email:String): ViewModel(){
-     fun getProfileInfo(email:String): Person? {
+     suspend fun getProfileInfo(email:String): Person? {
          try{
         return personDao.getPersonWithEmail(email)}
          catch (e :Exception ){
@@ -15,7 +15,7 @@ class profileViewModel(private val personDao: PersonDao,private val addressDao: 
              return null
          }
      }
-    fun updateProfileInfo(name:String,newEmail:String,phone:String,address:String):Boolean{
+    suspend fun updateProfileInfo(name:String, newEmail:String, phone:String, address:String):Boolean{
         val person=personDao.getPersonWithEmail(newEmail)
         if(person==null){
             val oldPerson=personDao.getPersonWithEmail(email)

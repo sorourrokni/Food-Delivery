@@ -1,18 +1,17 @@
 package com.example.fooddelivery.viewModel
 
 import android.util.Log
-import android.util.MutableInt
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.data.dao.PersonDao
-import com.example.fooddelivery.event.PersonEvent
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.util.concurrent.ThreadLocalRandom
 import javax.mail.Authenticator
 import javax.mail.Message
@@ -23,35 +22,67 @@ import javax.mail.Transport
 import javax.mail.internet.AddressException
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
-import kotlin.random.Random
 
-class authViewModel(private val personDao:PersonDao):ViewModel() {
 
-    var verificationCode by mutableStateOf(0)
-    fun login(email:String,password:String):Boolean{
-        var person: Person ?=personDao.getPersonWithEmail(email)
-        if (person?.password==password){
-            Log.i("login","${person?.email} entered")
-            //navigation
-            return true
+class PersonRepository(private val personDao: PersonDao) {
+
+    suspend fun userExist(email: String): Person? {
+        // Perform the database operation to check if the user exists
+        return personDao.getPersonWithEmail(email)
+    }
+    suspend fun signup(person : Person) {
+        // Perform the database operation to check if the user exists
+        return personDao.upsertPerson(person)
+    }
+}
+
+class AuthViewModel(private val personRepository: PersonRepository):ViewModel() {
+
+    var verificationCode by mutableIntStateOf(0)
+    suspend fun login(email: String, password: String, param: (Person) -> Unit) {
+        viewModelScope.launch {
+            val isSuccess = withContext(Dispatchers.IO) {
+                personRepository.userExist(email)
+            }
+            if (isSuccess != null) {
+                onResult(isSuccess, password)
+            }
         }
-        else{
-            Log.i("login","${person?.email} wrong password")
+
+    }
+
+    private fun onResult(person: Person, password: String): Boolean {
+        return if (person.password ==password){
+            Log.i("login","${person.email} entered")
             //navigation
-            return false
+            true
+        } else{
+            Log.i("login","${person.email} wrong password")
+            //navigation
+            false
         }
     }
-    fun signUp(email: String,password: String):Boolean {
-        var person: Person? = personDao.getPersonWithEmail(email)
-        if (person == null) {
-            Log.i("singUp", "$email signed up correctly")
-            var newPerson = Person(email, "", "", password, R.drawable.person1)
-            personDao.upsertPerson(newPerson)
-            return true
-        } else {
-            Log.i("singUp", "$email has registered already")
-            return false
+
+
+    suspend fun signUp(email: String, password: String, param: (Any) -> Unit) {
+        viewModelScope.launch {
+            val isSuccess = withContext(Dispatchers.IO) {
+                personRepository.userExist(email)
+            }
+            if (isSuccess != null) {
+                onResult(isSuccess, password)
+            }
         }
+//        val person: Person? = personRepository.userExist(email)
+//        return if (person == null) {
+//            Log.i("singUp", "$email signed up correctly")
+//            val newPerson = Person(email, "", "", password, R.drawable.person1)
+//            personRepository.signup(newPerson)
+//            true
+//        } else {
+//            Log.i("singUp", "$email has registered already")
+//            false
+//        }
 
     }
 
@@ -99,10 +130,10 @@ class authViewModel(private val personDao:PersonDao):ViewModel() {
         return input==verificationCode
     }
 
-    fun createNewUser(email: String,password: String){
+    suspend fun createNewUser(email: String, password: String){
         val person=Person(email,"","", password,R.drawable.person1)
         try {
-            personDao.upsertPerson(person)
+            personRepository.signup(person)
         }
         catch (e :Exception){
             Log.e("custom_error",e.toString())

@@ -24,16 +24,21 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTextField(type: KeyboardType, label: String) {
-    var text by rememberSaveable { mutableStateOf("") }
-
+fun CustomTextField(
+//    type: KeyboardType, label: String) {
+//    var text by rememberSaveable { mutableStateOf("") }
+    text: String,
+    onTextChange: (String) -> Unit,
+    type: KeyboardType,
+    label: String
+    ) {
     TextField(
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 0.dp)
             .height(59.dp),
         value = text,
-        onValueChange = { text = it },
+        onValueChange = onTextChange,
         textStyle = MaterialTheme.typography.titleSmall.copy(textDecoration = TextDecoration.None),
         label = {
             Text(

@@ -1,6 +1,8 @@
 package com.example.fooddelivery
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,13 +18,13 @@ import com.example.fooddelivery.theme.FoodDeliveryTheme
 
 
 class MainActivity : ComponentActivity() {
-    private  val db by lazy{
+    private val db by lazy {
         Room.databaseBuilder(
             applicationContext,
-            DataBase ::class.java,
+            DataBase::class.java,
             "DataBase"
 
-        ).build()
+        ).allowMainThreadQueries().build()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +36,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen()
+                    Log.i("tttttttttttt", db.isOpen.toString())
+                    Intent(applicationContext, AuthActivity::class.java).also {
+                        startActivity(it)
+                        MainScreen()
+                    }
                 }
             }
         }
