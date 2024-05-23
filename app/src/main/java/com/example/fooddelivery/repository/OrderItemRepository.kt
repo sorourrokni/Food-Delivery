@@ -18,4 +18,10 @@ class OrderItemRepository(private val orderItemDao: OrderItemDao) {
         orderItemDao.upsertOrderItem(orderItem)
     }
 
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getOrderItem(orderId:Int,FoodId:String):OrderItem? {
+        return orderItemDao.getOrderItemWithFoodIDAndOrderID(orderId,FoodId)
+    }
+
 }

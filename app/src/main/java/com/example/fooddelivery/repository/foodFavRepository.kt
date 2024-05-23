@@ -16,4 +16,17 @@ class foodFavRepository(private val foodFavDao: foodFavDao,email:String) {
         foodFavDao.insertFoodFav(foodFav)
     }
 
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun delete(foodFav:FoodFavorite) {
+        foodFavDao.deleteFoodFav(foodFav)
+    }
+
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun userLikeFood(email:String,name:String):FoodFavorite? {
+        return foodFavDao.userLikeFood(email,name)
+    }
+
 }

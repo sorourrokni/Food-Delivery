@@ -1,8 +1,13 @@
 package com.example.fooddelivery.viewModel
 
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.asLiveData
+import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.data.FoodFavorite
@@ -20,6 +25,9 @@ import com.example.fooddelivery.repository.FoodRepository
 import com.example.fooddelivery.repository.OrderItemRepository
 import com.example.fooddelivery.repository.OrderRepository
 import com.example.fooddelivery.repository.foodFavRepository
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.launch
+
 
 class homeViewModel(
     private val foodRepository: FoodRepository,
@@ -29,84 +37,123 @@ class homeViewModel(
     private val orderItemRepository: OrderItemRepository,
     private val addressRepository: AddressRepository
 ) : ViewModel() {
-    fun getDishes(): List<Food> {
-        return foodFavRepository.getAllFood()
-    }
 
-    fun getSomeDishes(number: Int): List<Food> {
-        return foodDao.getSomeFood(number)
-    }
+    val allFoods: LiveData <List<Food>> = foodRepository.allFoods.asLiveData()
+    val allFavoriteFoods: LiveData<List<Food>> = foodFavRepository.allUserFavoriteFood.asLiveData()
+    fun getFoodInfo(name: String): Food? {
+        var food:Food?=null
+        viewModelScope.launch {
+            food= foodRepository.getFoodInfo(name)
+        }
+        return  food
 
-    fun getFoodInfo(name: String): Food {
-        return foodDao.getFoodByName(name)
     }
-
-    fun getFavoriteFoods(): List<Food> {
-        return foodFavDao.getAllFoodFavByUserID(email)
-    }
-
     fun likeFood(name: String) {
-        val food = foodFavDao.userLikeFood(email, name)
+        var food:FoodFavorite?=null
+        viewModelScope.launch{
+            food = foodFavRepository.userLikeFood(email, name)
+        }
+
         if (food == null) {
             val FoodFavorite = FoodFavorite(name, email)
-            foodFavDao.insertFoodFav(FoodFavorite)
-        } else {
+            viewModelScope.launch{
+                foodFavRepository.insert(FoodFavorite)
+            }
+        }
+        else {
             Log.i("like_food", "food has been liked already")
         }
     }
 
     fun disLikeFood(name: String) {
-        val food = foodFavDao.userLikeFood(email, name)
+        var food:FoodFavorite?=null
+        viewModelScope.launch{
+            food = foodFavRepository.userLikeFood(email, name)
+        }
+
         if (food != null) {
             val FoodFavorite = FoodFavorite(name, email)
-            foodFavDao.deleteFoodFav(FoodFavorite)
-        } else {
+            viewModelScope.launch{
+                foodFavRepository.delete(FoodFavorite)
+            }
+        }
+        else {
             Log.i("like_food", "food hasn't been liked ")
         }
     }
 
-    fun userHistory(): List<Order> {
-        return orderDao.getAllOrdersByUser(email)
-    }
-
     fun addToCart(name: String, number: Int = 1) {
-        val orderList = orderDao.getUserTODOCart(email)
-        val food = foodDao.getFoodByName(name)
-        val address = addressDao.getUserAddress(name)
+        var orderList:List<Order>?= listOf()
+        var food:Food?=null
+        var address: Address?=null
+        viewModelScope.launch {
+             orderList = orderRepository.getTODOOrders(email)
+             food = foodRepository.getFoodInfo(name)
+             address = addressRepository.getUserAddress(name)
+        }
+
+
         if (orderList?.count() == 1) {
-            val orderItem = orderItemDao.getOrderItemWithFoodIDAndOrderID(orderList[0].id, name)
+            var orderItem :OrderItem?=null
+                viewModelScope.launch {
+                    orderItem=orderItemRepository.getOrderItem(orderList!![0].id, name)
+                }
+
             if (orderItem == null) {
-                val newOrderItem = OrderItem(number, orderList[0].id, name)
-                orderItemDao.upsertOrderItem(newOrderItem)
+                var newOrderItem = OrderItem(number, orderList!![0].id, name)
+                viewModelScope.launch {
+                    orderItemRepository.upsert(newOrderItem)
+                }
+
             } else {
-                orderItem.quantity = orderItem.quantity + number
-                orderItemDao.upsertOrderItem(orderItem)
+                orderItem!!.quantity = orderItem!!.quantity + number
+                viewModelScope.launch {
+                    orderItemRepository.upsert(orderItem!!)
+                }
             }
 
-            val orderTODO = orderDao.getOrderById(orderList[0].id)
-            orderTODO.totalPrice = orderTODO.totalPrice + number * food.price
-            orderDao.upsertOrder(orderTODO)
+            var orderTODO:Order?=null
+            viewModelScope.launch {
+                orderRepository.getOrderById(orderList!![0].id)
+            }
+
+
+
+            orderTODO!!.totalPrice = orderTODO.totalPrice + number * food!!.price
+            viewModelScope.launch {
+                orderRepository.upsert(orderTODO)
+
+            }
 
         }
-        if (orderList.isEmpty()) {
-            val allOrders = orderDao.getAllOrders()
-            if (allOrders.isEmpty()) {
+        if (orderList!!.isEmpty()) {
+            var allOrders :List<Order>?=null
+            viewModelScope.launch {
+               allOrders= orderRepository.getAllOrders()
+            }
+
+            if (allOrders!!.isEmpty()) {
                 val order = Order(
-                    1, food.price, PaymentMethod.DirectPay, Delivery.PickUp, address.id, email,
+                    1, food!!.price, PaymentMethod.DirectPay, Delivery.PickUp, address!!.id, email,
                     orderStatus.TODO
                 )
-                orderDao.upsertOrder(order)
+                viewModelScope.launch {
+                    orderRepository.upsert(order)
+                }
+
             } else {
                 val order = Order(
-                    allOrders.last().id + 1,
-                    food.price,
+                    allOrders!!.last().id + 1,
+                    food!!.price,
                     PaymentMethod.DirectPay,
                     Delivery.PickUp,
-                    address.id,
+                    address!!.id,
                     email,
                     orderStatus.TODO
                 )
-                orderDao.upsertOrder(order)
+                viewModelScope.launch {
+                    orderRepository.upsert(order)
+                }
             }
 
         } else {
@@ -136,4 +183,5 @@ class homeViewModel(
         }
 
 
+}
 }

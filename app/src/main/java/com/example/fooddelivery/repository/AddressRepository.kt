@@ -9,11 +9,15 @@ import kotlinx.coroutines.flow.Flow
 class AddressRepository(private val addressDao: AddressDao,email:String) {
 
 
-
-    val allUserAddress: Flow<Address> = addressDao.getUserAddress(email)
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun upsert(address: Address) {
         addressDao.upsertAddress(address)
     }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getUserAddress(email:String):Address? {
+        return addressDao.getUserAddress(email)
+    }
+
 }

@@ -15,5 +15,5 @@ interface OrderItemDao {
     @Delete
      fun deleteOrderItem(orderItem: OrderItem)
      @Query("select * from orderitem where orderID==:inputOrderID and foodID==:inputFoodID")
-     fun getOrderItemWithFoodIDAndOrderID(inputOrderID: Int,inputFoodID:String): Flow<OrderItem>
+     fun getOrderItemWithFoodIDAndOrderID(inputOrderID: Int,inputFoodID:String): OrderItem?
 }

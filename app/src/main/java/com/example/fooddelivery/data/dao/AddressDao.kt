@@ -15,7 +15,7 @@ interface AddressDao {
      fun deleteAddress(address:Address)
 
     @Query("Select * from Address where user==:userID")
-    fun getUserAddress(userID:String): Flow<Address>
+    fun getUserAddress(userID:String): Address?
 
 
 }

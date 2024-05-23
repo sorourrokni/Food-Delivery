@@ -9,11 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 class OrderRepository(private val orderDao: OrderDao,email:String,addressID:Int,orderID:Int) {
     val allUserOrders: Flow<List<Order>> = orderDao.getAllOrdersByUser(email)
-    val allOrders: Flow<List<Order>> = orderDao.getAllOrders()
-    val allTODOOrders: Flow<List<Order>> = orderDao.getUserTODOCart(email)
-    val allUserHistory: Flow<List<Order>> = orderDao.getUserHistory(email)
-    val allOrdersById: Flow<List<Order>> = orderDao.getOrderAddressByID(addressID)
-    val allOrderItemsById: Flow<List<OrderItem>> = orderDao.getOrderItemsByID(orderID)
 
 
 
@@ -25,5 +20,39 @@ class OrderRepository(private val orderDao: OrderDao,email:String,addressID:Int,
     suspend fun upsert(order: Order) {
         orderDao.upsertOrder(order = order)
     }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getUserHistoryOrder(email:String) {
+        orderDao.getUserHistory(email)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getOrderItemsById(orderID:Int) {
+        orderDao.getOrderItemsByID(orderID)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getTODOOrders(email:String):List<Order> {
+        return orderDao.getUserTODOCart(email)
+    }
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getAllOrders():List<Order>? {
+        return orderDao.getAllOrders()
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getAllUserOrders(email:String) {
+        orderDao.getAllOrdersByUser(email)
+    }
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getOrderById(orderId:Int):Order? {
+        return orderDao.getOrderById(orderId)
+    }
+
+
 
 }

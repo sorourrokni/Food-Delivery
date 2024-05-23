@@ -18,7 +18,7 @@ interface foodFavDao {
     @Query("select name,description,price,imageResId from FoodFavorite natural join food where FoodFavorite.userID==:email")
     fun getAllFoodFavByUserID(email:String): Flow<List<Food>>
     @Query("select FoodFavorite.foodID,FoodFavorite.userID from FoodFavorite , person , food where FoodFavorite.userID==:email and FoodFavorite.foodID==:name")
-    fun userLikeFood(email:String,name:String):Flow<FoodFavorite>
+    fun userLikeFood(email:String,name:String):FoodFavorite?
 
 
 }

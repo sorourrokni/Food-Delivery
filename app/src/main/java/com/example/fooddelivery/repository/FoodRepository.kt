@@ -17,4 +17,13 @@ class FoodRepository(private val foodDao: FoodDao) {
     suspend fun upsert(food: Food) {
         foodDao.upsertFood(food)
     }
+
+
+
+    @Suppress("RedundantSuspendModifier")
+    @WorkerThread
+    suspend fun getFoodInfo(name:String):Food? {
+        return foodDao.getFoodByName(name)
+    }
+
 }

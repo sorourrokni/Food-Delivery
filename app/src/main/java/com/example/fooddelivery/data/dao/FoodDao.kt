@@ -22,7 +22,7 @@ interface FoodDao {
     fun getSomeFood(number:Int):Flow<List<Food>>
 
     @Query("select * from Food where name==:foodName")
-    fun getFoodByName(foodName:String):Flow<Food>
+    fun getFoodByName(foodName:String):Food?
 
 
 
