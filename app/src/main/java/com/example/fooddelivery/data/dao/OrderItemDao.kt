@@ -6,6 +6,7 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface OrderItemDao {
@@ -14,5 +15,5 @@ interface OrderItemDao {
     @Delete
      fun deleteOrderItem(orderItem: OrderItem)
      @Query("select * from orderitem where orderID==:inputOrderID and foodID==:inputFoodID")
-     fun getOrderItemWithFoodIDAndOrderID(inputOrderID: Int,inputFoodID:String):OrderItem
+     fun getOrderItemWithFoodIDAndOrderID(inputOrderID: Int,inputFoodID:String): Flow<OrderItem>
 }
