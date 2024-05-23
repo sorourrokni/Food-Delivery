@@ -2,6 +2,7 @@ package com.example.fooddelivery.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.data.FoodFavorite
@@ -14,17 +15,22 @@ import com.example.fooddelivery.data.dao.OrderDao
 import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.dao.foodFavDao
 import com.example.fooddelivery.data.orderStatus
+import com.example.fooddelivery.repository.AddressRepository
+import com.example.fooddelivery.repository.FoodRepository
+import com.example.fooddelivery.repository.OrderItemRepository
+import com.example.fooddelivery.repository.OrderRepository
+import com.example.fooddelivery.repository.foodFavRepository
 
 class homeViewModel(
-    private val foodDao: FoodDao,
-    private val foodFavDao: foodFavDao,
-    private val orderDao: OrderDao,
+    private val foodRepository: FoodRepository,
+    private val foodFavRepository: foodFavRepository,
+    private val orderRepository: OrderRepository,
     private val email: String,
-    private val orderItemDao: OrderItemDao,
-    private val addressDao: AddressDao
+    private val orderItemRepository: OrderItemRepository,
+    private val addressRepository: AddressRepository
 ) : ViewModel() {
     fun getDishes(): List<Food> {
-        return foodDao.getAllFood()
+        return foodFavRepository.getAllFood()
     }
 
     fun getSomeDishes(number: Int): List<Food> {
@@ -107,6 +113,27 @@ class homeViewModel(
             Log.e("custom_error", "error in orders: there is two TODO Cart")
         }
     }
+    class HomeViewModelFactory(
+        private val foodRepository: FoodRepository,
+        private val foodFavRepository: foodFavRepository,
+        private val orderRepository: OrderRepository,
+        private val email: String,
+        private val orderItemRepository: OrderItemRepository,
+        private val addressRepository: AddressRepository
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(homeViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return homeViewModel(
+                    foodRepository,
+                    foodFavRepository,
+                    orderRepository,
+                    email,
+                    orderItemRepository,
+                    addressRepository) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
 
 
 }

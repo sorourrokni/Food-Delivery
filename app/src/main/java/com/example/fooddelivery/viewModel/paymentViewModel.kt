@@ -2,6 +2,7 @@ package com.example.fooddelivery.viewModel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Order
@@ -12,12 +13,16 @@ import com.example.fooddelivery.data.dao.FoodDao
 import com.example.fooddelivery.data.dao.OrderDao
 import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.orderStatus
+import com.example.fooddelivery.repository.AddressRepository
+import com.example.fooddelivery.repository.FoodRepository
+import com.example.fooddelivery.repository.OrderItemRepository
+import com.example.fooddelivery.repository.OrderRepository
 
 class paymentViewModel(
-    private val orderDao: OrderDao,
-    private val orderItemDao: OrderItemDao,
-    private val foodDao: FoodDao,
-    private val addressDao: AddressDao,
+    private val orderRepository: OrderRepository,
+    private val orderItemRepository: OrderItemRepository,
+    private val foodRepository: FoodRepository,
+    private val addressRepository: AddressRepository,
     private val email:String
 ): ViewModel() {
     fun addToCart(name:String,number:Int){
@@ -122,5 +127,25 @@ class paymentViewModel(
             Log.e("custom_error","error in orders: there is two TODO Cart")
         }
     }
+    class PaymentViewModelFactory(
+        private val orderRepository: OrderRepository,
+        private val orderItemRepository: OrderItemRepository,
+        private val foodRepository: FoodRepository,
+        private val addressRepository: AddressRepository,
+        private val email:String
+    ) : ViewModelProvider.Factory {
+        override fun <T : ViewModel> create(modelClass: Class<T>): T {
+            if (modelClass.isAssignableFrom(paymentViewModel::class.java)) {
+                @Suppress("UNCHECKED_CAST")
+                return paymentViewModel(
+                    orderRepository,
+                    orderItemRepository,
+                    foodRepository,
+                    addressRepository,
+                    email
+                ) as T
+            }
+            throw IllegalArgumentException("Unknown ViewModel class")
+        }
 
-}
+    }

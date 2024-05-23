@@ -1,4 +1,4 @@
-package com.example.fooddelivery.data.repository
+package com.example.fooddelivery.repository
 
 import androidx.annotation.WorkerThread
 import com.example.fooddelivery.data.Order
