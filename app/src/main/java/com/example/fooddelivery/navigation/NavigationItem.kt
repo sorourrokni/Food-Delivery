@@ -56,3 +56,23 @@ sealed class AuthNavigationItem(var route: String) {
         )
 
 }
+
+
+
+sealed class PaymentNavigationItem(var route: String) {
+    data object Cart :
+        PaymentNavigationItem(
+            route = "cart"
+        )
+
+    data object Delivery :
+        PaymentNavigationItem(
+            route = "delivery"
+        )
+
+    data object Payment :
+        PaymentNavigationItem(
+            route = "payment"
+        )
+
+}

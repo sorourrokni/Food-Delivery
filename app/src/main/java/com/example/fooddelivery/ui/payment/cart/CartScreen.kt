@@ -22,9 +22,10 @@ import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FavoriteItem
 import com.example.fooddelivery.data.Food
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun CartScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
+fun CartScreen(navControllerWithHistory: NavControllerWithHistory, foodList: List<Food>, modifier: Modifier = Modifier) {
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier

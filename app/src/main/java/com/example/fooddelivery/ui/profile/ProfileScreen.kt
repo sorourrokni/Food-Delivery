@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.profile
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -16,9 +17,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.ProfileButton
 import com.example.fooddelivery.component.ProfileCard
@@ -35,6 +38,7 @@ fun ProfileScreen(
     address: Address,
     navControllerWithHistory: NavControllerWithHistory
 ) {
+    val mContext = LocalContext.current
     val scrollState = rememberScrollState()
 
     Column(
@@ -53,6 +57,10 @@ fun ProfileScreen(
             Image(
                 painter = painterResource(id = R.drawable.ic_shopping_cart),
                 contentDescription = null
+                ,modifier=Modifier.clickable { mContext.startActivity(
+                    Intent(mContext,
+                        PaymentActivity::class.java)
+                ) }
             )
         }
         Row(

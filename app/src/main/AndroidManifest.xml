@@ -30,6 +30,11 @@
             android:label="AuthActivity"
             android:theme="@style/Theme.FoodDelivery" />
         <activity
+            android:name=".PaymentActivity"
+            android:exported="false"
+            android:label="AuthActivity"
+            android:theme="@style/Theme.FoodDelivery" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
