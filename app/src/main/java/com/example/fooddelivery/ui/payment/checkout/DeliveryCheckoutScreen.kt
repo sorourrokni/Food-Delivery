@@ -21,9 +21,11 @@ import com.example.fooddelivery.component.DeliveryMethodCard
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
+import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.navigation.Screen
 
 @Composable
-fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifier,person: Person){
+fun DeliveryCheckoutScreen(navControllerWithHistory: NavControllerWithHistory,address:Address, total:Int, modifier: Modifier=Modifier, person: Person){
     val scrollState = rememberScrollState()
 
     Column(Modifier.verticalScroll(scrollState)){
@@ -45,7 +47,7 @@ fun DeliveryCheckoutScreen(address:Address,total:Int, modifier: Modifier=Modifie
             Text("$total", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=199.dp))
         }
         Spacer(modifier = Modifier.padding(top = 48.dp))
-        FilledButton(onClick = { /*TODO*/ }, text = "Proceed to payment")
+        FilledButton(onClick = { navControllerWithHistory.navigate(Screen.Payment.route)}, text = "Proceed to payment")
 
     }
 }

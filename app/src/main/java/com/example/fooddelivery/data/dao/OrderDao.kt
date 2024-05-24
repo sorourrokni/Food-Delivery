@@ -6,6 +6,7 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface OrderDao {
@@ -15,17 +16,17 @@ interface OrderDao {
     suspend fun deleteOrder(order: Order)
 
     @Query("select * from `order` inner join Person on(userID==email) where Person.email==:inputEmail")
-    fun getAllOrdersByUser(inputEmail:String):List<Order>
+    fun getAllOrdersByUser(inputEmail:String): Flow<List<Order>>
     @Query("select * from orderitem inner join `order` on (orderID==id)where orderID==:inputID")
-    fun getOrderItemsByID(inputID:Int):List<OrderItem>
+    fun getOrderItemsByID(inputID:Int):Flow<List<OrderItem>>
     @Query("select * from address inner join `order`  on (`order`.id==addressID)where address.id==:inputID")
     fun getOrderAddressByID(inputID:Int):List<Order>
     @Query("select * from `order` natural join person where person.email==:email and `order`.status=='DONE'")
-    fun getUserHistory(email:String):List<Order>
+    fun getUserHistory(email:String):Flow<List<Order>>
     @Query("select * from `order` natural join person where person.email==:email and `order`.status=='TODO'")
     fun getUserTODOCart(email:String):List<Order>
     @Query("select * from `order`")
-    fun getAllOrders():List<Order>
+    fun getAllOrders():List<Order>?
     @Query("select * from `order` where id==:inputID")
-    fun getOrderById(inputID: Int):Order
+    fun getOrderById(inputID: Int):Order?
 }

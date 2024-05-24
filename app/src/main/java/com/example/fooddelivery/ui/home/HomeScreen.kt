@@ -1,7 +1,9 @@
 package com.example.fooddelivery.ui.home
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,15 +20,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.fooddelivery.HomeActivity
+import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.CustomTabRow
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavControllerWithHistory) {
-
+    val mContext = LocalContext.current
     var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()
 
@@ -46,6 +51,10 @@ fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavContro
             Image(
                 painter = painterResource(id = R.drawable.ic_shopping_cart),
                 contentDescription = null
+                ,modifier=Modifier.clickable { mContext.startActivity(
+                    Intent(mContext,
+                        PaymentActivity::class.java)
+                ) }
             )
         }
         Row(

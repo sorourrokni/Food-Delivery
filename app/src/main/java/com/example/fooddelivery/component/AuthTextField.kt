@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AuthTextField(type: KeyboardType, label: String) {
+fun AuthTextField(type: KeyboardType, label: String):String {
     var text by rememberSaveable { mutableStateOf("") }
 
     androidx.compose.material3.TextField(
@@ -52,4 +52,5 @@ fun AuthTextField(type: KeyboardType, label: String) {
             focusedLabelColor = Color.Gray,
         )
     )
+    return text
 }

@@ -25,9 +25,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun LostConnectionScreen(name :String , modifier:Modifier=Modifier) {
+fun LostConnectionScreen(navControllerWithHistory: NavControllerWithHistory, modifier:Modifier=Modifier) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier= Modifier

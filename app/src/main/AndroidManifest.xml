@@ -4,6 +4,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".ProjectDataBase"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -17,6 +18,21 @@
             android:name=".ui.history.historyPage"
             android:exported="false"
             android:label="history_page"
+            android:theme="@style/Theme.FoodDelivery" />
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"
+            android:label="AuthActivity"
+            android:theme="@style/Theme.FoodDelivery" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="AuthActivity"
+            android:theme="@style/Theme.FoodDelivery" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false"
+            android:label="AuthActivity"
             android:theme="@style/Theme.FoodDelivery" />
         <activity
             android:name=".MainActivity"

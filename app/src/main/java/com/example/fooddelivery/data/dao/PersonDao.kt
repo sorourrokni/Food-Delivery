@@ -6,11 +6,12 @@ import androidx.room.Query
 import androidx.room.Upsert
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.Person
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PersonDao {
     @Upsert
-     fun upsertPerson(person: Person)
+    suspend fun upsertPerson(person: Person)
     @Delete
      fun deletePerson(person: Person)
 

@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.auth
 
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -27,12 +28,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.fooddelivery.ProjectDataBase
 import com.example.fooddelivery.R
+import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.ui.auth.login.LoginScreen
 import com.example.fooddelivery.ui.auth.signup.SignupScreen
+import com.example.fooddelivery.viewModel.authViewModel
 
 @Composable
-fun AuthLayout() {
+fun AuthLayout(authVM: authViewModel,navControllerWithHistory: NavControllerWithHistory) {
+
     val scrollState = rememberScrollState()
     val tabTitles = AuthTab.values()
     var selectedTabIndex by remember { mutableIntStateOf(0) }
@@ -96,8 +101,8 @@ fun AuthLayout() {
 
         }
         when (tabTitles[selectedTabIndex]) {
-            AuthTab.LOGIN -> LoginScreen("login")
-            AuthTab.SIGNUP -> SignupScreen("signup")
+            AuthTab.LOGIN -> LoginScreen(authVM,navControllerWithHistory,"login")
+            AuthTab.SIGNUP -> SignupScreen(authVM,navControllerWithHistory,"signup")
         }
     }
 }
