@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.auth.verification
 
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -23,8 +24,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.example.fooddelivery.HomeActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.VerificationCodeField
@@ -34,6 +37,7 @@ import com.example.fooddelivery.viewModel.authViewModel
 @Composable
 fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navControllerWithHistory: NavControllerWithHistory) {
     val scrollState = rememberScrollState()
+    val mContext = LocalContext.current
     Column(
         modifier = Modifier
             .verticalScroll(scrollState)
@@ -87,7 +91,11 @@ fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navC
         var number= VerificationCodeField(4).take(4)
         Spacer(modifier = Modifier.height(280.dp))
 
-        FilledButton(onClick = { /*TODO*/ }, text = "Submit")
+        FilledButton(onClick = {
+                               if(number==authVM.verificationCode.toString()){
+                                   mContext.startActivity(Intent(mContext, HomeActivity::class.java))
+                               }
+        }, text = "Submit")
 
     }
 }

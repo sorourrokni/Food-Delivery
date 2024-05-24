@@ -77,11 +77,12 @@ fun ForgotPasswordScreen(authVM: authViewModel, navControllerWithHistory: NavCon
 
             }
         }
-        AuthTextField(KeyboardType.Email, label = "Email address")
+        var email=AuthTextField(KeyboardType.Email, label = "Email address")
 
         Spacer(modifier = Modifier.height(280.dp))
 
-        FilledButton(onClick = { navControllerWithHistory.navigate(Screen.Verification.route) }, text = "Enter code")
+        FilledButton(onClick = { navControllerWithHistory.navigate(Screen.Verification.route)
+                               authVM.sendEmail(email)}, text = "Enter email")
 
     }
 }
