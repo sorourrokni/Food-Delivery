@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CustomTextField(type: KeyboardType, label: String) {
+fun CustomTextField(type: KeyboardType, label: String):String {
     var text by rememberSaveable { mutableStateOf("") }
 
     TextField(
@@ -52,4 +52,5 @@ fun CustomTextField(type: KeyboardType, label: String) {
             focusedLabelColor = Color.Gray,
         )
     )
+    return text
 }

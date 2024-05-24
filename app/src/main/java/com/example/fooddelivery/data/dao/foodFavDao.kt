@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface foodFavDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertFoodFav(foodFavorite: FoodFavorite)
+    suspend fun insertFoodFav(FoodFavorite: FoodFavorite)
     @Delete
-    fun deleteFoodFav(foodFavorite: FoodFavorite)
-    @Query("select name,description,price,category,imageResId from FoodFavorite natural join food where FoodFavorite.userID==:email")
+     fun deleteFoodFav(FoodFavorite: FoodFavorite)
+    @Query("select name,description,price,imageResId from FoodFavorite natural join food where FoodFavorite.userID==:email")
     fun getAllFoodFavByUserID(email:String): List<Food>
     @Query("select FoodFavorite.foodID,FoodFavorite.userID from FoodFavorite , person , food where FoodFavorite.userID==:email and FoodFavorite.foodID==:name")
     fun userLikeFood(email:String,name:String):FoodFavorite?

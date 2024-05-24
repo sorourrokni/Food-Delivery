@@ -2,7 +2,6 @@ package com.example.fooddelivery.navigation
 
 import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Address
-import com.example.fooddelivery.data.Category
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.data.Payment
@@ -14,7 +13,6 @@ class FakeData {
     val person1 = generateHardcodedPersonData().first()
 
     val address1 = generateHardcodedAddressData(persons).first()
-    val addresses = generateHardcodedAddressData(persons)
 
     val food1 = generateHardcodedFoodData()[0]
     val food2 = generateHardcodedFoodData()[1]
@@ -79,11 +77,11 @@ class FakeData {
 
     private fun generateHardcodedFoodData(): List<Food> {
         return listOf(
-            Food("Veggie tomato mix", "N1,900", 100, Category.Foods, R.drawable.food_1),
-            Food("Egg and cucumber", "N1,900", 200, Category.Drinks, R.drawable.food_2),
-            Food("Egg and cucumber", "N1,900", 250, Category.Snacks, R.drawable.food_3),
-            Food("Egg and cucumber", "N1,900", 480, Category.Sauce, R.drawable.food_4),
-            Food("Egg and cucumber", "N1,900", 100, Category.Foods, R.drawable.food_1),
+            Food("Veggie tomato mix", "N1,900", 100, R.drawable.food_1),
+            Food("Egg and cucumber", "N1,900", 200, R.drawable.food_2),
+            Food("Egg and cucumber", "N1,900", 250, R.drawable.food_3),
+            Food("Egg and cucumber", "N1,900", 480, R.drawable.food_4),
+            Food("Egg and cucumber", "N1,900", 100, R.drawable.food_1),
         )
     }
 }

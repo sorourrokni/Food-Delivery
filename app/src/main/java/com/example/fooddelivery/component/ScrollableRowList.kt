@@ -14,17 +14,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
-import com.example.fooddelivery.data.Category
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
 
 val foodItems = listOf(
-    Food("Veggie tomato mix", "description", 1900, Category.Foods, R.drawable.food_1),
-    Food("Egg and cucumber", "description", 1900, Category.Drinks, R.drawable.food_2),
-    Food("Egg and cucumber", "description", 1900, Category.Snacks, R.drawable.food_3),
-    Food("Egg and cucumber", "description", 1900, Category.Sauce, R.drawable.food_4),
-    Food("Egg and cucumber", "description", 1900, Category.Foods, R.drawable.food_1),
+    Food("Veggie tomato mix", "description", 1900, R.drawable.food_1),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_2),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_3),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_4),
+    Food("Egg and cucumber", "description", 1900, R.drawable.food_1),
 )
 
 @Composable

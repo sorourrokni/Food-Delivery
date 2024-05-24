@@ -8,16 +8,13 @@ import kotlinx.coroutines.flow.Flow
 class PersonRepository(private val personDao: PersonDao) {
 
 
+    @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun upsert(person: Person) {
         personDao.upsertPerson(person)
     }
 
-    @Suppress("RedundantSuspendModifier")
-    @WorkerThread
-    suspend fun getAllPerson(): List<Person>? {
-        return personDao.getAllPerson()
-    }
+
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

@@ -28,9 +28,11 @@ import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.VerificationCodeField
+import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.viewModel.authViewModel
 
 @Composable
-fun VerificationScreen(name:String,modifier: Modifier =Modifier) {
+fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navControllerWithHistory: NavControllerWithHistory) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier

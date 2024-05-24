@@ -30,4 +30,29 @@ sealed class NavigationItem(var route: String, var selectedIcon: Int, var unSele
         unSelectedIcon = R.drawable.ic_stickynote_unselected
     )
 
+
+
+}
+
+
+sealed class AuthNavigationItem(var route: String) {
+    data object ForgotPass :
+        AuthNavigationItem(
+            route = "forgotPass"
+        )
+
+    data object Verification :
+        AuthNavigationItem(
+            route = "verification"
+        )
+
+    data object ConnectionLoss :
+        AuthNavigationItem(
+            route = "connectionLoss"
+        )
+    data object AuthLayout :
+        AuthNavigationItem(
+            route = "authLayout"
+        )
+
 }

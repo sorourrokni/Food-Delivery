@@ -1,7 +1,5 @@
 package com.example.fooddelivery.component
 
-import android.graphics.drawable.Drawable
-import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -24,7 +22,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Food
-import com.example.fooddelivery.data.FoodImages
 
 @Composable
 fun FavoriteItem(food: Food, modifier: Modifier = Modifier) {
@@ -44,7 +41,7 @@ fun FavoriteItem(food: Food, modifier: Modifier = Modifier) {
                 .padding(top = 16.dp), verticalArrangement = Arrangement.Center
         ) {
             Image(
-                painter = painterResource(id = food.imageResId ),
+                painter = painterResource(id = food.imageResId),
                 contentDescription = null,
                 Modifier
                     .size(100.dp, 100.dp)

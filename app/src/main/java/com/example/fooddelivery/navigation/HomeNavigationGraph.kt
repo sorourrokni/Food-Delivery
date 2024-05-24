@@ -15,7 +15,7 @@ import com.example.fooddelivery.ui.profile.ProfileScreen
 import com.example.fooddelivery.ui.profile.edit.EditProfileScreen
 
 @Composable
-fun NavigationGraph(navController: NavHostController, fakeData: FakeData, modifier: Modifier) {
+fun HomeNavigationGraph(navController: NavHostController, fakeData: FakeData, modifier: Modifier) {
 
     val navControllerWithHistory = remember { NavControllerWithHistory(navController) }
 

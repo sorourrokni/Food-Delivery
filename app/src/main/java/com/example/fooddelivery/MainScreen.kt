@@ -9,8 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.example.fooddelivery.navigation.BottomNavigationBar
 import com.example.fooddelivery.navigation.FakeData
+import com.example.fooddelivery.navigation.HomeNavigationGraph
 import com.example.fooddelivery.navigation.NavControllerWithHistory
-import com.example.fooddelivery.navigation.NavigationGraph
 import com.example.fooddelivery.navigation.NavigationItem
 
 @Composable
@@ -29,7 +29,7 @@ fun MainScreen() {
     Scaffold(
         bottomBar = { BottomNavigationBar(navControllerWithHistory.navController, items) }
     ) { innerPadding: PaddingValues ->
-        NavigationGraph(
+        HomeNavigationGraph(
             navController,
             fakeData = fakeData,
             modifier = Modifier.padding(innerPadding)

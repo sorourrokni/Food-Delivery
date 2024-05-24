@@ -45,23 +45,16 @@ abstract class DataBase:RoomDatabase() {
             // Delete all content here.
             foodDao.deleteAll()
 
-            // Add sample words.
-//            var word = Word("Hello")
-//            wordDao.insert(word)
-//            word = Word("World!")
-//            wordDao.insert(word)
-            var food1=Food("Veggie tomato mix", "N1,900", 100, Category.Foods, R.drawable.food_1)
-            var food2= Food("Egg and cucumber", "N1,900", 200, Category.Drinks, R.drawable.food_2)
-            var food3=Food("Egg and cucumber", "N1,900", 250, Category.Snacks, R.drawable.food_3)
-            var food4=Food("Egg and cucumber", "N1,900", 480, Category.Sauce, R.drawable.food_4)
-            var food5=Food("Egg and cucumber", "N1,900", 100, Category.Foods, R.drawable.food_1)
+            var food1=Food("Veggie tomato mix", "N1,900", 100, R.drawable.food_1)
+            var food2= Food("Egg and cucumber", "N1,900", 200, R.drawable.food_2)
+            var food3=Food("Pizza", "N1,900", 250, R.drawable.food_3)
+            var food4=Food("Kabab ", "N1,900", 480, R.drawable.food_4)
+            var food5=Food("Chicken", "N1,900", 100, R.drawable.food_1)
             foodDao.upsertFood(food1)
             foodDao.upsertFood(food2)
             foodDao.upsertFood(food3)
             foodDao.upsertFood(food4)
             foodDao.upsertFood(food5)
-
-            // TODO: Add your own words!
         }
     }
 
@@ -85,6 +78,7 @@ abstract class DataBase:RoomDatabase() {
                     DataBase::class.java,
                     "project_database"
                 ).addCallback(WordDatabaseCallback(scope))
+                    .allowMainThreadQueries()
                     .build()
                 INSTANCE = instance
                 instance

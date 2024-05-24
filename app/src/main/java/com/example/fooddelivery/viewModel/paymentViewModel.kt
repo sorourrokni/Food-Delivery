@@ -21,7 +21,7 @@ import com.example.fooddelivery.repository.OrderItemRepository
 import com.example.fooddelivery.repository.OrderRepository
 import kotlinx.coroutines.launch
 
-class PaymentViewModel(
+class paymentViewModel(
     private val orderRepository: OrderRepository,
     private val orderItemRepository: OrderItemRepository,
     private val foodRepository: FoodRepository,
@@ -193,9 +193,9 @@ class PaymentViewModel(
         private val email: String
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(PaymentViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(paymentViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return PaymentViewModel(
+                return paymentViewModel(
                     orderRepository,
                     orderItemRepository,
                     foodRepository,

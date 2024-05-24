@@ -1,15 +1,20 @@
 package com.example.fooddelivery.viewModel
 
 import android.util.Log
+import android.util.MutableInt
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Person
+import com.example.fooddelivery.data.dao.PersonDao
+import com.example.fooddelivery.event.PersonEvent
 import com.example.fooddelivery.repository.PersonRepository
 import kotlinx.coroutines.launch
 import java.util.concurrent.ThreadLocalRandom
@@ -22,50 +27,56 @@ import javax.mail.Transport
 import javax.mail.internet.AddressException
 import javax.mail.internet.InternetAddress
 import javax.mail.internet.MimeMessage
+import kotlin.random.Random
 
-class AuthViewModel(private val personRepository: PersonRepository):ViewModel() {
+class authViewModel(private val personRepository: PersonRepository):ViewModel() {
 
-    private var verificationCode by mutableIntStateOf(0)
+    var verificationCode by mutableStateOf(0)
 
     fun login(email: String, password: String): Boolean {
-        var person: Person?
-        var result = false
+        var person: Person? = null
         viewModelScope.launch {
             person = personRepository.getPersonWithEmail(email)
-            if (person != null) {
-                result = if (person?.password == password) {
-                    Log.i("login", "${person?.email} entered")
-                    //navigation
-                    true
-                } else {
-                    Log.i("login", "${person?.email} wrong password")
-                    //navigation
-                    false
-                }
-            }
-            else{
-                result = false
-                Log.i("login", "$email does not exist")
-            }
         }
-        return result
+        if (person != null) {
+            if (person?.password == password) {
+                Log.i("login", "${person?.email} entered")
+                //navigation
+                return true
+            }
+            else {
+                Log.i("login", "${person?.email} wrong password")
+                //navigation
+                return false
+            }
+
+        }
+        else{
+            return false
+        }
     }
 
 
-    fun signUp(email: String, password: String,  onSuccess: () -> Unit, onError: (String) -> Unit) {
-        viewModelScope.launch {
-            val person = personRepository.getPersonWithEmail(email)
-            if (person == null) {
-                Log.i("singUp", "$email signed up correctly")
-                val newPerson = Person(email, "", "", password, R.drawable.person1)
+    fun signUp(email: String, password: String): Boolean {
+        var person = viewModelScope.launch {
+            personRepository.getPersonWithEmail(email)
+        }
+        if (person == null) {
+            Log.i("singUp", "$email signed up correctly")
+            var newPerson = Person(email, "", "", password, R.drawable.person1)
+            viewModelScope.launch {
                 personRepository.upsert(newPerson)
-                onSuccess()
-            } else {
-                Log.i("singUp", "$email has registered already")
-                onError("$email has registered already")
             }
+
+
+            return true
+        } else {
+            Log.i("singUp", "$email has registered already")
+            return false
         }
+
     }
+
     fun sendEmail(email: String) {
         verificationCode = ThreadLocalRandom.current().nextInt(1000, 9999)
         try {
@@ -113,29 +124,25 @@ class AuthViewModel(private val personRepository: PersonRepository):ViewModel() 
         return input == verificationCode
     }
 
-    fun createListOfUser(persons: List<Person>) {
-        viewModelScope.launch {
-            for (p in persons.iterator()) {
-                personRepository.upsert(p)
+    fun createNewUser(email: String, password: String) {
+        val person = Person(email, "", "", password, R.drawable.person1)
+        try {
+            viewModelScope.launch {
+                personRepository.upsert(person)
             }
+        } catch (e: Exception) {
+            Log.e("custom_error", e.toString())
         }
-    }
 
-    fun getAllPersons(): List<Person>{
-        var persons: MutableList<Person> = mutableListOf()
-        viewModelScope.launch {
-            persons = (personRepository.getAllPerson() as MutableList<Person>?)!!
-        }
-        return persons
     }
 
 
     class AuthViewModelFactory(private val repository: PersonRepository) :
         ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(AuthViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(authViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return AuthViewModel(repository) as T
+                return authViewModel(repository) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
