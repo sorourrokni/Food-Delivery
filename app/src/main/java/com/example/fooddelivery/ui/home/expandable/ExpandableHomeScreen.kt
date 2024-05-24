@@ -15,17 +15,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavHostController
 import com.example.fooddelivery.R
-import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.component.ItemGrid
+import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.navigation.Screen
 
 @Composable
 fun ExpandableHomeScreen(
     name: String,
     modifier: Modifier = Modifier,
-    navControllerWithHistory: NavControllerWithHistory
+    navControllerWithHistory: NavControllerWithHistory,
+    foodItems: List<Food>
 ) {
     Column(modifier = Modifier.background(color = MaterialTheme.colorScheme.tertiaryContainer)) {
         Row(
@@ -45,6 +46,6 @@ fun ExpandableHomeScreen(
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 18.sp)
             )
         }
-        ItemGrid(navControllerWithHistory)
+        ItemGrid(navControllerWithHistory, foodItems = foodItems)
     }
 }

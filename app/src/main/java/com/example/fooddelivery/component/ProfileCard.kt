@@ -21,19 +21,21 @@ import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
 
 @Composable
-fun ProfileCard(person: Person, modifier: Modifier, address: Address) {
+fun ProfileCard(person: Person?, modifier: Modifier, address: Address?) {
     Row(
         modifier
             .background(color = Color.White, shape = RoundedCornerShape(20.dp))
     ) {
-        Image(
-            modifier = Modifier
-                .size(91.dp, 100.dp)
-                .fillMaxHeight()
-                .padding(start = 16.dp, top = 18.dp),
-            painter = painterResource(id = person.profileImg),
-            contentDescription = null,
-        )
+        if (person != null) {
+            Image(
+                modifier = Modifier
+                    .size(91.dp, 100.dp)
+                    .fillMaxHeight()
+                    .padding(start = 16.dp, top = 18.dp),
+                painter = painterResource(id = person.profileImg),
+                contentDescription = null,
+            )
+        }
         Column(
             modifier = Modifier.padding(
                 start = 16.dp,
@@ -42,37 +44,50 @@ fun ProfileCard(person: Person, modifier: Modifier, address: Address) {
                 bottom = 24.dp
             )
         ) {
-            Text(
-                person.fullName, style = MaterialTheme.typography.headlineSmall.copy(
-                    fontSize = 18.sp, lineHeight = 21.sp
-                ), modifier = Modifier.padding(bottom = 6.dp)
-            )
-            Text(
-                person.email,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-            )
+            if (person != null) {
+                Text(
+                    person.fullName, style = MaterialTheme.typography.headlineSmall.copy(
+                        fontSize = 18.sp, lineHeight = 21.sp
+                    ), modifier = Modifier.padding(bottom = 6.dp)
+                )
+            }
+            if (person != null) {
+                Text(
+                    person.email,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
             Divider(
                 modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
                 color = Color.Black,
                 thickness = 0.5.dp
             )
-            Text(
-                person.phoneNumber,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-            )
+            if (person != null) {
+                Text(
+                    person.phoneNumber,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
             Divider(
                 modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
                 color = Color.Black,
                 thickness = 0.5.dp
             )
-            Text(
-                address.address,
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
-            )
-
+            if (address != null) {
+                Text(
+                    address.address,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            } else {
+                Text(
+                    "No address available. Please add your address.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onPrimaryContainer
+                )
+            }
         }
     }
 }

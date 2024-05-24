@@ -16,6 +16,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -25,22 +27,21 @@ import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.ProfileButton
 import com.example.fooddelivery.component.ProfileCard
-import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
+import com.example.fooddelivery.viewModel.ProfileViewModel
 
 @Composable
 fun ProfileScreen(
-    person: Person,
-    name: String,
+    person: Person?,
     modifier: Modifier = Modifier,
-    address: Address,
+    profileViewModel: ProfileViewModel,
     navControllerWithHistory: NavControllerWithHistory
 ) {
     val mContext = LocalContext.current
     val scrollState = rememberScrollState()
-
+    val address by profileViewModel.address.collectAsState()
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
@@ -56,11 +57,14 @@ fun ProfileScreen(
             Image(painter = painterResource(id = R.drawable.ic_more), contentDescription = null)
             Image(
                 painter = painterResource(id = R.drawable.ic_shopping_cart),
-                contentDescription = null
-                ,modifier=Modifier.clickable { mContext.startActivity(
-                    Intent(mContext,
-                        PaymentActivity::class.java)
-                ) }
+                contentDescription = null, modifier = Modifier.clickable {
+                    mContext.startActivity(
+                        Intent(
+                            mContext,
+                            PaymentActivity::class.java
+                        )
+                    )
+                }
             )
         }
         Row(
@@ -93,6 +97,7 @@ fun ProfileScreen(
             )
         }
         ProfileCard(
+
             person = person,
             Modifier.padding(start = 42.dp, end = 57.dp),
             address = address

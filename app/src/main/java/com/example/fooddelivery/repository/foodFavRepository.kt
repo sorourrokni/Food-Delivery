@@ -29,8 +29,7 @@ class foodFavRepository(private val foodFavDao: foodFavDao) {
     }
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
-    suspend fun getAllUserFavoriteFood(email:String):List<Food> {
+    suspend fun getAllUserFavoriteFood(email: String): Flow<List<Food>> {
         return foodFavDao.getAllFoodFavByUserID(email)
     }
-
 }

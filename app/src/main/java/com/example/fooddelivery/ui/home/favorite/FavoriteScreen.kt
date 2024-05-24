@@ -1,5 +1,6 @@
 package com.example.fooddelivery.ui.home.favorite
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -7,6 +8,7 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -27,15 +29,18 @@ import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FavoriteItem
 import com.example.fooddelivery.data.Food
+import kotlinx.coroutines.flow.MutableStateFlow
 
+@SuppressLint("StateFlowValueCalledInComposition")
 @Composable
-fun FavoriteScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
+fun FavoriteScreen(foodList: MutableStateFlow<List<Food>>, modifier: Modifier = Modifier) {
     val mContext = LocalContext.current
     val scrollState = rememberScrollState()
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
             .background(color = MaterialTheme.colorScheme.onSecondary)
+            .fillMaxHeight()
 
     ) {
         Row(
@@ -48,11 +53,14 @@ fun FavoriteScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
             Image(painter = painterResource(id = R.drawable.ic_more), contentDescription = null)
             Image(
                 painter = painterResource(id = R.drawable.ic_shopping_cart),
-                contentDescription = null
-                ,modifier=Modifier.clickable { mContext.startActivity(
-                    Intent(mContext,
-                        PaymentActivity::class.java)
-                ) }
+                contentDescription = null, modifier = Modifier.clickable {
+                    mContext.startActivity(
+                        Intent(
+                            mContext,
+                            PaymentActivity::class.java
+                        )
+                    )
+                }
             )
         }
         Row(
@@ -67,10 +75,10 @@ fun FavoriteScreen(foodList: List<Food>, modifier: Modifier = Modifier) {
                 color = Color.Black
             )
         }
-        if (foodList.isNotEmpty()) {
-            val it = foodList.iterator()
-            for (e in it) {
-                FavoriteItem(e)
+        if (foodList.value.isNotEmpty()) {
+            val foods = foodList.value
+            for (food in foods) {
+                FavoriteItem(food)
             }
         } else {
             Row(

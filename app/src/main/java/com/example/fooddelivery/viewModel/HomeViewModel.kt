@@ -1,12 +1,9 @@
 package com.example.fooddelivery.viewModel
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Delivery
 import com.example.fooddelivery.data.Food
@@ -14,22 +11,17 @@ import com.example.fooddelivery.data.FoodFavorite
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
 import com.example.fooddelivery.data.PaymentMethod
-import com.example.fooddelivery.data.dao.AddressDao
-import com.example.fooddelivery.data.dao.FoodDao
-import com.example.fooddelivery.data.dao.OrderDao
-import com.example.fooddelivery.data.dao.OrderItemDao
-import com.example.fooddelivery.data.dao.foodFavDao
 import com.example.fooddelivery.data.orderStatus
 import com.example.fooddelivery.repository.AddressRepository
 import com.example.fooddelivery.repository.FoodRepository
 import com.example.fooddelivery.repository.OrderItemRepository
 import com.example.fooddelivery.repository.OrderRepository
 import com.example.fooddelivery.repository.foodFavRepository
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 
-class homeViewModel(
+class HomeViewModel(
     private val foodRepository: FoodRepository,
     private val foodFavRepository: foodFavRepository,
     private val orderRepository: OrderRepository,
@@ -38,71 +30,89 @@ class homeViewModel(
     private val addressRepository: AddressRepository
 ) : ViewModel() {
 
-    val allFoods: LiveData <List<Food>> = foodRepository.allFoods.asLiveData()
-    fun getFoodInfo(name: String): Food? {
-        var food:Food?=null
+    private val _foods = MutableStateFlow<List<Food>>(emptyList())
+    val foods get() = _foods
+
+    init {
         viewModelScope.launch {
-            food= foodRepository.getFoodInfo(name)
+            foodRepository.getAllFoods().collect { foods ->
+                _foods.value = foods
+            }
         }
-        return  food
+    }
+
+    fun getEmail(): String {
+        return email
+    }
+
+    fun getFoodInfo(name: String): Food? {
+        var food: Food? = null
+        viewModelScope.launch {
+            food = foodRepository.getFoodInfo(name)
+        }
+        return food
 
     }
-    fun getAllUserFavoriteFood(email:String):List<Food>?{
-        var food:List<Food>?=null
+
+    fun getAllUserFavoriteFood(email: String): MutableStateFlow<List<Food>> {
+        val favoriteFoods = MutableStateFlow<List<Food>>(emptyList())
+
         viewModelScope.launch {
-            food= foodFavRepository.getAllUserFavoriteFood(email)
+            foodFavRepository.getAllUserFavoriteFood(email).collect { fetchedFoods ->
+                favoriteFoods.value = fetchedFoods
+            }
         }
-        return  food
+
+        return favoriteFoods
     }
+
     fun likeFood(name: String) {
-        var food:FoodFavorite?=null
-        viewModelScope.launch{
+        var food: FoodFavorite? = null
+        viewModelScope.launch {
             food = foodFavRepository.userLikeFood(email, name)
         }
 
         if (food == null) {
             val FoodFavorite = FoodFavorite(name, email)
-            viewModelScope.launch{
+            viewModelScope.launch {
                 foodFavRepository.insert(FoodFavorite)
             }
-        }
-        else {
+        } else {
             Log.i("like_food", "food has been liked already")
         }
     }
 
     fun disLikeFood(name: String) {
-        var food:FoodFavorite?=null
-        viewModelScope.launch{
+        var food: FoodFavorite? = null
+        viewModelScope.launch {
             food = foodFavRepository.userLikeFood(email, name)
         }
 
         if (food != null) {
             val FoodFavorite = FoodFavorite(name, email)
-            viewModelScope.launch{
+            viewModelScope.launch {
                 foodFavRepository.delete(FoodFavorite)
             }
-        }
-        else {
+        } else {
             Log.i("like_food", "food hasn't been liked ")
         }
     }
 
     fun addToCart(name: String, number: Int = 1) {
-        var orderList:List<Order>?= listOf()
-        var food:Food?=null
-        var address: Address?=null
+        var orderList: List<Order>? = listOf()
+        var food: Food? = null
+        var address: Address? = null
         viewModelScope.launch {
-             orderList = orderRepository.getTODOOrders(email)
-             food = foodRepository.getFoodInfo(name)
-             address = addressRepository.getUserAddress(name)
+            orderList = orderRepository.getTODOOrders(email)
+            food = foodRepository.getFoodInfo(name)
+            address = addressRepository.getUserAddress(name)
         }
 
 
         if (orderList?.count() == 1) {
-            var orderItem :OrderItem?=null
+            var orderItem: OrderItem? = null
             viewModelScope.launch {
-                    orderItem=orderItemRepository.getOrderItem(orderList!![0].id, name)
+                orderItem = orderItemRepository.getOrderItem(orderList!![0].id, name)
             }
 
             if (orderItem == null) {
@@ -118,7 +128,7 @@ class homeViewModel(
                 }
             }
 
-            var orderTODO:Order?=null
+            var orderTODO: Order? = null
             viewModelScope.launch {
                 orderRepository.getOrderById(orderList!![0].id)
             }
@@ -133,9 +143,9 @@ class homeViewModel(
 
         }
         if (orderList!!.isEmpty()) {
-            var allOrders :List<Order>?=null
+            var allOrders: List<Order>? = null
             viewModelScope.launch {
-               allOrders= orderRepository.getAllOrders()
+                allOrders = orderRepository.getAllOrders()
             }
 
             if (allOrders!!.isEmpty()) {
@@ -166,6 +176,7 @@ class homeViewModel(
             Log.e("custom_error", "error in orders: there is two TODO Cart")
         }
     }
+
     class HomeViewModelFactory(
         private val foodRepository: FoodRepository,
         private val foodFavRepository: foodFavRepository,
@@ -175,19 +186,20 @@ class homeViewModel(
         private val addressRepository: AddressRepository
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(homeViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(HomeViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return homeViewModel(
+                return HomeViewModel(
                     foodRepository,
                     foodFavRepository,
                     orderRepository,
                     email,
                     orderItemRepository,
-                    addressRepository) as T
+                    addressRepository
+                ) as T
             }
             throw IllegalArgumentException("Unknown ViewModel class")
         }
 
 
-}
+    }
 }

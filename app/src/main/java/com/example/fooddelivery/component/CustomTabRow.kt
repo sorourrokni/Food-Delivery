@@ -9,16 +9,22 @@ import androidx.compose.material3.TabRowDefaults.tabIndicatorOffset
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun CustomTabRow(name: String, modifier: Modifier = Modifier,navControllerWithHistory: NavControllerWithHistory) {
+fun CustomTabRow(
+    name: String,
+    modifier: Modifier = Modifier,
+    navControllerWithHistory: NavControllerWithHistory,
+    foodItems: List<Food>
+) {
     val tabTitles = listOf("Foods", "Drinks", "Snacks", "Sauce")
-    var selectedTabIndex by remember { mutableStateOf(0) }
+    var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     Column {
         ScrollableTabRow(
@@ -50,10 +56,10 @@ fun CustomTabRow(name: String, modifier: Modifier = Modifier,navControllerWithHi
 
         // Content below the tab row
         when (selectedTabIndex) {
-            0 -> ScrollableRowList(navControllerWithHistory)
-            1 -> ScrollableRowList(navControllerWithHistory)
-            2 -> ScrollableRowList(navControllerWithHistory)
-            3 -> ScrollableRowList(navControllerWithHistory)
+            0 -> ScrollableRowList(navControllerWithHistory, foodItems = foodItems)
+            1 -> ScrollableRowList(navControllerWithHistory, foodItems = foodItems)
+            2 -> ScrollableRowList(navControllerWithHistory, foodItems = foodItems)
+            3 -> ScrollableRowList(navControllerWithHistory, foodItems = foodItems)
         }
     }
 }

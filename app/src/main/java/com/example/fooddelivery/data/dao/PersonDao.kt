@@ -4,9 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.Person
-import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface PersonDao {
@@ -17,6 +15,5 @@ interface PersonDao {
 
     @Query ("select * from Person where email==:emailInput")
     fun getPersonWithEmail(emailInput:String):Person?
-
 
 }

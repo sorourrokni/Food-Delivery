@@ -2,7 +2,6 @@ package com.example.fooddelivery.repository
 
 import androidx.annotation.WorkerThread
 import com.example.fooddelivery.data.Food
-import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.data.dao.FoodDao
 import kotlinx.coroutines.flow.Flow
 
@@ -10,7 +9,9 @@ class FoodRepository(private val foodDao: FoodDao) {
 
 
 
-    val allFoods: Flow<List<Food>> = foodDao.getAllFood()
+    fun getAllFoods(): Flow<List<Food>> {
+        return foodDao.getAllFood()
+    }
 
     @Suppress("RedundantSuspendModifier")
     @WorkerThread

@@ -19,10 +19,10 @@ class ProjectDataBase : Application() {
     val database by lazy { DataBase.getDatabase(this,applicationScope) }
     val addressRepository by lazy { AddressRepository(database.addressDao()) }
     val foodFavRepository by lazy { foodFavRepository(database.foodFavDao()) }
-    val FoodRepository by lazy { FoodRepository(database.foodDao()) }
-    val OrderItemRepository by lazy { OrderItemRepository(database.orderItemDao()) }
-    val OrderRepository by lazy { OrderRepository(database.orderDao()) }
-    val PersonRepository by lazy { PersonRepository(database.personDao()) }
+    val foodRepository by lazy { FoodRepository(database.foodDao()) }
+    val orderItemRepository by lazy { OrderItemRepository(database.orderItemDao()) }
+    val orderRepository by lazy { OrderRepository(database.orderDao()) }
+    val personRepository by lazy { PersonRepository(database.personDao()) }
 
 
 }
