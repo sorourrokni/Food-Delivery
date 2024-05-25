@@ -29,14 +29,21 @@ import com.example.fooddelivery.component.ProfileTextField
 import com.example.fooddelivery.data.Address
 import com.example.fooddelivery.data.Person
 import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.navigation.NavigationItem
+import com.example.fooddelivery.viewModel.ProfileViewModel
 
 @Composable
 fun EditProfileScreen(
     person: Person,
     modifier: Modifier = Modifier,
     address: Address,
-    navControllerWithHistory: NavControllerWithHistory
+    navControllerWithHistory: NavControllerWithHistory,
+    profileViewModel: ProfileViewModel
 ) {
+    var name by remember { mutableStateOf(person.fullName) }
+    var email by remember { mutableStateOf(person.email) }
+    var phoneNumber by remember { mutableStateOf(person.phoneNumber) }
+    var newAddress by remember { mutableStateOf(address.address) }
     val scrollState = rememberScrollState()
 
     Column(
@@ -75,11 +82,8 @@ fun EditProfileScreen(
         Spacer(Modifier.height(34.dp))
 
         Column(modifier = Modifier.padding(start = 50.dp)) {
-            var name by remember { mutableStateOf(person.fullName) }
-            var email by remember { mutableStateOf(person.email) }
-            var phoneNumber by remember { mutableStateOf(person.phoneNumber) }
-            var address by remember { mutableStateOf(address.address) }
-            ProfileTextField(
+
+            name = ProfileTextField(
                 label = "Name",
                 type = KeyboardType.Text,
                 base = person.fullName,
@@ -87,7 +91,7 @@ fun EditProfileScreen(
                 50
             )
             Spacer(Modifier.height(12.dp))
-            ProfileTextField(
+            email = ProfileTextField(
                 label = "Email",
                 type = KeyboardType.Text,
                 base = person.email,
@@ -95,7 +99,7 @@ fun EditProfileScreen(
                 50
             )
             Spacer(Modifier.height(12.dp))
-            ProfileTextField(
+            phoneNumber = ProfileTextField(
                 label = "Phone",
                 type = KeyboardType.Text,
                 base = person.phoneNumber,
@@ -103,9 +107,23 @@ fun EditProfileScreen(
                 50
             )
             Spacer(Modifier.height(12.dp))
-            ProfileTextField(label = "Address", type = KeyboardType.Text, base = address, 315, 90)
+            newAddress = ProfileTextField(
+                label = "Address",
+                type = KeyboardType.Text,
+                base = address.address,
+                315,
+                90
+            )
         }
         Spacer(Modifier.height(72.dp))
-        FilledButton(onClick = { /*TODO*/ }, text = "Update")
+        FilledButton(onClick = {
+            profileViewModel.updateProfileInfo(
+                name = name,
+                newEmail = email,
+                phone = phoneNumber,
+                address = newAddress
+            )
+            navControllerWithHistory.navigate(NavigationItem.Profile.route)
+        }, text = "Update")
     }
 }
