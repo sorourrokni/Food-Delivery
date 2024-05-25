@@ -26,22 +26,19 @@ import com.example.fooddelivery.component.FoodCaption
 import com.example.fooddelivery.component.ImageSlider
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
+import com.example.fooddelivery.viewModel.HomeViewModel
 
 @Composable
 fun FoodDetailScreen(
     name: String,
     modifier: Modifier = Modifier,
-    navControllerWithHistory: NavControllerWithHistory
+    navControllerWithHistory: NavControllerWithHistory,
+    food: Food?,
+    homeViewModel: HomeViewModel
 ) {
 
     val scrollState = rememberScrollState()
 
-    val foodItem = Food(
-        "Veggie tomato mix",
-        "description",
-        price = 2000,
-        imageResId = R.drawable.food_1
-    )
     Column(
         modifier = modifier
             .verticalScroll(scrollState)
@@ -63,30 +60,40 @@ fun FoodDetailScreen(
                 colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primaryContainer)
             )
             Image(
-                painter = painterResource(id = R.drawable.ic_heart_unselected),
+                modifier = Modifier.clickable {
+
+                },
+                painter = painterResource(
+                    id = R.drawable.ic_heart_unselected
+                ),
                 contentDescription = null,
-                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primaryContainer)
             )
         }
-        ImageSlider(images = listOf(foodItem.imageResId, foodItem.imageResId, foodItem.imageResId))
+        if (food != null) {
+            ImageSlider(images = listOf(food.imageResId, food.imageResId, food.imageResId))
+        }
 
         Column(modifier = Modifier.padding(start = 64.dp, end = 64.dp)) {
-            Text(
-                text = foodItem.name,
-                style = MaterialTheme.typography.headlineMedium,
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(top = 46.dp, bottom = 12.dp)
-            )
-            Text(
-                text = "${foodItem.price} $",
-                style = MaterialTheme.typography.displayMedium.copy(color = MaterialTheme.colorScheme.primary),
-                textAlign = TextAlign.Center,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(bottom = 42.dp)
-            )
+            if (food != null) {
+                Text(
+                    text = food.name,
+                    style = MaterialTheme.typography.headlineMedium,
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(top = 46.dp, bottom = 12.dp)
+                )
+            }
+            if (food != null) {
+                Text(
+                    text = "${food.price} $",
+                    style = MaterialTheme.typography.displayMedium.copy(color = MaterialTheme.colorScheme.primary),
+                    textAlign = TextAlign.Center,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(bottom = 42.dp)
+                )
+            }
             FoodCaption(
                 title = "Delivery info",
                 caption = "Delivered between monday aug and thursday 20 from 8pm to 91:32 pm"

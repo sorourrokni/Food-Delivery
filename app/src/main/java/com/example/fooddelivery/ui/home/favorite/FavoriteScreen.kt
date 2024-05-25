@@ -81,42 +81,36 @@ fun FavoriteScreen(foodList: MutableStateFlow<List<Food>>, modifier: Modifier = 
                 FavoriteItem(food)
             }
         } else {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)
-                    .padding(top = 20.dp)
+            Column(
+                modifier = Modifier.fillMaxHeight(),
             ) {
                 Image(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .wrapContentSize(align = Alignment.Center)
+                        .padding(top = 20.dp)
+                        .size(width = 100.dp, height = 100.dp),
                     painter = painterResource(id = R.drawable.ic_heart_unselected),
                     contentDescription = null,
-                    modifier = Modifier.size(width = 100.dp, height = 100.dp)
                 )
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)
-                    .padding(top = 10.dp)
-            ) {
                 Text(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .wrapContentSize(align = Alignment.Center)
+                        .padding(top = 10.dp),
                     text = "No Favorite foods yet",
                     style = MaterialTheme.typography.bodyLarge, color = Color.Black
                 )
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .wrapContentSize(Alignment.Center)
-                    .padding(top = 10.dp)
-            ) {
                 Text(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .wrapContentSize(align = Alignment.Center)
+                        .padding(top = 10.dp),
                     text = "Hit the orange button down\n" +
                             "below to Create an order",
                     style = MaterialTheme.typography.bodyMedium
                 )
             }
-
         }
     }
 }

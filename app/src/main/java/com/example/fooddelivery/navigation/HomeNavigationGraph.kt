@@ -57,12 +57,20 @@ fun HomeNavigationGraph(
         composable(NavigationItem.History.route) {
             HistoryScreen(payments = fakeData.payments)
         }
-        composable(Screen.FoodDetail.route) {
+
+        composable(Screen.FoodDetail.route + "/{foodName}") { backStackEntry ->
+            val foodName = backStackEntry.arguments?.getString("foodName")
+
             FoodDetailScreen(
                 name = "foodDetail",
-                navControllerWithHistory = navControllerWithHistory
+                navControllerWithHistory = navControllerWithHistory,
+                food = homeViewModel.getFoodInfo(foodName ?: ""),
+                homeViewModel = homeViewModel,
+
             )
         }
+
+
         composable(Screen.Expandable.route) {
             ExpandableHomeScreen(
                 name = "expandable",

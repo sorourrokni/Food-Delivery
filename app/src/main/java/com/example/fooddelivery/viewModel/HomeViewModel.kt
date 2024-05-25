@@ -1,6 +1,7 @@
 package com.example.fooddelivery.viewModel
 
 import android.util.Log
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
@@ -46,12 +47,12 @@ class HomeViewModel(
     }
 
     fun getFoodInfo(name: String): Food? {
-        var food: Food? = null
-        viewModelScope.launch {
-            food = foodRepository.getFoodInfo(name)
-        }
-        return food
+        val food = mutableStateOf<Food?>(null)
 
+        viewModelScope.launch {
+            food.value = foodRepository.getFoodInfo(name)
+        }
+        return food.value
     }
 
     fun getAllUserFavoriteFood(email: String): MutableStateFlow<List<Food>> {
@@ -75,6 +76,7 @@ class HomeViewModel(
         if (food == null) {
             val FoodFavorite = FoodFavorite(name, email)
             viewModelScope.launch {
+
                 foodFavRepository.insert(FoodFavorite)
             }
         } else {
@@ -82,19 +84,20 @@ class HomeViewModel(
         }
     }
 
-    fun disLikeFood(name: String) {
+
+    fun dislikeFood(name: String) {
         var food: FoodFavorite? = null
         viewModelScope.launch {
             food = foodFavRepository.userLikeFood(email, name)
         }
 
         if (food != null) {
-            val FoodFavorite = FoodFavorite(name, email)
             viewModelScope.launch {
-                foodFavRepository.delete(FoodFavorite)
+
+                foodFavRepository.delete(food!!)
             }
         } else {
-            Log.i("like_food", "food hasn't been liked ")
+            Log.i("dislike_food", "food hasn't been liked")
         }
     }
 

@@ -47,7 +47,11 @@ fun FoodItem(
                 color = MaterialTheme.colorScheme.onSecondary,
                 shape = RoundedCornerShape(30.dp)
             )
-            .clickable { navControllerWithHistory.navigate(Screen.FoodDetail.route) }
+            .clickable {
+                navControllerWithHistory.navigate(
+                    Screen.FoodDetail.route + "/${foodItem.name}"
+                )
+            }
     ) {
         Box(
             modifier = Modifier
