@@ -1,4 +1,4 @@
-package com.example.fooddelivery
+package com.example.fooddelivery.ui.home
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.padding

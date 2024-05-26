@@ -107,6 +107,11 @@ fun FoodDetailScreen(
 
         Spacer(modifier = Modifier.height(48.dp))
 
-        FilledButton(onClick = { /*TODO*/ }, text = "Add to cart")
+        FilledButton(
+            onClick = { /*TODO*/ },
+            text = "Add to cart",
+            color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
     }
 }

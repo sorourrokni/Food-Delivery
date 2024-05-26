@@ -116,14 +116,17 @@ fun EditProfileScreen(
             )
         }
         Spacer(Modifier.height(72.dp))
-        FilledButton(onClick = {
-            profileViewModel.updateProfileInfo(
-                name = name,
-                newEmail = email,
-                phone = phoneNumber,
-                address = newAddress
-            )
-            navControllerWithHistory.navigate(NavigationItem.Profile.route)
-        }, text = "Update")
+        FilledButton(
+            onClick = {
+                profileViewModel.updateProfileInfo(
+                    name = name,
+                    newEmail = email,
+                    phone = phoneNumber,
+                    address = newAddress
+                )
+                navControllerWithHistory.navigate(NavigationItem.Profile.route)
+            }, text = "Update", color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
     }
 }

@@ -1,6 +1,5 @@
 package com.example.fooddelivery.ui.auth
 
-import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -28,7 +27,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.ProjectDataBase
 import com.example.fooddelivery.R
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.ui.auth.login.LoginScreen

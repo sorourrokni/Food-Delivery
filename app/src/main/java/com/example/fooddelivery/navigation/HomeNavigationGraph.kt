@@ -67,7 +67,7 @@ fun HomeNavigationGraph(
                 food = homeViewModel.getFoodInfo(foodName ?: ""),
                 homeViewModel = homeViewModel,
 
-            )
+                )
         }
 
 
@@ -82,7 +82,8 @@ fun HomeNavigationGraph(
             EditProfileScreen(
                 person = fakeData.person1,
                 address = fakeData.address1,
-                navControllerWithHistory = navControllerWithHistory
+                navControllerWithHistory = navControllerWithHistory,
+                profileViewModel = profileViewModel
             )
         }
     }

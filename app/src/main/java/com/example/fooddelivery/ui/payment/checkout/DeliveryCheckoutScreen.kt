@@ -25,29 +25,62 @@ import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
 
 @Composable
-fun DeliveryCheckoutScreen(navControllerWithHistory: NavControllerWithHistory,address:Address, total:Int, modifier: Modifier=Modifier, person: Person){
+fun DeliveryCheckoutScreen(
+    navControllerWithHistory: NavControllerWithHistory,
+    address: Address,
+    total: Int,
+    modifier: Modifier = Modifier,
+    person: Person
+) {
     val scrollState = rememberScrollState()
 
-    Column(Modifier.verticalScroll(scrollState)){
-        Row(modifier=Modifier.padding(start = 40.dp,top=60.dp)){
-            Image(painterResource(id = R.drawable.chevron_left),null)
-            Text("Checkout",style=MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=96.dp))
+    Column(Modifier.verticalScroll(scrollState)) {
+        Row(modifier = Modifier.padding(start = 40.dp, top = 60.dp)) {
+            Image(painterResource(id = R.drawable.chevron_left), null)
+            Text(
+                "Checkout",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(start = 96.dp)
+            )
         }
-        Row(modifier=Modifier.padding(start=54.dp,top=40.dp)){
-            Text("Delivery",style= MaterialTheme.typography.headlineLarge)
+        Row(modifier = Modifier.padding(start = 54.dp, top = 40.dp)) {
+            Text("Delivery", style = MaterialTheme.typography.headlineLarge)
         }
-        Row(modifier=Modifier.padding(start=40.dp,top=44.dp), horizontalArrangement = Arrangement.SpaceBetween){
-            Text("Address details",style=MaterialTheme.typography.headlineSmall.copy(fontSize =18.sp, lineHeight = 21.sp))
-            Text("change",style=MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary,modifier=Modifier.padding(start = 120.dp))
+        Row(
+            modifier = Modifier.padding(start = 40.dp, top = 44.dp),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                "Address details",
+                style = MaterialTheme.typography.headlineSmall.copy(
+                    fontSize = 18.sp,
+                    lineHeight = 21.sp
+                )
+            )
+            Text(
+                "change",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(start = 120.dp)
+            )
         }
-        AddressCard(address,Modifier.padding(start = 50.dp,end=49.dp), person = person)
-        DeliveryMethodCard( modifier = Modifier.padding(start=50.dp,end=46.dp))
-        Row( Modifier.padding(start=50.dp,end=46.dp,top=67.dp)){
-            Text("Total",style=MaterialTheme.typography.bodyMedium)
-            Text("$total", style = MaterialTheme.typography.titleMedium,modifier=Modifier.padding(start=199.dp))
+        AddressCard(address, Modifier.padding(start = 50.dp, end = 49.dp), person = person)
+        DeliveryMethodCard(modifier = Modifier.padding(start = 50.dp, end = 46.dp))
+        Row(Modifier.padding(start = 50.dp, end = 46.dp, top = 67.dp)) {
+            Text("Total", style = MaterialTheme.typography.bodyMedium)
+            Text(
+                "$total",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(start = 199.dp)
+            )
         }
         Spacer(modifier = Modifier.padding(top = 48.dp))
-        FilledButton(onClick = { navControllerWithHistory.navigate(Screen.Payment.route)}, text = "Proceed to payment")
+        FilledButton(
+            onClick = { navControllerWithHistory.navigate(Screen.Payment.route) },
+            text = "Proceed to payment",
+            color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
 
     }
 }

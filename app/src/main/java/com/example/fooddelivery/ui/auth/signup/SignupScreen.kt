@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.HomeActivity
+import com.example.fooddelivery.activity.HomeActivity
 import com.example.fooddelivery.component.CustomTextField
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
@@ -38,11 +38,16 @@ fun SignupScreen(
 
         Spacer(modifier = Modifier.height(190.dp))
 
-        FilledButton(onClick = {
-            authVM.createNewUser(email, passwrod)
-            mContext.startActivity(Intent(mContext, HomeActivity::class.java))
+        FilledButton(
+            onClick = {
+                authVM.createNewUser(email, passwrod)
+                mContext.startActivity(Intent(mContext, HomeActivity::class.java))
 
-        }, text = "Sign-up")
+            },
+            text = "Sign-up",
+            color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
 
     }
 }
