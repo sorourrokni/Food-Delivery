@@ -1,6 +1,7 @@
 package com.example.fooddelivery.ui.payment.checkout
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,7 +35,7 @@ fun DeliveryCheckoutScreen(
 ) {
     val scrollState = rememberScrollState()
 
-    Column(Modifier.verticalScroll(scrollState)) {
+    Column(Modifier.verticalScroll(scrollState).background(color = MaterialTheme.colorScheme.onSecondary)) {
         Row(modifier = Modifier.padding(start = 40.dp, top = 60.dp)) {
             Image(painterResource(id = R.drawable.chevron_left), null)
             Text(
@@ -47,7 +48,7 @@ fun DeliveryCheckoutScreen(
             Text("Delivery", style = MaterialTheme.typography.headlineLarge)
         }
         Row(
-            modifier = Modifier.padding(start = 40.dp, top = 44.dp),
+            modifier = Modifier.padding(start = 40.dp, top = 44.dp, bottom = 32.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text(
