@@ -18,7 +18,12 @@ import androidx.compose.ui.unit.sp
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
-
+/**
+ * Composable function that displays the Lost Connection screen.
+ *
+ * @param navControllerWithHistory The navigation controller with history support.
+ * @param modifier The modifier to be applied to the composable.
+ */
 @Composable
 fun LostConnectionScreen(
     navControllerWithHistory: NavControllerWithHistory,

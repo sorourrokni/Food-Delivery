@@ -10,18 +10,25 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.fooddelivery.data.ProjectDataBase
 import com.example.fooddelivery.R
+import com.example.fooddelivery.data.ProjectDataBase
 import com.example.fooddelivery.navigation.AuthNavigationGraph
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.theme.FoodDeliveryTheme
 import com.example.fooddelivery.viewModel.authViewModel
 
+/**
+ * Activity class responsible for handling authentication-related UI.
+ */
 class AuthActivity:ComponentActivity() {
     private val authVM: authViewModel by viewModels {
         authViewModel.AuthViewModelFactory((application as ProjectDataBase).personRepository)
     }
-
+    /**
+     * Called when the activity is starting. This is where most initialization should go.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     * this contains the data it most recently supplied in [onSaveInstanceState]. Otherwise, it is null.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.circle_1)

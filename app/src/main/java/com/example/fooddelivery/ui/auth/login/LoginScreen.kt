@@ -20,7 +20,14 @@ import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.viewModel.authViewModel
-
+/**
+ * Composable function that displays the login screen.
+ *
+ * @param authVM The ViewModel instance for authentication-related operations.
+ * @param navControllerWithHistory The navigation controller with history support.
+ * @param name The name of the user (not currently used in the function).
+ * @param modifier The modifier to be applied to the composable.
+ */
 @Composable
 fun LoginScreen(
     authVM: authViewModel,

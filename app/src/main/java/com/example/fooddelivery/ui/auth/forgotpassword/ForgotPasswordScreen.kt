@@ -29,7 +29,13 @@ import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.viewModel.authViewModel
-
+/**
+ * Composable function that displays the Forgot Password screen.
+ *
+ * @param authVM The ViewModel instance for authentication-related operations.
+ * @param navControllerWithHistory The navigation controller with history support.
+ * @param modifier The modifier to be applied to the composable.
+ */
 @Composable
 fun ForgotPasswordScreen(
     authVM: authViewModel,

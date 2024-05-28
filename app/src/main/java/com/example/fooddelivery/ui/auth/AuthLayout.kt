@@ -32,7 +32,12 @@ import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.ui.auth.login.LoginScreen
 import com.example.fooddelivery.ui.auth.signup.SignupScreen
 import com.example.fooddelivery.viewModel.authViewModel
-
+/**
+ * Composable function that provides the layout for authentication screens.
+ *
+ * @param authVM The authentication view model.
+ * @param navControllerWithHistory The navigation controller with history support.
+ */
 @Composable
 fun AuthLayout(authVM: authViewModel,navControllerWithHistory: NavControllerWithHistory) {
 
