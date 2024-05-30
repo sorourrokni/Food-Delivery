@@ -8,22 +8,23 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 
 @Composable
-fun FilledButton(onClick: () -> Unit, text: String) {
+fun FilledButton(onClick: () -> Unit, text: String, color: Color, textColor: Color) {
     Button(
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 50.dp, top = 0.dp, end = 50.dp, bottom = 42.dp),
         onClick = { onClick() },
-        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary)
+        colors = ButtonDefaults.buttonColors(containerColor = color)
     ) {
         Text(
             modifier = Modifier.padding(start = 0.dp, top = 12.dp, end = 0.dp, bottom = 12.dp),
             text = text,
-            style = MaterialTheme.typography.titleSmall.copy(color = MaterialTheme.colorScheme.secondary)
+            style = MaterialTheme.typography.titleSmall.copy(color = textColor)
         )
     }
 }

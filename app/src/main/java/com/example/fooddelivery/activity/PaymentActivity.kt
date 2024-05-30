@@ -1,4 +1,4 @@
-package com.example.fooddelivery
+package com.example.fooddelivery.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,7 +9,6 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
-import com.example.fooddelivery.navigation.AuthNavigationGraph
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.PaymentNavigationGraph
 import com.example.fooddelivery.theme.FoodDeliveryTheme

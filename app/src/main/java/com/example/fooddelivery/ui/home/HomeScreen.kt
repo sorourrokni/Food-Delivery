@@ -23,12 +23,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
+import com.example.fooddelivery.activity.PaymentActivity
 import com.example.fooddelivery.component.CustomTabRow
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
+/**
+ * Composable that displays the home screen of the FoodDelivery app.
+ *
+ * The home screen provides a visual and interactive overview of food items available for order.
+ * It features a customizable tab bar, and icons for additional actions like viewing the shopping cart.
+ *
+ * @param modifier The modifier to be applied to the composable.
+ * @param navControllerWithHistory The navigation controller to handle history and navigation events.
+ * @param foodItems The list of food items to display.
+ */
 @Composable
 fun HomeScreen(
     modifier: Modifier = Modifier,

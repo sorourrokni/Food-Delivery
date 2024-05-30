@@ -4,6 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 val Orange01 = Color(0xFFFA4A0C)
 val Orange02 = Color(0xffF47B0A)
+val Orange03 = Color(0xffFF4B3A)
 
 val Red = Color(0xffDF2C2C)
 

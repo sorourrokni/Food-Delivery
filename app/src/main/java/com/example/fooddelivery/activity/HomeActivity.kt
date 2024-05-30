@@ -1,4 +1,4 @@
-package com.example.fooddelivery
+package com.example.fooddelivery.activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,11 +10,17 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import com.example.fooddelivery.R
+import com.example.fooddelivery.data.ProjectDataBase
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.theme.FoodDeliveryTheme
+import com.example.fooddelivery.ui.home.MainScreen
 import com.example.fooddelivery.viewModel.HomeViewModel
 import com.example.fooddelivery.viewModel.ProfileViewModel
 
+/**
+ * Activity class responsible for handling the main home UI.
+ */
 class HomeActivity : ComponentActivity() {
     private lateinit var email: String
 
@@ -37,7 +43,11 @@ class HomeActivity : ComponentActivity() {
             email = email
         )
     }
-
+    /**
+     * Called when the activity is starting. This is where most initialization should go.
+     * @param savedInstanceState If the activity is being re-initialized after previously being shut down,
+     * this contains the data it most recently supplied in [onSaveInstanceState]. Otherwise, it is null.
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.circle_1)

@@ -16,8 +16,6 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,15 +25,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.HomeActivity
 import com.example.fooddelivery.R
+import com.example.fooddelivery.activity.HomeActivity
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.component.VerificationCodeField
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.viewModel.authViewModel
 
 @Composable
-fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navControllerWithHistory: NavControllerWithHistory) {
+fun VerificationScreen(
+    authVM: authViewModel,
+    modifier: Modifier = Modifier,
+    navControllerWithHistory: NavControllerWithHistory
+) {
     val scrollState = rememberScrollState()
     val mContext = LocalContext.current
     Column(
@@ -57,28 +59,39 @@ fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navC
                 )
         )
         {
-            Column (modifier= Modifier
-                .align(Alignment.Center)
-                .wrapContentSize(Alignment.Center)
+            Column(
+                modifier = Modifier
+                    .align(Alignment.Center)
+                    .wrapContentSize(Alignment.Center)
 
-            ){
-                Row(modifier=Modifier.fillMaxWidth().wrapContentSize(Alignment.Center)){
-                Image(
-                    painter = painterResource(id = R.drawable.vuesax),
-                    contentDescription = null,
-                    modifier = Modifier
+            ) {
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)) {
+                    Image(
+                        painter = painterResource(id = R.drawable.vuesax),
+                        contentDescription = null,
+                        modifier = Modifier
 //                    .align(Alignment.Center)
-                        .size(100.dp, 100.dp)
-                        .padding( top = 32.dp)
-                )
+                            .size(100.dp, 100.dp)
+                            .padding(top = 32.dp)
+                    )
 
                 }
-                Row(modifier=Modifier.fillMaxWidth().wrapContentSize(Alignment.Center)){
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)) {
 
-                Text(text = "\nVerification", style = MaterialTheme.typography.titleMedium, color = Color(0xffFA4A0C)
-                )}
+                    Text(
+                        text = "\nVerification",
+                        style = MaterialTheme.typography.titleMedium,
+                        color = Color(0xffFA4A0C)
+                    )
+                }
 
-                Row(modifier=Modifier.fillMaxWidth().wrapContentSize(Alignment.Center)) {
+                Row(modifier = Modifier
+                    .fillMaxWidth()
+                    .wrapContentSize(Alignment.Center)) {
 
                     Text(
                         text = "\nEnter your verification code",
@@ -88,14 +101,17 @@ fun VerificationScreen(authVM: authViewModel, modifier: Modifier =Modifier, navC
             }
         }
         Spacer(modifier = Modifier.height(50.dp))
-        var number= VerificationCodeField(4).take(4)
+        var number = VerificationCodeField(4).take(4)
         Spacer(modifier = Modifier.height(280.dp))
 
-        FilledButton(onClick = {
-                               if(number==authVM.verificationCode.toString()){
-                                   mContext.startActivity(Intent(mContext, HomeActivity::class.java))
-                               }
-        }, text = "Submit")
+        FilledButton(
+            onClick = {
+                if (number == authVM.verificationCode.toString()) {
+                    mContext.startActivity(Intent(mContext, HomeActivity::class.java))
+                }
+            }, text = "Submit", color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
 
     }
 }

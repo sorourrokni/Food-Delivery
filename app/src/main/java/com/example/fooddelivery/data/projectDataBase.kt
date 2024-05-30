@@ -1,5 +1,6 @@
 package com.example.fooddelivery.data
 
+import android.app.Application
 import android.content.Context
 import androidx.room.CoroutinesRoom
 import androidx.room.Database
@@ -13,7 +14,14 @@ import com.example.fooddelivery.data.dao.OrderDao
 import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.dao.PersonDao
 import com.example.fooddelivery.data.dao.foodFavDao
+import com.example.fooddelivery.repository.AddressRepository
+import com.example.fooddelivery.repository.FoodRepository
+import com.example.fooddelivery.repository.OrderItemRepository
+import com.example.fooddelivery.repository.OrderRepository
+import com.example.fooddelivery.repository.PersonRepository
+import com.example.fooddelivery.repository.foodFavRepository
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
 
 @Database(
@@ -85,5 +93,21 @@ abstract class DataBase:RoomDatabase() {
             }
         }
     }
+
+}
+
+class ProjectDataBase : Application() {
+    val applicationScope = CoroutineScope(SupervisorJob())
+
+    // Using by lazy so the database and the repository are only created when they're needed
+    // rather than when the application starts
+    val database by lazy { DataBase.getDatabase(this, applicationScope) }
+    val addressRepository by lazy { AddressRepository(database.addressDao()) }
+    val foodFavRepository by lazy { foodFavRepository(database.foodFavDao()) }
+    val foodRepository by lazy { FoodRepository(database.foodDao()) }
+    val orderItemRepository by lazy { OrderItemRepository(database.orderItemDao()) }
+    val orderRepository by lazy { OrderRepository(database.orderDao()) }
+    val personRepository by lazy { PersonRepository(database.personDao()) }
+
 
 }

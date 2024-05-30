@@ -25,7 +25,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.PaymentActivity
+import com.example.fooddelivery.activity.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.FavoriteItem
 import com.example.fooddelivery.data.Food

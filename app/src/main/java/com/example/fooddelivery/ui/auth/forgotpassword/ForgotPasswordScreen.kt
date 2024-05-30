@@ -23,16 +23,25 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.AuthTextField
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.viewModel.authViewModel
-
+/**
+ * Composable function that displays the Forgot Password screen.
+ *
+ * @param authVM The ViewModel instance for authentication-related operations.
+ * @param navControllerWithHistory The navigation controller with history support.
+ * @param modifier The modifier to be applied to the composable.
+ */
 @Composable
-fun ForgotPasswordScreen(authVM: authViewModel, navControllerWithHistory: NavControllerWithHistory, modifier: Modifier=Modifier) {
+fun ForgotPasswordScreen(
+    authVM: authViewModel,
+    navControllerWithHistory: NavControllerWithHistory,
+    modifier: Modifier = Modifier
+) {
     val scrollState = rememberScrollState()
     Column(
         modifier = Modifier
@@ -53,36 +62,51 @@ fun ForgotPasswordScreen(authVM: authViewModel, navControllerWithHistory: NavCon
                 )
         )
         {
-            Column (modifier= Modifier
-                .padding(start = 0.dp, top = 0.dp, end = 0.dp, bottom = 0.dp)
-                .align(Alignment.Center)
-                .wrapContentSize(Alignment.Center)
-
-            ){
-            Image(
-                painter = painterResource(id = R.drawable.lock),
-                contentDescription = null,
+            Column(
                 modifier = Modifier
-//                    .align(Alignment.Center)
-                    .size(164.16.dp, 164.16.dp)
-                    .padding(start = 0.dp, top = 32.dp, end = 0.dp, bottom = 0.dp)
-            )
+                    .padding(start = 0.dp, top = 0.dp, end = 0.dp, bottom = 0.dp)
+                    .align(Alignment.Center)
+                    .wrapContentSize(Alignment.Center)
 
-                Text(text = "\nForgot Password", style = MaterialTheme.typography.titleMedium, color = Color(0xffFA4A0C)
-                ,modifier=Modifier.padding(start=8.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.lock),
+                    contentDescription = null,
+                    modifier = Modifier
+//                    .align(Alignment.Center)
+                        .size(164.16.dp, 164.16.dp)
+                        .padding(start = 0.dp, top = 32.dp, end = 0.dp, bottom = 0.dp)
+                )
+
+                Text(
+                    text = "\nForgot Password",
+                    style = MaterialTheme.typography.titleMedium,
+                    color = Color(0xffFA4A0C),
+                    modifier = Modifier.padding(start = 8.dp)
                 )
 
 
-                Text(text = "Enter your registered email", style = MaterialTheme.typography.labelLarge,modifier=Modifier.padding(8.dp))
+                Text(
+                    text = "Enter your registered email",
+                    style = MaterialTheme.typography.labelLarge,
+                    modifier = Modifier.padding(8.dp)
+                )
 
             }
         }
-        var email=AuthTextField(KeyboardType.Email, label = "Email address")
+        var email = AuthTextField(KeyboardType.Email, label = "Email address")
 
         Spacer(modifier = Modifier.height(280.dp))
 
-        FilledButton(onClick = { navControllerWithHistory.navigate(Screen.Verification.route)
-                               authVM.sendEmail(email)}, text = "Enter email")
+        FilledButton(
+            onClick = {
+                navControllerWithHistory.navigate(Screen.Verification.route)
+                authVM.sendEmail(email)
+            },
+            text = "Enter email",
+            color = MaterialTheme.colorScheme.primary,
+            textColor = MaterialTheme.colorScheme.secondary
+        )
 
     }
 }

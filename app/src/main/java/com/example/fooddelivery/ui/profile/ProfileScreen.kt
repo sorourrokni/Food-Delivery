@@ -23,7 +23,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.fooddelivery.PaymentActivity
+import com.example.fooddelivery.activity.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.ProfileButton
 import com.example.fooddelivery.component.ProfileCard
