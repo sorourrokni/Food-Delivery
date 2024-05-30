@@ -11,20 +11,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.R
 import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun ItemGrid(navControllerWithHistory: NavControllerWithHistory) {
-
-    val foodItems = listOf(
-        Food("Veggie tomato mix", "N1,900", 100, R.drawable.food_1),
-        Food("Egg and cucumber", "N1,900", 200, R.drawable.food_2),
-        Food("Egg and cucumber", "N1,900", 250, R.drawable.food_3),
-        Food("Egg and cucumber", "N1,900", 480, R.drawable.food_4),
-        Food("Egg and cucumber", "N1,900", 100, R.drawable.food_1),
-    )
+fun ItemGrid(navControllerWithHistory: NavControllerWithHistory, foodItems: List<Food>) {
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
@@ -51,7 +42,7 @@ fun ItemGrid(navControllerWithHistory: NavControllerWithHistory) {
                     titlePadding = 8,
                     imgPadding = 0,
                     scale = 1.2f,
-                   navControllerWithHistory = navControllerWithHistory
+                    navControllerWithHistory = navControllerWithHistory
                 )
             }
         }

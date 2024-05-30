@@ -23,14 +23,18 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.example.fooddelivery.HomeActivity
 import com.example.fooddelivery.PaymentActivity
 import com.example.fooddelivery.R
 import com.example.fooddelivery.component.CustomTabRow
+import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.navigation.NavControllerWithHistory
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavControllerWithHistory) {
+fun HomeScreen(
+    modifier: Modifier = Modifier,
+    navControllerWithHistory: NavControllerWithHistory,
+    foodItems: List<Food>
+) {
     val mContext = LocalContext.current
     var enabled by remember { mutableStateOf(true) }
     val scrollState = rememberScrollState()
@@ -50,11 +54,14 @@ fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavContro
             Image(painter = painterResource(id = R.drawable.ic_more), contentDescription = null)
             Image(
                 painter = painterResource(id = R.drawable.ic_shopping_cart),
-                contentDescription = null
-                ,modifier=Modifier.clickable { mContext.startActivity(
-                    Intent(mContext,
-                        PaymentActivity::class.java)
-                ) }
+                contentDescription = null, modifier = Modifier.clickable {
+                    mContext.startActivity(
+                        Intent(
+                            mContext,
+                            PaymentActivity::class.java
+                        )
+                    )
+                }
             )
         }
         Row(
@@ -73,7 +80,8 @@ fun HomeScreen(modifier: Modifier = Modifier,navControllerWithHistory: NavContro
             name = "CustomTabRow", modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 75.dp, top = 80.dp, end = 0.dp, bottom = 0.dp)
-                .height(33.dp), navControllerWithHistory = navControllerWithHistory
+                .height(33.dp), navControllerWithHistory = navControllerWithHistory,
+            foodItems = foodItems
         )
     }
 }

@@ -10,10 +10,6 @@ import com.example.fooddelivery.data.Food
 import com.example.fooddelivery.data.Order
 import com.example.fooddelivery.data.OrderItem
 import com.example.fooddelivery.data.PaymentMethod
-import com.example.fooddelivery.data.dao.AddressDao
-import com.example.fooddelivery.data.dao.FoodDao
-import com.example.fooddelivery.data.dao.OrderDao
-import com.example.fooddelivery.data.dao.OrderItemDao
 import com.example.fooddelivery.data.orderStatus
 import com.example.fooddelivery.repository.AddressRepository
 import com.example.fooddelivery.repository.FoodRepository
@@ -21,26 +17,26 @@ import com.example.fooddelivery.repository.OrderItemRepository
 import com.example.fooddelivery.repository.OrderRepository
 import kotlinx.coroutines.launch
 
-class paymentViewModel(
+class PaymentViewModel(
     private val orderRepository: OrderRepository,
     private val orderItemRepository: OrderItemRepository,
     private val foodRepository: FoodRepository,
     private val addressRepository: AddressRepository,
-    private val email:String
-): ViewModel() {
+    private val email: String
+) : ViewModel() {
     fun addToCart(name: String, number: Int) {
-        var orderList:List<Order>?= listOf()
-        var food: Food?=null
-        var address: Address?=null
+        var orderList: List<Order>? = listOf()
+        var food: Food? = null
+        var address: Address? = null
         viewModelScope.launch {
             orderList = orderRepository.getTODOOrders(email)
             food = foodRepository.getFoodInfo(name)
             address = addressRepository.getUserAddress(name)
         }
         if (orderList?.count() == 1) {
-            var orderItem :OrderItem?=null
+            var orderItem: OrderItem? = null
             viewModelScope.launch {
-                orderItem=orderItemRepository.getOrderItem(orderList!![0].id, name)
+                orderItem = orderItemRepository.getOrderItem(orderList!![0].id, name)
             }
             if (orderItem == null) {
                 var newOrderItem = OrderItem(number, orderList!![0].id, name)
@@ -53,7 +49,7 @@ class paymentViewModel(
                     orderItemRepository.upsert(orderItem!!)
                 }
             }
-            var orderTODO:Order?=null
+            var orderTODO: Order? = null
             viewModelScope.launch {
                 orderRepository.getOrderById(orderList!![0].id)
             }
@@ -65,9 +61,9 @@ class paymentViewModel(
 
         }
         if (orderList!!.isEmpty()) {
-            var allOrders :List<Order>?=null
+            var allOrders: List<Order>? = null
             viewModelScope.launch {
-                allOrders= orderRepository.getAllOrders()
+                allOrders = orderRepository.getAllOrders()
             }
 
             if (allOrders!!.isEmpty()) {
@@ -100,32 +96,32 @@ class paymentViewModel(
     }
 
     fun removeFromCart(name: String, number: Int) {
-        var orderList :List<Order>?=null
-        var food :Food?=null
+        var orderList: List<Order>? = null
+        var food: Food? = null
         viewModelScope.launch {
-            orderList=orderRepository.getTODOOrders(email)
-            food=foodRepository.getFoodInfo(name)
+            orderList = orderRepository.getTODOOrders(email)
+            food = foodRepository.getFoodInfo(name)
         }
 
-        if (orderList==null) {
+        if (orderList == null) {
             Log.e("custom_error", "error in orders: there no TODO Cart")
         } else {
             if (orderList?.count() == 1) {
-                var orderItem :OrderItem?=null
+                var orderItem: OrderItem? = null
                 viewModelScope.launch {
-                    orderItem=orderItemRepository.getOrderItem(orderList!![0].id, name)
+                    orderItem = orderItemRepository.getOrderItem(orderList!![0].id, name)
                 }
                 if (orderItem != null) {
                     if (number >= orderItem!!.quantity) {
                         orderList!![0].totalPrice -= food!!.price * orderItem!!.quantity
-                        viewModelScope.launch{
+                        viewModelScope.launch {
                             orderItemRepository.delete(orderItem!!)
                             orderRepository.upsert(orderList!![0])
                         }
                     } else {
                         orderItem!!.quantity -= number
                         orderList!![0].totalPrice -= food!!.price * number
-                        viewModelScope.launch{
+                        viewModelScope.launch {
                             orderItemRepository.upsert(orderItem!!)
                             orderRepository.upsert(orderList!![0])
                         }
@@ -144,10 +140,10 @@ class paymentViewModel(
     }
 
     fun deliveryChange(address: Address, deliverMethode: Delivery) {
-        var orderList:List<Order>? =null
+        var orderList: List<Order>? = null
         viewModelScope.launch {
 
-            orderList=orderRepository.getTODOOrders(email)
+            orderList = orderRepository.getTODOOrders(email)
         }
 
         if (orderList?.count() == 1) {
@@ -158,7 +154,7 @@ class paymentViewModel(
                 orderRepository.upsert(orderList!![0])
             }
         }
-        if (orderList==null) {
+        if (orderList == null) {
             Log.e("custom_error", "error in orders: there is TODO Cart")
         } else {
             Log.e("custom_error", "error in orders: there is two TODO Cart")
@@ -166,10 +162,10 @@ class paymentViewModel(
     }
 
     fun paymentChange(paymentMethod: PaymentMethod, deliverMethode: Delivery) {
-        var orderList:List<Order>? =null
+        var orderList: List<Order>? = null
         viewModelScope.launch {
 
-            orderList=orderRepository.getTODOOrders(email)
+            orderList = orderRepository.getTODOOrders(email)
         }
         if (orderList?.count() == 1) {
             orderList!![0].deliveryMethod = deliverMethode
@@ -178,7 +174,7 @@ class paymentViewModel(
                 orderRepository.upsert(orderList!![0])
             }
         }
-        if (orderList==null) {
+        if (orderList == null) {
             Log.e("custom_error", "error in orders: there is TODO Cart")
         } else {
             Log.e("custom_error", "error in orders: there is two TODO Cart")
@@ -193,9 +189,9 @@ class paymentViewModel(
         private val email: String
     ) : ViewModelProvider.Factory {
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(paymentViewModel::class.java)) {
+            if (modelClass.isAssignableFrom(PaymentViewModel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return paymentViewModel(
+                return PaymentViewModel(
                     orderRepository,
                     orderItemRepository,
                     foodRepository,

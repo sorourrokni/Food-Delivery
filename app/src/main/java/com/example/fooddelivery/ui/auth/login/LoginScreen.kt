@@ -1,7 +1,6 @@
 package com.example.fooddelivery.ui.auth.login
 
 import android.content.Intent
-import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
@@ -15,13 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat.startActivity
-import com.example.fooddelivery.AuthActivity
 import com.example.fooddelivery.HomeActivity
 import com.example.fooddelivery.component.CustomTextField
 import com.example.fooddelivery.component.FilledButton
 import com.example.fooddelivery.navigation.NavControllerWithHistory
-import com.example.fooddelivery.navigation.NavigationItem
 import com.example.fooddelivery.navigation.Screen
 import com.example.fooddelivery.viewModel.authViewModel
 
@@ -49,10 +45,11 @@ fun LoginScreen(    authVM: authViewModel,navControllerWithHistory: NavControlle
         Spacer(modifier = Modifier.height(136.dp))
 
         FilledButton(onClick = {
-                               if(authVM.login(email,password)){
-
-                                   mContext.startActivity(Intent(mContext,HomeActivity::class.java))
-                               }
+            if (authVM.login(email, password)) {
+                val intent = Intent(mContext, HomeActivity::class.java)
+                intent.putExtra("email", email)
+                mContext.startActivity(intent)
+            }
         }, text = "Login")
     }
 }
